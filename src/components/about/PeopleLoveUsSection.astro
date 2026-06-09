@@ -1,0 +1,60 @@
+---
+export const reasons = [
+  {
+    number: "1",
+    title: "We transform ideas",
+    description:
+      "We appreciate the ideas that pave the path to a new horizon. And it turns out to be outstanding when we add to it our intuitive inputs to make your ideas with longer expectancy.",
+  },
+  {
+    number: "2",
+    title: "We build relations",
+    description:
+      "We stay on board always to assist you even for a minute detail. This is why we don't need to stress building relations, they just happen to be a long lasting bond of ethical business relations.",
+  },
+  {
+    number: "3",
+    title: "We Long for the best",
+    description:
+      "The best achievement for us is to bring a curve of a smile on the face of our clients and eyes with a question about what best else we have to add to their project.",
+  },
+];
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="text-[#ff6b1a] uppercase text-sm"> People Love Us </span>
+
+      <h2 class="text-5xl font-bold mt-4">HOW IT'S WORK</h2>
+
+      <p class="text-gray-500 mt-4">
+        One solution for all types of fully customize software services.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        {
+          reasons.map((item) => (
+            <div class="flex gap-8 mb-10">
+              <div class="p-6 rounded-full border-2 border-[#ff6b1a] text-[#ff6b1a] font-bold flex items-center justify-center w-16 h-16 text-xl">
+                {item.number}
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-bold mb-3">{item.title}</h3>
+
+                <p class="text-gray-600 leading-8">{item.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div>
+        <img src="/about/people-love-us.png" class="w-full" />
+      </div>
+    </div>
+  </div>
+</section>

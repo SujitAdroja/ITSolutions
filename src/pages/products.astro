@@ -1,0 +1,244 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+export const products = [
+  {
+    title: "Sales Force Automation (SFA)",
+    badge: "demo",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "For Company or Distributor to track activities to each and every sales man in market and convert their hours into productivity, capture more & more order from market.",
+    features: [
+      "Monitor Sales Staff's activity real-time",
+      "Online Ordering Process",
+      "Track Location of your Sales Person",
+      "Collect Information from the market",
+      "Track your salesperson's productivity",
+    ],
+  },
+  {
+    title: "Distribution Manage System (DMS)",
+    badge: "demo",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "For Company or Distributor to track their customers sales, purchase data to date stock, outstanding payment and expenses.",
+    features: [
+      "Distributor or Dealer's Sales",
+      "Central Monitoring of all orders",
+      "Supports Ready Stock and Order Booking",
+      "Scheme and Claim Management",
+      "Integrated SFA application",
+    ],
+  },
+  {
+    title: "Chat Bot (Artificial Intelligence)",
+    badge: "upgrade",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "Software application used to conduct an online chat conversation via text or text-to-speech.",
+    features: [
+      "Contextual responses",
+      "Great UI/UX",
+      "Analytics Module",
+      "Omnichannel messaging",
+      "Data Security",
+    ],
+  },
+  {
+    title: "Sale Marketing Strategies (Machine Learning)",
+    badge: "upgrade",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "Recognition of patterns in data and helpful for forecasting consumer purchases.",
+    features: [
+      "Demand Forecasting",
+      "Product Seasonal Promotion Scheme",
+      "Company Purchases Forecasting",
+      "Churn Price",
+      "Stock Forecasting",
+    ],
+  },
+  {
+    title: "Point of Sale (POS)",
+    badge: "upgrade",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "Online - Offline solutions for giving distribution store / mobile store.",
+    features: [
+      "Desktop to Manage Everything",
+      "Inventory Management Module",
+      "Payment Module",
+      "Day Close Module",
+      "Customer Special Scheme and Claim",
+    ],
+  },
+  {
+    title: "E-Commerce Application",
+    badge: "demo",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "For business through world wide market via this E Commerce App.",
+    features: [
+      "Coupon & Scheme Module",
+      "Admin & Seller Portal",
+      "Google SEO Friendly URL",
+      "Courier & Email & SMS & Payment",
+      "Stock Management with Inventory App",
+    ],
+  },
+  {
+    title: "Ticket/Task Management",
+    badge: "demo",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "Keep track with this centralized system with different timezones remote employee's task status.",
+    features: [
+      "Ticket/Task Hour Wise Assign",
+      "Approval For Completed Work",
+      "Time Zone & Working Hours",
+      "Billing Rates vs Working Hours",
+      "Staff Timesheet & Salary Process",
+    ],
+  },
+  {
+    title: "Logistics Application",
+    badge: "demo",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "Parcel booking system from booking to loading to unloading to delivery.",
+    features: [
+      "Parcel Booking System",
+      "Online + Offline Module",
+      "Booking Loading-Unloading-Delivery",
+      "Pay and To Pay System",
+      "Stock Aging Report",
+    ],
+  },
+  {
+    title: "WhatsApp Messaging",
+    badge: "demo",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "Send transactional and bulk promotional messages to your existing partners.",
+    features: [
+      "Auto Transactional Messages",
+      "Bulk Promotional Messages",
+      "SAP B1, SAP R3 and any System",
+      "Auto Reminder Messages",
+      "Photo, Video, PDF, GIF Messages",
+    ],
+  },
+  {
+    title: "Accounting Software",
+    badge: "upgrade",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "At company level users can entries of Sales, Purchase, Stock, On Account Payment.",
+    features: [
+      "Sales order & Purchase order Module",
+      "Inventory Management Module",
+      "Finance Module",
+      "Payment Module",
+      "Customize to support your business",
+    ],
+  },
+  {
+    title: "Customer Relationship Management (CRM)",
+    badge: "upgrade",
+    image: "/public/homepage/card-image.jpg",
+    description:
+      "Improve the relationship with existing customers and find new prospective customers.",
+    features: [
+      "Lead Management",
+      "Customer Service",
+      "Workflow Automation",
+      "Business Reporting",
+      "Customization",
+    ],
+  },
+];
+---
+
+<MainLayout title="Products">
+  <!-- Products Section -->
+
+  <section class="bg-[#f5f5f7] py-20">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-[40px] font-bold text-[#222]">
+          Our Fantastic Products, you might like its features
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
+        {
+          products.map((product) => (
+            <article class="bg-white border border-[#e8e8e8] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-md">
+              {/* Image */}
+              <div class="relative">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  class="w-full h-[190px] object-cover"
+                />
+
+                <div
+                  class:list={[
+                    "absolute right-4 bottom-[-20px] w-[60px] h-[60px] rounded-full text-white text-[11px] font-semibold flex items-center justify-center text-center leading-tight shadow-lg",
+                    product.badge === "demo" ? "bg-[#16a34a]" : "bg-[#ff6b1a]",
+                  ]}
+                >
+                  {product.badge === "demo" ? (
+                    <>
+                      Demo
+                      <br />
+                      Ready
+                    </>
+                  ) : (
+                    <>
+                      Work
+                      <br />
+                      Upgrade
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[#2a2a2a] leading-tight mb-3">
+                  {product.title}
+                </h3>
+
+                <p class="text-[#666] text-md leading-relaxed mb-6">
+                  {product.description}
+                </p>
+
+                <ul class="space-y-3">
+                  {product.features.map((feature) => (
+                    <li class="flex gap-3 items-start">
+                      <div class="w-6 h-6 rounded-full bg-[#f1f3f7] flex items-center justify-center text-lg text-[#7d7d7d] shrink-0 mt-[2px]">
+                        ✓
+                      </div>
+
+                      <span class="text-md text-[#666] leading-6">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+</style>

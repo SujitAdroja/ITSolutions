@@ -1,0 +1,72 @@
+---
+export const processSteps = [
+  {
+    id: "01",
+    title: "Frame the Problem",
+    image: "/about/hiw-card-image.png",
+  },
+  {
+    id: "02",
+    title: "Analysis and Review",
+    image: "/about/hiw-card-image.png",
+  },
+  {
+    id: "03",
+    title: "Collect the Raw Data",
+    image: "/about/hiw-card-image.png",
+  },
+  {
+    id: "04",
+    title: "Explore the Data",
+    image: "/about/hiw-card-image.png",
+  },
+  {
+    id: "05",
+    title: "Perform Update",
+    image: "/about/hiw-card-image.png",
+  },
+  {
+    id: "06",
+    title: "Communicate Results",
+    image: "/about/hiw-card-image.png",
+  },
+];
+---
+
+<section class="bg-[#f8f8f8] py-24">
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="text-center mb-20">
+      <span class="text-[#ff6b1a] uppercase text-sm"> How Its Work </span>
+
+      <h2 class="text-5xl font-bold mt-4">
+        Our Process For Customize Software
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
+      <img src="/about/how-it-works.png" class="w-full" />
+
+      <div class="space-y-4">
+        {
+          processSteps.map((step) => (
+            <div class="bg-white flex shadow-sm ">
+              <div class="bg-[#EDFCFF] px-6 flex items-center justify-center">
+                 <img
+                  src={step.image}
+                  alt={step.title}
+                  class="w-14 h-14 object-contain"
+                />
+
+              </div>
+              <div class="p-4 self-center">               
+                <span class="font-semibold text-xl">{step.title}</span>
+              </div>
+
+              <span class="align-self-end text-[70px] font-bold text-gray-100">{step.id}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

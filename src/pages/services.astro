@@ -1,0 +1,297 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+export const whyChooseUs = [
+  {
+    title: "Fully Customization",
+    icon: "/icons/customization.svg",
+    description:
+      "As we are providing fully customize software so we can modified software as per your business process.",
+  },
+  {
+    title: "Responsive Design",
+    icon: "/icons/responsive.svg",
+    description: "Our Solutions are fully responsive and Cross Platform.",
+  },
+  {
+    title: "Quick Support",
+    icon: "/icons/support.svg",
+    description:
+      "We Provide online or offline support for any query or problem.",
+  },
+  {
+    title: "Integration",
+    icon: "/icons/integration2.svg",
+    description:
+      "Integrate master and transaction data with Tally, SAP and legacy systems.",
+  },
+  {
+    title: "Analysis",
+    icon: "/icons/analysis.svg",
+    description:
+      "Graphical Report, Tabular Report & Crystal Report integrated for analysis.",
+  },
+  {
+    title: "SaaS Solutions",
+    icon: "/icons/saas.svg",
+    description:
+      "Provide SaaS solutions so you can start your business with lower cost.",
+  },
+];
+
+export const services = [
+  {
+    title: "Web & Cloud Applications",
+    icon: "/services/webcloud.png",
+    items: [
+      ".NET Development",
+      ".NET CORE Development",
+      "Angular Development",
+      "PHP Development",
+    ],
+  },
+
+  {
+    title: "Mobile App Development",
+    icon: "/services/mobileApp.png",
+    items: [
+      "Android App Development",
+      "iPhone App Development",
+      "Flutter App Development",
+      "Xamarin Cross Platform",
+    ],
+  },
+
+  {
+    title: "Web Designing",
+    icon: "/services/web-designing.png",
+    items: [
+      "Responsive Web Design",
+      "UI/UX Web-Mobile",
+      "Logo / Banner Design",
+      "Promotional Ads & Campaign",
+    ],
+  },
+
+  {
+    title: "Marketing & SEO",
+    icon: "/services/marketing-seo.png",
+    items: [
+      "Search Engine Optimization (SEO)",
+      "Email Marketing",
+      "Social Media Marketing (SMM)",
+      "Inbound / Content Marketing",
+    ],
+  },
+
+  {
+    title: "Domain & Web Hosting",
+    icon: "/services/domain-web-hosting.png",
+    items: [
+      "Domain Extensions",
+      "Web Hosting",
+      "Business Email",
+      "SSL Certificate",
+    ],
+  },
+
+  {
+    title: "Analytical Reports",
+    icon: "/services/analytical-report.png",
+    items: [
+      "Graphical & Tabular (MIS) Report",
+      "Microsoft Power BI",
+      "SAP Crystal Report",
+      "Qlik View, Tableau & Sisense",
+    ],
+  },
+
+  {
+    title: "Third-Party Integration",
+    icon: "/services/thirdparty-integration.png",
+    items: [
+      "Payment Gateway Integration",
+      "Tally, SAP, SFA & Any Third Party",
+      "Social Accounts Integration",
+      "Web API / Soap / VoIP",
+    ],
+  },
+
+  {
+    title: "Custom Development",
+    icon: "/services/custome-development.png",
+    items: [
+      "E-Commerce Website",
+      "WordPress, Joomla & Magento",
+      "CMS Development",
+      "Database Administrator",
+    ],
+  },
+
+  {
+    title: "Device Integration",
+    icon: "/services/device-integration.png",
+    items: [
+      "GPS & RFID System",
+      "Biometric Fingerprint System",
+      "Face Recognition System",
+      "Weighing Control Systems",
+    ],
+  },
+
+  {
+    title: "Server Administration",
+    icon: "/services/server-administration.png",
+    items: [
+      "Server Migration / Upgrade",
+      "Cloud / OnPrem Integration",
+      "Vmware Product Suit Administration",
+      "End to End Cloud Solution",
+    ],
+  },
+
+  {
+    title: "QA & QC",
+    icon: "/services/QA-EC.png",
+    items: [
+      "Automation & Manual Testing",
+      "Data Scraping",
+      "Load (Performance) Testing",
+      "API Security Testing",
+    ],
+  },
+
+  {
+    title: "Graphics Designing",
+    icon: "/services/graphic-designing.png",
+    items: [
+      "Logo / Banner Design",
+      "All Types Graphics Design",
+      "Pouch Design (Roto Gravure)",
+      "Company Brochure",
+    ],
+  },
+];
+---
+
+<MainLayout title="Services">
+  <!-- SERVICES GRID SECTION -->
+  <section class="relative py-24 overflow-hidden">
+    <!-- Background Image -->
+    <img src="/public/homepage/black-bg.jpg" alt="Background Image" class="absolute inset-0 w-full h-full object-cover" />
+
+    <!-- Dark Overlay -->
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6">
+      <h2 class="text-center text-white text-3xl font-bold mb-16">
+        Services that We Can Help You With
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
+        {
+          services.map((service) => (
+            <div class="bg-white rounded-sm p-8 min-h-[280px] border border-white/10">
+              <div class="flex justify-center mb-5">
+                <img src={service.icon} alt={service.title} class="w-14 h-14" />
+              </div>
+
+              <h3 class="text-center text-[24px] font-semibold text-[#25253b] mb-6">
+                {service.title}
+              </h3>
+
+              <ul class="space-y-3">
+                {service.items.map((item) => (
+                  <li class="flex gap-3 text-[#6f6f84] text-sm">
+                    <span class="w-5 h-5 rounded-full bg-[#f1f2f6] flex items-center justify-center text-[10px]">
+                      ✓
+                    </span>
+
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="text-center mb-16">
+        <span
+          class="uppercase text-orange-500 font-semibold tracking-widest text-sm"
+        >
+          Our Solutions
+        </span>
+
+        <h2 class="text-5xl font-bold text-[#25253b] mt-4 max-w-4xl mx-auto">
+          We Different From Others Should Choose Us
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {
+          whyChooseUs.map((item) => (
+            <div class="border border-[#ececec] p-10 text-center min-h-[280px]">
+              <img
+                src={item.icon}
+                alt={item.title}
+                class="w-16 h-16 mx-auto mb-6"
+              />
+
+              <h3 class="font-semibold text-[24px] text-[#25253b] mb-4">
+                {item.title}
+              </h3>
+
+              <p class="text-[#6f6f84] leading-8 text-sm">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="relative overflow-hidden bg-[#221638]">
+    <!-- Background Image -->
+    <!-- <img src="/public/homepage/black-bg.jpg" alt="Background Image" class="absolute inset-0 w-full h-full object-cover" /> -->
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Illustration -->
+        <div class="flex justify-center">
+          <img src="/public/homepage/project-start1.png" alt="Project Illustration" class="max-w-[600px] w-full" />
+        </div>
+
+        <!-- Content -->
+        <div>
+          <h2 class="text-white text-4xl font-bold leading-tight mb-6">
+            You Like to Start Your Project With Us
+          </h2>
+
+          <p class="text-white/80 text-lg leading-relaxed mb-8 max-w-5xl">
+            With successfully delivering business solutions and having served
+            clients across multiple sectors, we aim to make business solutions
+            accessible to all users.
+          </p>
+
+          <button
+            class="bg-[#ff6b1a] hover:bg-[#e55d13] text-white px-8 py-4 rounded-md font-semibold transition"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+</style>
