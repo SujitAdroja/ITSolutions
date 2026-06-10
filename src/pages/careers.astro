@@ -1,17 +1,210 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import { careerTabs } from "../data/careerData.ts";
 ---
 
 <MainLayout title="Careers">
-  <section class="page-section">
-    <h1>Careers</h1>
+  <section class="relative">
+    <img
+      src="/public/homepage/page-title-bg.jpg"
+      alt="Background Image"
+      class="absolute w-full h-70 object-cover"
+    />
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-20">
+      <h2 class="text-center text-black text-4xl font-bold mb-4">Careers</h2>
+      <div class="text-center">
+        <span class="text-gray-500 hover:text-orange-500">Home</span><span
+          class="text-orange-500"
+        >
+          >
+        </span>
+        <span>Careers</span>
+      </div>
+    </div>
   </section>
-</MainLayout>
 
-<style>
-  .page-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-  }
-</style>
+  <section class="py-24">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <!-- Heading -->
+
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#25253b] mb-4">
+          Current Opportunities
+        </h2>
+
+        <p class="text-[#6f6f84] max-w-3xl mx-auto">
+          We offer excellent opportunities for IT professionals. Where remote
+          working options are stated, If you are interested please submit a copy
+          of your CV.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-[360px_1fr] gap-10">
+        <!-- LEFT FORM -->
+
+        <div class="bg-white shadow-md p-8 border border-[#ececec]">
+          <h3 class="text-[#6f6f84] mb-8">
+            We'll be glad to see you in our team!
+          </h3>
+
+          <form class="space-y-4">
+            <input
+              type="text"
+              placeholder="Your name"
+              class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
+            />
+
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
+            />
+
+            <input
+              type="text"
+              placeholder="Your Mobile number"
+              class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
+            />
+
+            <input
+              type="text"
+              placeholder="Job position"
+              class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
+            />
+
+            <textarea
+              rows="5"
+              placeholder="Write your message..."
+              class="w-full p-4 bg-[#f7f7f7] border border-[#ececec]"
+            ></textarea>
+
+            <label
+              class="h-20 border border-[#ff6b1a]/40 flex items-center justify-center cursor-pointer text-[#4b4b66]"
+            >
+              Browse Or Drop Your CV
+
+              <input type="file" class="hidden" />
+            </label>
+
+            <button
+              type="submit"
+              class="bg-[#ff6b1a] text-white px-8 py-3 rounded hover:bg-[#e55d13] transition"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div>
+          <!-- Tabs -->
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            {
+              careerTabs.map((tab, index) => (
+                <button
+                  class={`px-5 py-3 text-sm font-semibold rounded shadow-sm transition ${
+                    index === 0
+                      ? "bg-[#ff6b1a] text-white"
+                      : "bg-white text-[#25253b]"
+                  }`}
+                  data-tab={tab.id}
+                >
+                  {tab.label}
+                </button>
+              ))
+            }
+          </div>
+
+          <!-- Tab Contents -->
+
+          {
+            careerTabs.map((tab, index) => (
+              <div
+                class={`tab-content ${index !== 0 ? "hidden" : ""}`}
+                id={tab.id}
+              >
+                {tab.jobs.length === 0 ? (
+                  <div class="bg-white border border-[#ececec] p-12 text-center shadow-sm">
+                    <h3 class="text-2xl font-semibold text-[#25253b]">
+                      No Openings Available
+                    </h3>
+
+                    <p class="mt-3 text-[#6f6f84]">
+                      Currently we don't have any active openings for this role.
+                    </p>
+                  </div>
+                ) : (
+                  <div class="space-y-4">
+                    {tab.jobs.map((job, idx) => (
+                      <details
+                        class="bg-white border border-[#ececec] shadow-sm group"
+                        open={idx === 0}
+                      >
+                        <summary class="cursor-pointer px-8 py-5 pb-2 font-bold text-lg text-[#25253b]">
+                          {job.title}
+                        </summary>
+
+                        <div class="px-8 pb-8 ml-6">
+                          <div class="space-y-1 text-[#4b4b66]">
+                            <p>
+                              <strong>Open Position :</strong>{" "}
+                              {job.openPosition}
+                            </p>
+
+                            <p>
+                              <strong>Experience :</strong> {job.experience}
+                            </p>
+
+                            <p>
+                              <strong>Employment Type :</strong>{" "}
+                              {job.employmentType}
+                            </p>
+
+                            <p>
+                              <strong>Skills :</strong> {job.skills}
+                            </p>
+                          </div>
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll("[data-tab]");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.tab;
+
+          contents.forEach((content) => {
+            content.classList.add("hidden");
+          });
+
+          document.getElementById(target)?.classList.remove("hidden");
+
+          tabs.forEach((t) => {
+            t.classList.remove("bg-[#ff6b1a]", "text-white");
+
+            t.classList.add("bg-white", "text-[#25253b]");
+          });
+
+          tab.classList.remove("bg-white", "text-[#25253b]");
+
+          tab.classList.add("bg-[#ff6b1a]", "text-white");
+        });
+      });
+    });
+  </script>
+</MainLayout>

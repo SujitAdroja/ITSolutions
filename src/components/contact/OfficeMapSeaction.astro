@@ -1,0 +1,52 @@
+---
+import OfficeMap from "./OfficeMap.tsx";
+import { officeLocations } from "./contactData";
+---
+
+<section class="pb-24">
+
+  <div class="max-w-[1400px] mx-auto px-6">
+
+    <div class="grid lg:grid-cols-[320px_1fr] gap-8">
+
+      <!-- LEFT LOCATIONS -->
+
+      <div class="space-y-8">
+
+        <h3
+          class="text-[#ff6b1a] font-bold uppercase"
+        >
+          4 Result(s)
+        </h3>
+
+        {
+          officeLocations.map((office) => (
+            <div
+              class="border-l-4 border-[#ff6b1a] pl-5"
+            >
+              <h4 class="font-bold mb-2">
+                {office.name}
+              </h4>
+
+              <p class="text-[#666] leading-7">
+                {office.address}
+              </p>
+            </div>
+          ))
+        }
+
+      </div>
+
+      <!-- MAP -->
+
+      <div
+        class="border border-[#ececec] overflow-hidden"
+      >
+        <OfficeMap client:only="react" />
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

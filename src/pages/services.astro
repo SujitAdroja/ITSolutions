@@ -1,38 +1,47 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-export const whyChooseUs = [
+import {
+  Rocket,
+  Laptop,
+  Headset,
+  PlugZap,
+  BarChart3,
+  CloudCog,
+} from "lucide-react";
+
+const whyChooseUs = [
   {
     title: "Fully Customization",
-    icon: "/icons/customization.svg",
+    icon: Rocket,
     description:
       "As we are providing fully customize software so we can modified software as per your business process.",
   },
   {
     title: "Responsive Design",
-    icon: "/icons/responsive.svg",
+    icon: Laptop,
     description: "Our Solutions are fully responsive and Cross Platform.",
   },
   {
     title: "Quick Support",
-    icon: "/icons/support.svg",
+    icon: Headset,
     description:
       "We Provide online or offline support for any query or problem.",
   },
   {
     title: "Integration",
-    icon: "/icons/integration2.svg",
+    icon: PlugZap,
     description:
       "Integrate master and transaction data with Tally, SAP and legacy systems.",
   },
   {
     title: "Analysis",
-    icon: "/icons/analysis.svg",
+    icon: BarChart3,
     description:
       "Graphical Report, Tabular Report & Crystal Report integrated for analysis.",
   },
   {
     title: "SaaS Solutions",
-    icon: "/icons/saas.svg",
+    icon: CloudCog,
     description:
       "Provide SaaS solutions so you can start your business with lower cost.",
   },
@@ -182,7 +191,14 @@ export const services = [
     />
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-20">
       <h2 class="text-center text-black text-4xl font-bold mb-4">Services</h2>
-      <div class="text-center "><span class="text-gray-500 hover:text-orange-500">Home</span><span class="text-orange-500"> > </span> <span>Services</span></div>
+      <div class="text-center">
+        <span class="text-gray-500 hover:text-orange-500">Home</span><span
+          class="text-orange-500"
+        >
+          >
+        </span>
+        <span>Services</span>
+      </div>
     </div>
   </section>
   <!-- SERVICES GRID SECTION -->
@@ -235,34 +251,45 @@ export const services = [
   <section class="py-24 bg-white">
     <div class="max-w-[1400px] mx-auto px-6">
       <div class="text-center mb-16">
-        <span
-          class="uppercase text-orange-500 font-semibold tracking-widest text-sm"
-        >
-          Our Solutions
-        </span>
-
-        <h2 class="text-5xl font-bold text-[#25253b] mt-4 max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-4">
+          <img
+            src="/homepage/star-icon.png"
+            alt="start icon image"
+            class="animate-spin-slow"
+          />
+          <span
+            class="uppercase text-orange-500 font-semibold tracking-widest text-sm"
+          >
+            Our Solutions
+          </span>
+        </div>
+        <h2 class="text-4xl font-bold text-[#25253b] mt-4 max-w-4xl mx-auto">
           We Different From Others Should Choose Us
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {
-          whyChooseUs.map((item) => (
-            <div class="border border-[#ececec] p-10 text-center min-h-[280px]">
-              <img
-                src={item.icon}
-                alt={item.title}
-                class="w-16 h-16 mx-auto mb-6"
-              />
+          whyChooseUs.map((item) => {
+            const Icon = item.icon;
 
-              <h3 class="font-semibold text-[24px] text-[#25253b] mb-4">
-                {item.title}
-              </h3>
+            return (
+              <div class="border border-[#ececec] p-10 text-center min-h-[280px] hover:shadow-lg transition">
+                <div class="flex justify-center mb-6">
+                  <Icon
+                    className="w-14 h-14 text-[#ff6b1a]"
+                    strokeWidth={1.75}
+                  />
+                </div>
 
-              <p class="text-[#6f6f84] leading-8 text-sm">{item.description}</p>
-            </div>
-          ))
+                <h3 class="font-semibold text-xl text-[#25253b] mb-4">
+                  {item.title}
+                </h3>
+
+                <p class="text-[#6f6f84] leading-relaxed">{item.description}</p>
+              </div>
+            );
+          })
         }
       </div>
     </div>

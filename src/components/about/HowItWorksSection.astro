@@ -36,33 +36,41 @@ export const processSteps = [
 <section class="bg-[#f8f8f8] py-24">
   <div class="max-w-[1400px] mx-auto px-6">
     <div class="text-center mb-20">
-      <span class="text-[#ff6b1a] uppercase text-sm"> How Its Work </span>
+      <div class="flex items-center justify-center gap-4">
+        <img
+          src="/homepage/star-icon.png"
+          alt="start icon image"
+          class="animate-spin-slow"
+        />
+        <span class="text-[#ff6b1a] uppercase text-sm"> How Its Work </span>
+      </div>
 
-      <h2 class="text-5xl font-bold mt-4">
+      <h2 class="text-4xl font-bold mt-4">
         Our Process For Customize Software
       </h2>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-20 items-center">
-      <img src="/about/how-it-works.png" class="w-full" />
+      <img src="/about/how-it-work.png" class="w-full" />
 
       <div class="space-y-4">
         {
           processSteps.map((step) => (
             <div class="bg-white flex shadow-sm ">
               <div class="bg-[#EDFCFF] px-6 flex items-center justify-center">
-                 <img
+                <img
                   src={step.image}
                   alt={step.title}
                   class="w-14 h-14 object-contain"
                 />
-
               </div>
-              <div class="p-4 self-center">               
+              <div class="p-4 self-center">
                 <span class="font-semibold text-xl">{step.title}</span>
               </div>
 
-              <span class="align-self-end text-[70px] font-bold text-gray-100">{step.id}</span>
+              <span class="align-self-end text-[70px] font-bold text-gray-100">
+                {step.id}
+              </span>
             </div>
           ))
         }
