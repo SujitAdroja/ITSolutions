@@ -23,8 +23,8 @@ export const reasons = [
 
 <section class="py-24 bg-white">
   <div class="max-w-[1400px] mx-auto px-6">
-    <div class="text-center mb-16">
-      <div class="flex items-center justify-center gap-4">
+    <div class="text-center mb-16 ">
+      <div class="flex items-center justify-center gap-4 reveal">
         <img
             src="/homepage/star-icon.png"
             alt="start icon image"
@@ -33,18 +33,20 @@ export const reasons = [
       <span class="text-[#ff6b1a] uppercase text-sm"> People Love Us </span>
       </div>
 
-      <h2 class="text-5xl font-bold mt-4">HOW IT'S WORK</h2>
+     <div class="reveal">
+       <h2 class="text-5xl font-bold mt-4">HOW IT'S WORK</h2>
 
       <p class="text-gray-500 mt-4">
         One solution for all types of fully customize software services.
       </p>
+     </div>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div>
         {
           reasons.map((item) => (
-            <div class="flex gap-8 mb-10">
+            <div class="flex gap-8 mb-10 reveal-left">
               <div class="p-6 rounded-full border-2 border-[#ff6b1a] text-[#ff6b1a] font-bold flex items-center justify-center w-16 h-16 text-xl">
                 {item.number}
               </div>
@@ -59,7 +61,7 @@ export const reasons = [
         }
       </div>
 
-      <div>
+      <div class="reveal-right">
         <img src="/about/people-love-us.png" class="w-full" />
       </div>
     </div>

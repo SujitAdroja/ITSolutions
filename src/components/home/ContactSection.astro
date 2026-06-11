@@ -5,18 +5,20 @@
 <section class="py-16 lg:py-20" style="background-color: #f0f9fc;">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div
-      class="flex items-center justify-center gap-4 text-orange-500 text-md font-semibold uppercase tracking-widest mb-3"
+      class="flex items-center justify-center gap-4 text-orange-500 text-md font-semibold uppercase tracking-widest mb-3 reveal"
     >
       <img src="/homepage/star-icon.png" alt="start icon image" class="animate-spin-slow">
       Get In Touch
     </div>
-    <h2 class="text-center text-3xl lg:text-4xl font-black text-gray-900 mb-1">
+    <div class="reveal">
+      <h2 class="text-center text-3xl lg:text-4xl font-black text-gray-900 mb-1">
       Ready to Get Started?
     </h2>
     <p class="text-center text-gray-400 text-md mb-8">
       Your email address will not be published.
     </p>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal-left">
       <!-- Left: Illustration -->
       <div class="flex justify-center">
         <img
@@ -27,8 +29,8 @@
       </div>
 
       <!-- Right: Form -->
-      <div>
-        <form class="flex flex-col gap-4" action="#" method="POST">
+      <div >
+        <form class="flex flex-col gap-4 reveal md:reveal-right" action="#" method="POST">
           <input
             type="text"
             name="name"

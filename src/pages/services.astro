@@ -212,15 +212,15 @@ export const services = [
 
     <!-- Dark Overlay -->
 
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6">
-      <h2 class="text-center text-white text-3xl font-bold mb-16">
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 ">
+      <h2 class="text-center text-white text-3xl font-bold mb-16 reveal">
         Services that We Can Help You With
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
         {
           services.map((service) => (
-            <div class="bg-white rounded-sm p-8 min-h-[280px] border border-white/10">
+            <div class="bg-white rounded-sm p-8 min-h-[280px] border border-white/10 reveal">
               <div class="flex justify-center mb-5">
                 <img src={service.icon} alt={service.title} class="w-14 h-14" />
               </div>
@@ -251,7 +251,7 @@ export const services = [
   <section class="py-24 bg-white">
     <div class="max-w-[1400px] mx-auto px-6">
       <div class="text-center mb-16">
-        <div class="flex items-center justify-center gap-4">
+        <div class="flex items-center justify-center gap-4 reveal">
           <img
             src="/homepage/star-icon.png"
             alt="start icon image"
@@ -263,7 +263,7 @@ export const services = [
             Our Solutions
           </span>
         </div>
-        <h2 class="text-4xl font-bold text-[#25253b] mt-4 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-[#25253b] mt-4 max-w-4xl mx-auto reveal">
           We Different From Others Should Choose Us
         </h2>
       </div>
@@ -274,7 +274,7 @@ export const services = [
             const Icon = item.icon;
 
             return (
-              <div class="border border-[#ececec] p-10 text-center min-h-[280px] hover:shadow-lg transition">
+              <div class="border border-[#ececec] p-10 text-center min-h-[280px] hover:shadow-sm transition reveal">
                 <div class="flex justify-center mb-6">
                   <Icon
                     className="w-14 h-14 text-[#ff6b1a]"
@@ -303,7 +303,7 @@ export const services = [
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Illustration -->
-        <div class="flex justify-center">
+        <div class="flex justify-center reveal-left">
           <img
             src="/homepage/project-start1.png"
             alt="Project Illustration"
@@ -312,7 +312,7 @@ export const services = [
         </div>
 
         <!-- Content -->
-        <div>
+        <div class="reveal-right">
           <h2 class="text-white text-4xl font-bold leading-tight mb-6">
             You Like to Start Your Project With Us
           </h2>

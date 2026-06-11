@@ -62,7 +62,7 @@ const testimonialGroups = [
     <!-- Header -->
     <div class="text-center mb-20">
 
-      <div class="flex justify-center items-center gap-2 text-[#ff6b1a] uppercase font-semibold text-sm mb-5">
+      <div class="flex justify-center items-center gap-2 text-[#ff6b1a] uppercase font-semibold text-sm mb-5 reveal">
         <img
           src="/homepage/star-icon.png"
           class="w-5 h-5 animate-spin-slow"
@@ -71,7 +71,8 @@ const testimonialGroups = [
         Testimonials
       </div>
 
-      <h2 class="text-4xl font-bold text-[#232323] mb-5">
+     <div class="reveal">
+       <h2 class="text-4xl font-bold text-[#232323] mb-5">
         What Our Clients are Saying?
       </h2>
 
@@ -79,6 +80,7 @@ const testimonialGroups = [
         We pride ourselves on providing an exceptional service
         to our clients, but you don't just have to take our word for it.
       </p>
+     </div>
 
     </div>
 
@@ -87,14 +89,14 @@ const testimonialGroups = [
 
       <button
         @click="prev()"
-        class="w-14 h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300"
+        class="w-14 h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300 reveal-left"
       >
         ←
       </button>
 
       <button
         @click="next()"
-        class="w-14 h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300"
+        class="w-14 h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300 reveal-right"
       >
         →
       </button>
@@ -102,7 +104,7 @@ const testimonialGroups = [
     </div>
 
     <!-- Slider -->
-    <div class="overflow-hidden">
+    <div class="overflow-hidden reveal">
 
       <div
         class="flex transition-transform duration-700 ease-in-out"
