@@ -1,14 +1,13 @@
 ---
-import HeroSection from '../components/about/HeroSection.astro';
-import StatsSection from '../components/about/StatsSection.astro';
-import PeopleLoveUsSection from '../components/about/PeopleLoveUsSection.astro';
-import HowItWorksSection from '../components/about/HowItWorksSection.astro';
-import MainLayout from '../layouts/MainLayout.astro';
-import TestimonialsSection from '../components/home/TestimonialsSection.astro';
+import HeroSection from "../components/about/HeroSection.astro";
+import StatsSection from "../components/about/StatsSection.astro";
+import PeopleLoveUsSection from "../components/about/PeopleLoveUsSection.astro";
+import HowItWorksSection from "../components/about/HowItWorksSection.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import TestimonialsSection from "../components/home/TestimonialsSection.astro";
 ---
 
 <MainLayout title="About Us">
-
   <section class="relative overflow-hidden">
     <img
       src="/homepage/page-title-bg.jpg"
@@ -16,18 +15,21 @@ import TestimonialsSection from '../components/home/TestimonialsSection.astro';
       class="absolute w-full h-70 object-cover scale-190 object-[20%_10%]"
     />
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-20">
-      <h2 class="text-center text-black text-4xl font-bold mb-4">About Us</h2>
-      <div class="text-center "><span class="text-gray-500 hover:text-orange-500">Home</span><span class="text-orange-500"> > </span> <span>About Us</span></div>
+      <h2 class="text-center text-black text-5xl font-bold mb-4">About Us</h2>
+      <div class="text-center">
+        <span class="text-gray-500 hover:text-orange-500"
+          ><a href="/">Home</a></span
+        ><span class="text-orange-500"> > </span>
+        <span>About Us</span>
+      </div>
     </div>
   </section>
 
   <section class="page-section">
-    <HeroSection/>
-    <StatsSection/>
-    <PeopleLoveUsSection/>
-    <HowItWorksSection/>
-    <TestimonialsSection/>
+    <HeroSection />
+    <StatsSection />
+    <PeopleLoveUsSection />
+    <HowItWorksSection />
+    <TestimonialsSection />
   </section>
 </MainLayout>
-
- 

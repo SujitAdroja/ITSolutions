@@ -2,13 +2,15 @@
 const testimonialGroups = [
   [
     {
-      text: "I just wanted to share a quick note and let you know that you guys do a really good job...",
+      text:
+        "I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your ERP and HRMS solutions are to update and manage.",
       name: "Tejas Agrawal",
       title: "Director of Radhe Dairy Products",
       avatar: "/homepage/img1 (1).jpg",
     },
     {
-      text: "We have started working with Shahastra Solutions since the COVID-19 pandemic...",
+      text:
+        "We have started working with Shahastra Solutions since the COVID-19 pandemic. Their products helped us increase business efficiency and manage customer relationships effectively.",
       name: "Gaurav Doshi",
       title: "Director of Taralac",
       avatar: "/homepage/img2 (1).jpg",
@@ -17,13 +19,15 @@ const testimonialGroups = [
 
   [
     {
-      text: "Shahastra team delivered the project on time and exceeded expectations.",
+      text:
+        "Shahastra team delivered the project on time and exceeded expectations. Their support and communication throughout the project were exceptional.",
       name: "John Smith",
       title: "CEO",
       avatar: "/homepage/img4 (1).jpg",
     },
     {
-      text: "Very professional team with excellent communication.",
+      text:
+        "Very professional team with excellent communication. They understand business requirements and transform them into quality software solutions.",
       name: "Sarah Johnson",
       title: "Managing Director",
       avatar: "/homepage/img3 (1).jpg",
@@ -33,7 +37,7 @@ const testimonialGroups = [
 ---
 
 <section
-  class="bg-[#eef6fa] py-24 overflow-hidden"
+  class="bg-[#eef6fa] py-16 md:py-20 lg:py-24 overflow-hidden"
   x-data="{
     current: 0,
     total: 2,
@@ -57,46 +61,61 @@ const testimonialGroups = [
   }"
   x-init="init()"
 >
+
   <div class="max-w-[1400px] mx-auto px-6">
 
     <!-- Header -->
-    <div class="text-center mb-20">
 
-      <div class="flex justify-center items-center gap-2 text-[#ff6b1a] uppercase font-semibold text-sm mb-5 reveal">
+    <div class="text-center mb-16 lg:mb-20">
+
+      <div
+        class="flex justify-center items-center gap-2 text-[#ff6b1a] uppercase font-semibold text-sm mb-5 reveal"
+      >
         <img
           src="/homepage/star-icon.png"
-          class="w-5 h-5 animate-spin-slow"
           alt=""
+          class="w-5 h-5 animate-spin-slow"
         />
+
         Testimonials
       </div>
 
-     <div class="reveal">
-       <h2 class="text-4xl font-bold text-[#232323] mb-5">
-        What Our Clients are Saying?
-      </h2>
+      <div class="reveal">
 
-      <p class="max-w-4xl mx-auto text-[#6d6d6d] text-lg leading-relaxed">
-        We pride ourselves on providing an exceptional service
-        to our clients, but you don't just have to take our word for it.
-      </p>
-     </div>
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#232323] mb-5"
+        >
+          What Our Clients are Saying?
+        </h2>
+
+        <p
+          class="max-w-4xl mx-auto text-[#6d6d6d] text-base md:text-lg leading-relaxed"
+        >
+          We pride ourselves on providing an exceptional service
+          to our clients, but you don't just have to take our word
+          for it.
+        </p>
+
+      </div>
 
     </div>
 
-    <!-- Navigation Buttons -->
-    <div class="flex justify-between items-center mb-8">
+    <!-- Navigation -->
+
+    <div
+      class="flex justify-center lg:justify-between items-center gap-4 mb-10"
+    >
 
       <button
         @click="prev()"
-        class="w-14 h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300 reveal-left"
+        class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300 reveal-left"
       >
         ←
       </button>
 
       <button
         @click="next()"
-        class="w-14 h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300 reveal-right"
+        class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300 reveal-right"
       >
         →
       </button>
@@ -104,6 +123,7 @@ const testimonialGroups = [
     </div>
 
     <!-- Slider -->
+
     <div class="overflow-hidden reveal">
 
       <div
@@ -115,36 +135,55 @@ const testimonialGroups = [
           testimonialGroups.map((group) => (
             <div class="w-full shrink-0">
 
-              <div class="grid lg:grid-cols-2 gap-8">
+              <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+              >
 
                 {
                   group.map((item) => (
-                    <div class="relative bg-white min-h-[450px] p-14 flex flex-col justify-between rounded-sm">
+                    <div
+                      class="relative bg-white rounded-lg p-6 md:p-8 lg:p-12 shadow-sm hover:shadow-xl transition-all duration-300"
+                    >
 
-                      <!-- Quote Mark -->
-                      <div class="absolute top-4 left-1/2 -translate-x-1/2 text-[180px] text-gray-100 leading-none select-none">
-                        “
+                      <!-- Quote -->
+
+                      <div
+                        class="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 text-[80px] md:text-[120px] lg:text-[180px] text-gray-100 leading-none select-none"
+                      >
+                        "
                       </div>
 
-                      <p class="relative z-10 text-center text-[#6d6d6d] text-[20px] leading-[2] mt-16">
+                      <!-- Content -->
+
+                      <p
+                        class="relative z-10 text-center text-[#6d6d6d] text-sm md:text-base lg:text-lg leading-7 md:leading-8 mt-10 md:mt-16 min-h-[180px] md:min-h-[220px]"
+                      >
                         {item.text}
                       </p>
 
-                      <div class="relative z-10 flex items-center justify-center gap-4 mt-12">
+                      <!-- User -->
+
+                      <div
+                        class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 md:mt-10"
+                      >
 
                         <img
                           src={item.avatar}
                           alt={item.name}
-                          class="w-16 h-16 rounded-full object-cover"
+                          class="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover"
                         />
 
-                        <div>
+                        <div class="text-center sm:text-left">
 
-                          <h4 class="font-bold text-2xl text-[#232323]">
+                          <h4
+                            class="font-bold text-lg md:text-xl text-[#232323]"
+                          >
                             {item.name}
                           </h4>
 
-                          <p class="text-[#6d6d6d]">
+                          <p
+                            class="text-sm text-[#6d6d6d]"
+                          >
                             {item.title}
                           </p>
 
@@ -167,14 +206,17 @@ const testimonialGroups = [
     </div>
 
     <!-- Dots -->
-    <div class="flex justify-center gap-3 mt-10">
 
-      <template x-for="(item,index) in total">
+    <div
+      class="flex justify-center gap-3 mt-10"
+    >
+
+      <template x-for="(_, index) in total">
 
         <button
-          @click="current=index"
-          class="w-3 h-3 rounded-full transition-all"
-          :class="current === index ? 'bg-[#ff6b1a] w-8' : 'bg-gray-300'"
+          @click="current = index"
+          class="h-3 rounded-full transition-all duration-300"
+          :class="current === index ? 'bg-[#ff6b1a] w-8' : 'bg-gray-300 w-3'"
         ></button>
 
       </template>
@@ -182,6 +224,7 @@ const testimonialGroups = [
     </div>
 
   </div>
+
 </section>
 
 <style>
@@ -189,6 +232,7 @@ const testimonialGroups = [
     from {
       transform: rotate(0deg);
     }
+
     to {
       transform: rotate(360deg);
     }

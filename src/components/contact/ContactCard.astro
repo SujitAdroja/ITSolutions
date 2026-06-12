@@ -6,8 +6,7 @@ import { contactCards } from "./contactData"
 
 <section class="py-24">
 
-  <div class="max-w-[1400px] mx-auto px-6">
-
+  <div class="max-w-[1400px] mx-auto">
     <div class="text-center mb-16">
 
       <h2 class="text-4xl font-bold text-[#232323] reveal">
@@ -27,10 +26,10 @@ import { contactCards } from "./contactData"
       {
         contactCards.map((item) => (
           <div
-            class="bg-white border border-[#ececec] p-8 flex items-center gap-6 reveal"
+            class="bg-white border border-[#ececec] p-6 md:p-8 flex items-center gap-6 reveal"
           >
             <div
-              class="w-16 h-16 flex items-center justify-center bg-[#fafafa]"
+              class="md:w-16 md:h-16 flex items-center justify-center bg-[#fafafa]"
             >
               <!-- Icon -->
                 {item.title!=="Call Us" && <Mail className="w-8 h-8 text-[#ff6b1a]"
