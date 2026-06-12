@@ -4,13 +4,13 @@ import { careerTabs } from "../data/careerData.ts";
 ---
 
 <MainLayout title="Careers">
-  <section class="relative">
+  <section class="relative overflow-hidden">
     <img
       src="/homepage/page-title-bg.jpg"
       alt="Background Image"
-      class="absolute w-full h-70 object-cover"
+      class="absolute w-full h-70 object-cover scale-190 object-[20%_10%]"
     />
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-20">
+    <div class="relative  max-w-[1400px] mx-auto px-6 py-20">
       <h2 class="text-center text-black text-4xl font-bold mb-4">Careers</h2>
       <div class="text-center">
         <span class="text-gray-500 hover:text-orange-500">Home</span><span
@@ -23,23 +23,23 @@ import { careerTabs } from "../data/careerData.ts";
     </div>
   </section>
 
-  <section class="py-24">
+  <section class="py-24 z-10">
     <div class="max-w-[1400px] mx-auto px-6">
       <!-- Heading -->
 
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-[#25253b] mb-4">
+        <h2 class="text-4xl font-bold text-[#25253b] mb-4 reveal">
           Current Opportunities
         </h2>
 
-        <p class="text-[#6f6f84] max-w-3xl mx-auto">
+        <p class="text-[#6f6f84] max-w-3xl mx-auto reveal">
           We offer excellent opportunities for IT professionals. Where remote
           working options are stated, If you are interested please submit a copy
           of your CV.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-[360px_1fr] gap-10">
+      <div class="grid lg:grid-cols-[360px_1fr] gap-10 reveal">
         <!-- LEFT FORM -->
 
         <div class="bg-white shadow-md p-8 border border-[#ececec]">

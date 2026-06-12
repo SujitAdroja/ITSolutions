@@ -6,11 +6,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Contact Us">
-  <section class="relative">
+  <section class="relative overflow-hidden">
     <img
       src="/homepage/page-title-bg.jpg"
       alt="Background Image"
-      class="absolute -z-1 w-full h-70 object-cover"
+      class="absolute w-full -z-1 h-70 object-cover scale-190 object-[20%_10%]"
     />
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-20">
       <h2 class="text-center text-black text-4xl font-bold mb-4">Contact Us</h2>
@@ -24,7 +24,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       </div>
     </div>
   </section>
-  <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-10">
+  <div class="relative max-w-[1400px] mx-auto px-6 py-10">
     <ContactCard />
     <GetInTouchSection />
     <OfficeMapSeaction />
