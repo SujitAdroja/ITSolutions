@@ -191,7 +191,8 @@ export const products = [
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
         {
           products.map((product) => (
-            <article class="bg-white border border-[#e8e8e8] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-md reveal">
+            <div class="reveal">
+              <article class="bg-white h-full border border-[#e8e8e8] shadow-sm md:hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)] md:hover:-translate-y-2 transition-all duration-300 overflow-hidden rounded-md ">
               {/* Image */}
               <div class="relative">
                 <img
@@ -247,6 +248,7 @@ export const products = [
                 </ul>
               </div>
             </article>
+            </div>
           ))
         }
       </div>

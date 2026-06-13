@@ -10,14 +10,12 @@ import { careerTabs } from "../data/careerData.ts";
       alt="Background Image"
       class="absolute w-full h-70 object-cover scale-190 object-[20%_10%]"
     />
-    <div class="relative  max-w-[1400px] mx-auto px-6 py-20">
+    <div class="relative max-w-[1400px] mx-auto px-6 py-20">
       <h2 class="text-center text-black text-5xl font-bold mb-4">Careers</h2>
       <div class="text-center">
-        <span class="text-gray-500 hover:text-orange-500"><a href="/">Home</a></span><span
-          class="text-orange-500"
-        >
-          >
-        </span>
+        <span class="text-gray-500 hover:text-orange-500"
+          ><a href="/">Home</a></span
+        ><span class="text-orange-500"> > </span>
         <span>Careers</span>
       </div>
     </div>
@@ -47,43 +45,66 @@ import { careerTabs } from "../data/careerData.ts";
             We'll be glad to see you in our team!
           </h3>
 
-          <form class="space-y-4">
+          <form
+            class="space-y-4"
+            action="https://formsubmit.co/bonebreaker712003@gmail.com"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <!-- <input
+              type="hidden"
+              name="access_key"
+              value="de838170-800d-4219-846d-90ec3666ffd7"
+            /> -->
             <input
               type="text"
+              name="name"
               placeholder="Your name"
               class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
             />
 
             <input
               type="email"
+              name="email"
               placeholder="Your email address"
               class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
             />
 
             <input
               type="text"
+              name="mobile"
               placeholder="Your Mobile number"
               class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
             />
 
             <input
               type="text"
+              name="job position"
               placeholder="Job position"
               class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
             />
 
             <textarea
               rows="5"
+              name="message"
               placeholder="Write your message..."
               class="w-full p-4 bg-[#f7f7f7] border border-[#ececec]"
             ></textarea>
 
             <label
+              for="resume"
               class="h-20 border border-[#ff6b1a]/40 flex items-center justify-center cursor-pointer text-[#4b4b66]"
             >
-              Browse Or Drop Your CV
+              <span id="file-name">Browse Or Drop Your CV (PDF only)</span>
 
-              <input type="file" class="hidden" />
+              <input
+                id="resume"
+                type="file"
+                name="resume"
+                accept=".pdf,application/pdf"
+                required
+                class="hidden"
+              />
             </label>
 
             <button
@@ -178,33 +199,53 @@ import { careerTabs } from "../data/careerData.ts";
       </div>
     </div>
   </section>
+</MainLayout>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const tabs = document.querySelectorAll("[data-tab]");
-      const contents = document.querySelectorAll(".tab-content");
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll("[data-tab]");
+    const contents = document.querySelectorAll(".tab-content");
 
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const target = tab.dataset.tab;
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.tab;
 
-          contents.forEach((content) => {
-            content.classList.add("hidden");
-          });
-
-          document.getElementById(target)?.classList.remove("hidden");
-
-          tabs.forEach((t) => {
-            t.classList.remove("bg-[#ff6b1a]", "text-white");
-
-            t.classList.add("bg-white", "text-[#25253b]");
-          });
-
-          tab.classList.remove("bg-white", "text-[#25253b]");
-
-          tab.classList.add("bg-[#ff6b1a]", "text-white");
+        contents.forEach((content) => {
+          content.classList.add("hidden");
         });
+
+        document.getElementById(target)?.classList.remove("hidden");
+
+        tabs.forEach((t) => {
+          t.classList.remove("bg-[#ff6b1a]", "text-white");
+
+          t.classList.add("bg-white", "text-[#25253b]");
+        });
+
+        tab.classList.remove("bg-white", "text-[#25253b]");
+
+        tab.classList.add("bg-[#ff6b1a]", "text-white");
       });
     });
-  </script>
-</MainLayout>
+  });
+</script>
+
+<script is:inline>
+  const resumeInput = document.getElementById("resume");
+  const fileName = document.getElementById("file-name");
+
+  resumeInput?.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    if (file.type !== "application/pdf") {
+      alert("Please upload a PDF file only.");
+      resumeInput.value = "";
+      fileName.textContent = "Browse Or Drop Your CV (PDF only)";
+      return;
+    }
+
+    fileName.textContent = file.name;
+  });
+</script>

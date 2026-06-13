@@ -35,29 +35,47 @@
       <!-- Form -->
 
       <div class="bg-white shadow-lg border border-[#ececec] p-10 reveal-right">
-        <form class="space-y-5">
+        <form
+          class="space-y-5"
+          method="POST"
+          action="https://formsubmit.co/bonebreaker712003@gmail.com"
+        >
+          <!-- <input
+            type="hidden"
+            name="access_key"
+            value="f9cbc9e2-78f8-40ba-8369-ef02a39f6897"
+          /> -->
+
           <input
             type="text"
             placeholder="Your name"
+            name="name"
             class="w-full h-16 px-5 bg-[#f8f8f8] border border-[#ececec]"
+            required
           />
 
           <input
             type="email"
+            name="email"
             placeholder="Your email address"
             class="w-full h-16 px-5 bg-[#f8f8f8] border border-[#ececec]"
+            required
           />
 
           <input
             type="text"
+            name="number"
             placeholder="Your Mobile number"
             class="w-full h-16 px-5 bg-[#f8f8f8] border border-[#ececec]"
+            required
           />
 
           <textarea
             rows="6"
+            name="message"
             placeholder="Write your message..."
-            class="w-full p-5 bg-[#f8f8f8] border border-[#ececec]"></textarea>
+            class="w-full p-5 bg-[#f8f8f8] border border-[#ececec]"
+            required></textarea>
 
           <button
             type="submit"

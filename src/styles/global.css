@@ -106,3 +106,44 @@
     transform: scaleX(1);
   }
 }
+
+.cta-btn {
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+@media (min-width: 1024px) {
+  .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 12px 30px rgba(249, 115, 22, 0.25);
+    background: #ea580c;
+  }
+
+  .cta-btn:hover::before {
+    left: 130%;
+  }
+
+  .cta-btn:hover span:last-child {
+    transform: translateX(5px);
+  }
+}
