@@ -4,9 +4,8 @@ import { contactCards } from "./contactData"
 ---
 
 
-<section class="py-12">
+<section class="py-12 mb-6 mx-auto">
 
-  <div class="max-w-[1400px] mx-auto">
     <div class="text-center mb-16">
 
       <h2 class="text-4xl font-bold text-[#232323] reveal">
@@ -26,10 +25,10 @@ import { contactCards } from "./contactData"
       {
         contactCards.map((item) => (
           <div
-            class="bg-white border border-[#ececec] p-6 md:p-8 flex items-center gap-6 reveal"
+            class="bg-white border border-[#ececec] p-4 md:p-8 flex flex-col md:flex-row md:items-center gap-2 md:gap-6 reveal"
           >
             <div
-              class="flex items-center justify-center "
+              class="flex md:items-center md:justify-center "
             >
               <!-- Icon -->
                 {item.title!=="Call Us" && <Mail className="w-8 h-8 text-[#ff6b1a]"
@@ -53,6 +52,5 @@ import { contactCards } from "./contactData"
 
     </div>
 
-  </div>
 
 </section>
