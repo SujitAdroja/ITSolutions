@@ -73,13 +73,13 @@ export const portfolioItems = [
   },
   {
     title: "Rachana Bio Chemicals - CRM",
-    image: "/homepage/card-image.jpg",
+    image: "/services/CRM.png",
     description:
       "Custom CRM for ordering system, inventory, invoicing and payment integration.",
   },
   {
     title: "JOY N JOY - One Touch",
-    image: "/homepage/card-image.jpg",
+    image: "/services/DMS.jpg",
     description:
       "DMS for supply chain, sales force management and finance modules.",
   },
