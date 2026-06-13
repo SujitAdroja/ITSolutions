@@ -2,21 +2,21 @@
 const features = [
   {
     iconBg: 'bg-orange-500',
-    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
+    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
     title: 'We transform ideas',
     description: 'We appreciate the ideas that pave the path to a new horizon. And it turns out to be outstanding when we add to it our intuitive inputs to make your ideas with longer expletancy.',
     class:"mt-0 md:mt-14"
   },
   {
     iconBg: 'bg-teal-500',
-    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
     title: 'We build relations',
     description: 'We stay on board always to assist you even for a minute detail. This is why we don\'t need to stress building relations, they just happen to be a long building bond of ethical business relations.',
     class:"mt-0 md:mt-7"
   },
   {
     iconBg: 'bg-pink-500',
-    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>`,
+    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>`,
     title: 'We Long for the best',
     description: 'The best achievement for us is to bring a curve of a smile on the face of our clients and even with a question about what best else we have to add to their project.',
     class:"mt-0"
@@ -29,13 +29,13 @@ const features = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       {features.map((f) => (
         <div class="flex flex-col items-center md:items-start gap-4 reveal" class:list={f.class}>
-          <div class:list={['w-14 h-14 rounded-xl flex items-center justify-center shrink-0', f.iconBg]}>
+          <div class:list={['w-16 h-16 md:w-20 md:h-20 rounded-xl flex items-center justify-center shrink-0', f.iconBg]}>
             <Fragment set:html={f.iconSvg} />
           </div>
           <div  class="text-center md:text-start">
             <h3 class="text-gray-900 font-bold text-2xl mb-2">{f.title}</h3>
             <p class="text-gray-500 text-md leading-relaxed mb-3 ">{f.description}</p>
-            <a href="/about-us" class="text-orange-500 font-medium text-md hover:text-orange-600 transition-colors ">
+            <a href="/services" class="text-orange-500 font-medium text-md hover:text-orange-600 transition-colors ">
               &rarr; Read More
             </a>
           </div>
