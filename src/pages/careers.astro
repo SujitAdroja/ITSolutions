@@ -1,6 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import { careerTabs } from "../data/careerData.ts";
 ---
 
 <MainLayout title="Careers">
@@ -15,42 +14,37 @@ import { careerTabs } from "../data/careerData.ts";
         Careers
       </h2>
       <div class="text-center">
-        <span class="text-gray-500 hover:text-orange-500"
-          ><a href="/">Home</a></span
-        ><span class="text-orange-500"> > </span>
+        <span class="text-gray-500 hover:text-orange-500"><a href="/">Home</a></span>
+        <span class="text-orange-500"> &gt; </span>
         <span>Careers</span>
       </div>
     </div>
   </section>
 
-  <section class="py-24 z-10">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <!-- Heading -->
+  <section class="relative overflow-hidden py-24 bg-white">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,107,26,0.08),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(34,22,56,0.06),transparent_28%)]"></div>
 
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-[#25253b] mb-4 reveal">
-          Current Opportunities
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-flex items-center rounded-full bg-[#fff4ec] px-4 py-2 text-sm font-semibold tracking-[0.18em] uppercase text-[#ff6b1a] mb-5">
+          Careers & Opportunities
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold text-[#25253b] mb-5">
+          Build your next role with a focused and professional team.
         </h2>
-
-        <p class="text-[#6f6f84] max-w-3xl mx-auto reveal">
-          We offer excellent opportunities for IT professionals. Where remote
-          working options are stated, If you are interested please submit a copy
-          of your CV.
+        <p class="text-[#6f6f84] text-lg leading-relaxed">
+          Submit your profile through the form and let us know the area where you want to contribute. We support careers across marketing, accounting, and software development.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-[360px_1fr] gap-10 reveal">
-        <!-- LEFT FORM -->
-
-        <div
-          class="bg-white shadow-md p-6 md:p-8 border border-[#ececec] order-2 md:order-0"
-        >
-          <h2 class="text-4xl font-bold text-[#25253b] mb-4 reveal md:hidden">
-            Submit Your CV
-          </h2>
-          <h3 class="text-[#6f6f84] mb-8">
-            We'll be glad to see you in our team!
-          </h3>
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-start">
+        <div class="bg-white border border-[#ececec] shadow-[0_20px_60px_rgba(17,17,26,0.08)] rounded-lg p-6 md:p-10 reveal-left">
+          <div class="mb-8">
+            <h3 class="text-3xl font-bold text-[#25253b] mb-3">Submit Your CV</h3>
+            <p class="text-[#6f6f84] max-w-xl">
+              Share your details below. We review applications carefully and reach out when there is a suitable match.
+            </p>
+          </div>
 
           <form
             class="space-y-4"
@@ -58,51 +52,49 @@ import { careerTabs } from "../data/careerData.ts";
             method="POST"
             enctype="multipart/form-data"
           >
-            <!-- <input
-              type="hidden"
-              name="access_key"
-              value="de838170-800d-4219-846d-90ec3666ffd7"
-            /> -->
             <input
               type="text"
               name="name"
               placeholder="Your name"
-              class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
+              class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
             />
 
             <input
               type="email"
               name="email"
               placeholder="Your email address"
-              class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
+              class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
             />
 
             <input
               type="text"
               name="mobile"
-              placeholder="Your Mobile number"
-              class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
+              placeholder="Your mobile number"
+              class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
             />
 
             <input
               type="text"
               name="job position"
               placeholder="Job position"
-              class="w-full h-14 px-4 bg-[#f7f7f7] border border-[#ececec]"
+              class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
             />
 
             <textarea
               rows="5"
               name="message"
               placeholder="Write your message..."
-              class="w-full p-4 bg-[#f7f7f7] border border-[#ececec]"
+              class="w-full p-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition resize-none"
             ></textarea>
 
             <label
               for="resume"
-              class="h-20 border border-[#ff6b1a]/40 flex items-center justify-center cursor-pointer text-[#4b4b66]"
+              class="h-24 rounded-lg border border-dashed border-[#ff6b1a]/45 bg-[#fff8f3] flex items-center justify-center cursor-pointer text-[#4b4b66] transition hover:bg-[#fff2e9]"
             >
-              <span id="file-name">Browse Or Drop Your CV (PDF only)</span>
+              <span class="text-center px-4">
+                <span id="file-name" class="block font-medium">Browse or drop your CV (PDF only)</span>
+                <span class="block text-sm text-[#8a8aa3] mt-1">Recommended file type: PDF</span>
+              </span>
 
               <input
                 id="resume"
@@ -116,92 +108,31 @@ import { careerTabs } from "../data/careerData.ts";
 
             <button
               type="submit"
-              class="cta-btn inline-flex items-center gap-3 bg-orange-500 text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md overflow-hidden"
+              class="w-full text-center cta-btn inline-flex items-center justify-center gap-3 bg-orange-500 text-white font-semibold px-5 py-3 md:px-6 md:py-3 rounded-md overflow-hidden"
             >
               Send Message
             </button>
           </form>
         </div>
 
-        <!-- RIGHT SIDE -->
-
-        <div>
-          <!-- Tabs -->
-
-          <div class="flex flex-wrap gap-3 mb-8">
-            {
-              careerTabs.map((tab, index) => (
-                <button
-                  class={`px-5 py-3 text-sm font-semibold rounded shadow-sm transition ${
-                    index === 0
-                      ? "bg-[#ff6b1a] text-white"
-                      : "bg-white text-[#25253b]"
-                  }`}
-                  data-tab={tab.id}
-                >
-                  {tab.label}
-                </button>
-              ))
-            }
-          </div>
-
-          <!-- Tab Contents -->
-
-          {
-            careerTabs.map((tab, index) => (
-              <div
-                class={`tab-content ${index !== 0 ? "hidden" : ""}`}
-                id={tab.id}
-              >
-                {tab.jobs.length === 0 ? (
-                  <div class="bg-white border border-[#ececec] p-12 text-center shadow-sm">
-                    <h3 class="text-2xl font-semibold text-[#25253b]">
-                      No Openings Available
-                    </h3>
-
-                    <p class="mt-3 text-[#6f6f84]">
-                      Currently we don't have any active openings for this role.
-                    </p>
-                  </div>
-                ) : (
-                  <div class="space-y-4">
-                    {tab.jobs.map((job, idx) => (
-                      <details
-                        class="bg-white border border-[#ececec] shadow-sm group"
-                        open={idx === 0}
-                      >
-                        <summary class="cursor-pointer px-8 py-5 pb-2 font-bold text-lg text-[#25253b]">
-                          {job.title}
-                        </summary>
-
-                        <div class="px-8 pb-8 ml-6">
-                          <div class="space-y-1 text-[#4b4b66]">
-                            <p>
-                              <strong>Open Position :</strong>{" "}
-                              {job.openPosition}
-                            </p>
-
-                            <p>
-                              <strong>Experience :</strong> {job.experience}
-                            </p>
-
-                            <p>
-                              <strong>Employment Type :</strong>{" "}
-                              {job.employmentType}
-                            </p>
-
-                            <p>
-                              <strong>Skills :</strong> {job.skills}
-                            </p>
-                          </div>
-                        </div>
-                      </details>
-                    ))}
-                  </div>
-                )}
+        <div class="space-y-6 reveal-right h-full">
+          <div class="overflow-hidden h-full rounded-lg border border-[#ececec] bg-[#fafafa] shadow-[0_20px_60px_rgba(17,17,26,0.08)]">
+            <div class="relative h-full">
+              <img
+                src="/services/career-hero.png"
+                alt="Careers illustration"
+                class="absolute inset-0 h-[200px] md:h-full w-full object-cover object-center"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#221638]/85 via-[#221638]/25 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                <p class="text-sm uppercase tracking-[0.2em] text-white/70 mb-2">Join Our Team</p>
+                <h3 class="text-2xl md:text-3xl font-bold mb-3">Work with a team that values clarity and quality.</h3>
+                <p class="text-white/78 leading-relaxed max-w-xl">
+                  We welcome professionals who want to contribute to accounting, marketing, and software projects with a structured and dependable approach.
+                </p>
               </div>
-            ))
-          }
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -209,35 +140,6 @@ import { careerTabs } from "../data/careerData.ts";
 </MainLayout>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const tabs = document.querySelectorAll("[data-tab]");
-    const contents = document.querySelectorAll(".tab-content");
-
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const target = tab.dataset.tab;
-
-        contents.forEach((content) => {
-          content.classList.add("hidden");
-        });
-
-        document.getElementById(target)?.classList.remove("hidden");
-
-        tabs.forEach((t) => {
-          t.classList.remove("bg-[#ff6b1a]", "text-white");
-
-          t.classList.add("bg-white", "text-[#25253b]");
-        });
-
-        tab.classList.remove("bg-white", "text-[#25253b]");
-
-        tab.classList.add("bg-[#ff6b1a]", "text-white");
-      });
-    });
-  });
-</script>
-
-<script is:inline>
   const resumeInput = document.getElementById("resume");
   const fileName = document.getElementById("file-name");
 
@@ -249,7 +151,7 @@ import { careerTabs } from "../data/careerData.ts";
     if (file.type !== "application/pdf") {
       alert("Please upload a PDF file only.");
       resumeInput.value = "";
-      fileName.textContent = "Browse Or Drop Your CV (PDF only)";
+      fileName.textContent = "Browse or drop your CV (PDF only)";
       return;
     }
 

@@ -5,14 +5,12 @@ const testimonialGroups = [
       text:
         "I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your ERP and HRMS solutions are to update and manage.",
       name: "Tejas Agrawal",
-      title: "Director of Radhe Dairy Products",
       avatar: "/homepage/img1 (1).jpg",
     },
     {
       text:
         "We have started working with EchoEleganceLTD Solutions since the COVID-19 pandemic. Their products helped us increase business efficiency and manage customer relationships effectively.",
       name: "Gaurav Doshi",
-      title: "Director of Taralac",
       avatar: "/homepage/img2 (1).jpg",
     },
   ],
@@ -22,14 +20,12 @@ const testimonialGroups = [
       text:
         "EchoEleganceLTD team delivered the project on time and exceeded expectations. Their support and communication throughout the project were exceptional.",
       name: "John Smith",
-      title: "CEO",
       avatar: "/homepage/img4 (1).jpg",
     },
     {
       text:
         "Very professional team with excellent communication. They understand business requirements and transform them into quality software solutions.",
       name: "Sarah Johnson",
-      title: "Managing Director",
       avatar: "/homepage/img3 (1).jpg",
     },
   ],
@@ -164,14 +160,8 @@ const testimonialGroups = [
                       <!-- User -->
 
                       <div
-                        class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 md:mt-10"
+                        class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4"
                       >
-
-                        <img
-                          src={item.avatar}
-                          alt={item.name}
-                          class="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover"
-                        />
 
                         <div class="text-center sm:text-left">
 
@@ -180,12 +170,6 @@ const testimonialGroups = [
                           >
                             {item.name}
                           </h4>
-
-                          <p
-                            class="text-sm text-[#6d6d6d]"
-                          >
-                            {item.title}
-                          </p>
 
                         </div>
 
