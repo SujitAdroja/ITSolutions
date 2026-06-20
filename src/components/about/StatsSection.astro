@@ -1,44 +1,20 @@
-<section class="relative w-full overflow-hidden">
-  <img
-    src="/homepage/about-stat-strip.jpg"
-    alt=""
-    class="absolute inset-0 h-full w-full object-cover"
-  />
-
-  <div class="relative z-10">
-    <div class="max-w-[1400px] mx-auto px-6 py-12">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 text-white">
-        <div class="flex items-center justify-center gap-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-5 md:px-6 md:py-6 reveal min-h-[110px]">
-          <img src="/about/icon.png" class="w-12 h-12 md:w-14 md:h-14 shrink-0" alt="" />
-          <div class="min-w-0 text-center md:text-left">
-            <h3 class="text-3xl md:text-4xl font-bold leading-none">10+</h3>
-            <p class="mt-2 text-sm md:text-base text-white/85 leading-tight">Technologies</p>
+<section style="background-color: #f4f4f5; padding: 0 0 0;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+    <div
+      style="background-color: #09090b; border-radius: 36px; padding: 48px 40px;"
+    >
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { value: '10+', label: 'Technologies' },
+          { value: '15+', label: 'Team Members' },
+          { value: '100%', label: 'Satisfaction Rate' },
+          { value: '4+', label: 'Countries' },
+        ].map(stat => (
+          <div class="reveal" style="display: flex; flex-direction: column; gap: 4px;">
+            <p style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.25;">{stat.value}</p>
+            <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; line-height: 1.56;">{stat.label}</p>
           </div>
-        </div>
-
-        <div class="flex items-center justify-center gap-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-5 md:px-6 md:py-6 reveal min-h-[110px]">
-          <img src="/about/icon.png" class="w-12 h-12 md:w-14 md:h-14 shrink-0" alt="" />
-          <div class="min-w-0 text-center md:text-left">
-            <h3 class="text-3xl md:text-4xl font-bold leading-none">15+</h3>
-            <p class="mt-2 text-sm md:text-base text-white/85 leading-tight">Team Members</p>
-          </div>
-        </div>
-
-        <div class="flex items-center justify-center gap-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-5 md:px-6 md:py-6 reveal min-h-[110px]">
-          <img src="/about/icon.png" class="w-12 h-12 md:w-14 md:h-14 shrink-0" alt="" />
-          <div class="min-w-0 text-center md:text-left">
-            <h3 class="text-3xl md:text-4xl font-bold leading-none">100%</h3>
-            <p class="mt-2 text-sm md:text-base text-white/85 leading-tight">Satisfaction Rate</p>
-          </div>
-        </div>
-
-        <div class="flex items-center justify-center gap-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-5 md:px-6 md:py-6 reveal min-h-[110px]">
-          <img src="/about/icon.png" class="w-12 h-12 md:w-14 md:h-14 shrink-0" alt="" />
-          <div class="min-w-0 text-center md:text-left">
-            <h3 class="text-3xl md:text-4xl font-bold leading-none">4+</h3>
-            <p class="mt-2 text-sm md:text-base text-white/85 leading-tight">Countries</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </div>

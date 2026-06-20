@@ -1,41 +1,42 @@
 ---
 const features = [
   {
-    iconBg: 'bg-orange-500',
-    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
+    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
     title: 'We transform ideas',
     description: 'We turn early concepts into practical, well-defined solutions with clear direction, thoughtful strategy, and execution that supports long-term business growth.',
-    class:"mt-0 md:mt-14"
   },
   {
-    iconBg: 'bg-teal-500',
-    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
     title: 'We build relations',
-    description: 'We stay on board always to assist you even for a minute detail. This is why we don\'t need to stress building relations, they just happen to be a long building bond of ethical business relations.',
-    class:"mt-0 md:mt-7"
+    description: 'We stay on board always to assist you even for a minute detail. Long-term partnerships built on trust, transparency, and consistent delivery.',
   },
   {
-    iconBg: 'bg-pink-500',
-    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 text-white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>`,
+    iconSvg: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>`,
     title: 'We strive for excellence',
     description: 'We focus on delivering quality outcomes that create measurable value for clients and leave every project stronger than it started.',
-    class:"mt-0"
   },
 ];
 ---
 
-<section class="bg-white py-16 lg:py-20">
-  <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<section style="background-color: #ffffff; padding: 80px 0;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {features.map((f) => (
-        <div class="flex flex-col items-center md:items-start gap-4 reveal" class:list={f.class}>
-          <div class:list={['w-16 h-16 md:w-20 md:h-20 rounded-xl flex items-center justify-center shrink-0', f.iconBg]}>
+        <div
+          class="reveal"
+          style="background-color: #ffffff; border-radius: 36px; padding: 28px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset;"
+        >
+          <div
+            style="width: 44px; height: 44px; border-radius: 40px; background-color: #09090b; display: flex; align-items: center; justify-content: center; color: #ffffff; margin-bottom: 20px;"
+          >
             <Fragment set:html={f.iconSvg} />
           </div>
-          <div  class="text-center md:text-start">
-            <h3 class="text-gray-900 font-bold text-2xl mb-2">{f.title}</h3>
-            <p class="text-gray-500 text-md leading-relaxed mb-3 ">{f.description}</p>
-          </div>
+          <h3 style="font-size: 20px; font-weight: 600; color: #09090b; line-height: 1.35; margin-bottom: 12px;">
+            {f.title}
+          </h3>
+          <p style="font-size: 15px; font-weight: 400; color: #71717a; line-height: 1.6;">
+            {f.description}
+          </p>
         </div>
       ))}
     </div>

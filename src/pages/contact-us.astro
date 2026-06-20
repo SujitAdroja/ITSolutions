@@ -5,28 +5,27 @@ import OfficeMapSeaction from "../components/contact/OfficeMapSeaction.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="Contact Us">
-  <section class="relative overflow-hidden">
-    <img
-      src="/homepage/page-title-bg.jpg"
-      alt="Background Image"
-      class="absolute w-full -z-1 h-70 object-cover scale-190 object-[20%_10%]"
-    />
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-10 md:py-20">
-      <h2 class="text-center text-black text-4xl md:text-5xl font-bold mb-4">Contact Us</h2>
-      <div class="text-center">
-        <span class="text-gray-500 hover:text-orange-500"><a href="/">Home</a></span><span
-          class="text-orange-500"
-        >
-          >
-        </span>
-        <span>Contact Us</span>
-      </div>
+<MainLayout title="Contact Us — EchoEleganceLTD">
+
+  <!-- Page Hero -->
+  <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+      <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
+        <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
+        <span style="margin: 0 6px;">›</span>
+        <span style="color: #09090b;">Contact Us</span>
+      </p>
+      <h1 style="font-size: 56px; font-weight: 700; color: #09090b; line-height: 1.12;">
+        Contact <span style="color: #a1a1aa;">Us</span>
+      </h1>
+      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;">
+        Reach out for project enquiries, service support, or partnerships — our team will respond with the right next step.
+      </p>
     </div>
   </section>
-  <div class="relative max-w-[1400px] mx-auto px-6 py-10">
-    <ContactCard />
-    <GetInTouchSection />
-    <OfficeMapSeaction />
-  </div>
+
+  <ContactCard />
+  <GetInTouchSection />
+  <OfficeMapSeaction />
+
 </MainLayout>

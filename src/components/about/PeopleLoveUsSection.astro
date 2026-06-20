@@ -3,67 +3,58 @@ export const reasons = [
   {
     number: "1",
     title: "We transform ideas",
-    description:
-      "We appreciate the ideas that pave the path to a new horizon. And it turns out to be outstanding when we add to it our intuitive inputs to make your ideas with longer expectancy.",
+    description: "We appreciate the ideas that pave the path to a new horizon. And it turns out to be outstanding when we add to it our intuitive inputs to make your ideas with longer expectancy.",
   },
   {
     number: "2",
     title: "We build relations",
-    description:
-      "We stay on board always to assist you even for a minute detail. This is why we don't need to stress building relations, they just happen to be a long lasting bond of ethical business relations.",
+    description: "We stay on board always to assist you even for a minute detail. This is why we don't need to stress building relations, they just happen to be a long lasting bond of ethical business relations.",
   },
   {
     number: "3",
-    title: "We Long for the best",
-    description:
-      "The best achievement for us is to bring a curve of a smile on the face of our clients and eyes with a question about what best else we have to add to their project.",
+    title: "We long for the best",
+    description: "The best achievement for us is to bring a curve of a smile on the face of our clients and eyes with a question about what best else we have to add to their project.",
   },
 ];
 ---
 
-<section class="py-24 bg-white">
-  <div class="max-w-[1400px] mx-auto px-6">
-    <div class="text-center mb-16 ">
-      <div class="flex items-center justify-center gap-4 reveal">
-        <img
-            src="/homepage/star-icon.png"
-            alt="start icon image"
-            class="animate-spin-slow"
-          />
-      <span class="text-[#ff6b1a] uppercase text-sm"> People Love Us </span>
-      </div>
+<section style="background-color: #f4f4f5; padding: 80px 0;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-     <div class="reveal">
-       <h2 class="text-5xl font-bold mt-4">HOW IT'S WORK</h2>
-
-      <p class="text-gray-500 mt-4">
-        One solution for all types of fully customize software services.
+    <div class="text-center reveal" style="margin-bottom: 48px;">
+      <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
+        People Love Us
+      </span>
+      <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
+        How It <span style="color: #a1a1aa;">Works</span>
+      </h2>
+      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 12px;">
+        One solution for all types of fully customised software services.
       </p>
-     </div>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <div>
-        {
-          reasons.map((item) => (
-            <div class="flex gap-8 mb-10 reveal-left">
-              <div class="p-6 rounded-full border-2 border-[#ff6b1a] text-[#ff6b1a] font-bold flex items-center justify-center w-16 h-16 text-xl">
-                {item.number}
-              </div>
 
-              <div>
-                <h3 class="text-2xl font-bold mb-3">{item.title}</h3>
-
-                <p class="text-gray-600 leading-8">{item.description}</p>
-              </div>
+      <!-- Steps -->
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        {reasons.map((item) => (
+          <div class="reveal-left" style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #09090b; color: #ffffff; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              {item.number}
             </div>
-          ))
-        }
+            <div style="background-color: #ffffff; border-radius: 28px; padding: 20px 24px; border: 1px solid #ececee; flex: 1;">
+              <h3 style="font-size: 18px; font-weight: 600; color: #09090b; line-height: 1.45; margin-bottom: 8px;">{item.title}</h3>
+              <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.6;">{item.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
 
+      <!-- Image -->
       <div class="reveal-right">
-        <img src="/about/people-love-us.png" class="w-full" />
+        <img src="/about/people-love-us.png" style="width: 100%; border-radius: 36px;" alt="People love us" />
       </div>
+
     </div>
   </div>
 </section>

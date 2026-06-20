@@ -1,41 +1,55 @@
 ---
 const areas = [
-  { label: 'Textile',imgPath:'/homepage/textile.jpg' },
-  { label: 'Manufacturing & Engineering',imgPath:'/homepage/manufacturing-engineering.jpg' },
-  { label: 'E-Commerce',imgPath:'/homepage/ecommerce.jpg' },
-  { label: 'Real Estate',imgPath:'/homepage/real-estate.jpg' },
-  { label: 'Advertising & Marketing',imgPath:'/homepage/advertising-marketing.jpg' },
-  { label: 'Transport & Logistics',imgPath:'/homepage/transports-logistics.jpg' },
-  { label: 'Retail & FMCG',imgPath:'/homepage/retailmarket.jpg' },
-  { label: 'Chemical & Paint',imgPath:'/homepage/chemical-paint.jpg' },
+  { label: 'Textile', imgPath: '/homepage/textile.jpg' },
+  { label: 'Manufacturing & Engineering', imgPath: '/homepage/manufacturing-engineering.jpg' },
+  { label: 'E-Commerce', imgPath: '/homepage/ecommerce.jpg' },
+  { label: 'Real Estate', imgPath: '/homepage/real-estate.jpg' },
+  { label: 'Advertising & Marketing', imgPath: '/homepage/advertising-marketing.jpg' },
+  { label: 'Transport & Logistics', imgPath: '/homepage/transports-logistics.jpg' },
+  { label: 'Retail & FMCG', imgPath: '/homepage/retailmarket.jpg' },
+  { label: 'Chemical & Paint', imgPath: '/homepage/chemical-paint.jpg' },
 ];
 ---
 
-<section class="relative py-16 lg:py-20">
-  <img src="/homepage/black-bg.jpg" alt="Background" class="absolute -z-1 inset-0 w-full h-full object-cover ">
-  <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+<section style="background-color: #f4f4f5; padding: 80px 0;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
     <!-- Header -->
-    <div class="text-center mb-10 reveal">
-      <h2 class="text-white text-3xl lg:text-4xl font-bold mb-4">Work Areas</h2>
-      <p class="text-white text-md max-w-4xl mx-auto leading-relaxed">
-        Every industry in every market is facing relentless change and challenges like Consumers, vendors,
-        distribution channels, accounts, and Man Power. Here we provide high-quality service and support.
+    <div class="text-center reveal" style="margin-bottom: 48px;">
+      <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25; margin-bottom: 16px;">
+        Work <span style="color: #a1a1aa;">Areas</span>
+      </h2>
+      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; max-width: 600px; margin: 0 auto;">
+        Every industry faces relentless change. We provide high-quality service and support across sectors.
       </p>
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {areas.map((area) => (
-        <div class="relative group overflow-hidden rounded-lg cursor-pointer reveal">
+        <div
+          class="reveal"
+          style="position: relative; overflow: hidden; border-radius: 36px; cursor: pointer;"
+        >
           <img
             src={area.imgPath}
             alt={area.label}
-            class="w-full h-44 object-cover block"
+            style="width: 100%; height: 200px; object-fit: cover; display: block;"
           />
-          <!-- Overlay -->
-          <div class="bg-white text-black flex items-end justify-center py-2">
-            <span class="text-black font-semibold text-lg text-center px-2">{area.label}</span>
+          <!-- Dark overlay badge at bottom-left -->
+          <div style="position: absolute; bottom: 14px; left: 14px;">
+            <span style="
+              background: transparent;
+              color: #ffffff;
+              border: 1px solid rgba(255,255,255,0.4);
+              border-radius: 12px;
+              padding: 4px 10px;
+              font-size: 12px;
+              font-weight: 500;
+              backdrop-filter: blur(8px);
+            ">
+              {area.label}
+            </span>
           </div>
         </div>
       ))}

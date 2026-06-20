@@ -1,50 +1,37 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import {
-  Rocket,
-  Laptop,
-  Headset,
-  PlugZap,
-  BarChart3,
-  CloudCog,
-} from "lucide-react";
+import { Rocket, Laptop, Headset, PlugZap, BarChart3, CloudCog } from "lucide-react";
 
-const whyChooseUs = [
+const modules = [
   {
     title: "Workflow Automation",
     icon: Rocket,
-    description:
-      "Streamline routine operations with structured processes that improve speed, consistency, and control across your team.",
+    description: "Streamline routine operations with structured processes that improve speed, consistency, and control across your team.",
   },
   {
     title: "Responsive Experience",
     icon: Laptop,
-    description:
-      "Deliver a clean and accessible experience across desktop, tablet, and mobile without compromising usability.",
+    description: "Deliver a clean and accessible experience across desktop, tablet, and mobile without compromising usability.",
   },
   {
     title: "Reliable Support",
     icon: Headset,
-    description:
-      "Keep operations moving with responsive assistance, issue resolution, and ongoing service support when you need it.",
+    description: "Keep operations moving with responsive assistance, issue resolution, and ongoing service support when you need it.",
   },
   {
     title: "System Integration",
     icon: PlugZap,
-    description:
-      "Connect core business tools, data sources, and external platforms to reduce duplication and improve accuracy.",
+    description: "Connect core business tools, data sources, and external platforms to reduce duplication and improve accuracy.",
   },
   {
     title: "Reporting & Insights",
     icon: BarChart3,
-    description:
-      "Access meaningful reports and dashboards that help teams monitor performance and make better decisions.",
+    description: "Access meaningful reports and dashboards that help teams monitor performance and make better decisions.",
   },
   {
     title: "Scalable Delivery",
     icon: CloudCog,
-    description:
-      "Build solutions that can grow with your business, supporting new requirements without disrupting existing operations.",
+    description: "Build solutions that can grow with your business, supporting new requirements without disrupting existing operations.",
   },
 ];
 
@@ -52,286 +39,223 @@ export const services = [
   {
     title: "Digital Marketing",
     icon: "/services/marketing-seo.png",
-    items: [
-      "Brand Strategy",
-      "Campaign Planning",
-      "Audience Targeting",
-      "Performance Tracking",
-    ],
+    items: ["Brand Strategy", "Campaign Planning", "Audience Targeting", "Performance Tracking"],
   },
   {
     title: "Accounting",
     icon: "/services/analytical-report.png",
-    items: [
-      "Bookkeeping Support",
-      "Financial Reporting",
-      "Reconciliation",
-      "Compliance Tracking",
-    ],
+    items: ["Bookkeeping Support", "Financial Reporting", "Reconciliation", "Compliance Tracking"],
   },
   {
     title: "Web Development",
     icon: "/services/webcloud.png",
-    items: [
-      "Business Websites",
-      "Web Applications",
-      "CMS Solutions",
-      "API Integration",
-    ],
+    items: ["Business Websites", "Web Applications", "CMS Solutions", "API Integration"],
   },
   {
     title: "Web Designing",
     icon: "/services/web-designing.png",
-    items: [
-      "Responsive Layouts",
-      "UI / UX Design",
-      "Landing Pages",
-      "Brand Visuals",
-    ],
+    items: ["Responsive Layouts", "UI / UX Design", "Landing Pages", "Brand Visuals"],
   },
   {
     title: "Graphics Designing",
     icon: "/services/graphic-designing.png",
-    items: [
-      "Logo Design",
-      "Social Media Creatives",
-      "Marketing Collateral",
-      "Brand Identity Assets",
-    ],
+    items: ["Logo Design", "Social Media Creatives", "Marketing Collateral", "Brand Identity Assets"],
   },
   {
     title: "Marketing & SEO",
     icon: "/services/marketing-seo.png",
-    items: [
-      "Search Visibility",
-      "Content Optimization",
-      "Keyword Strategy",
-      "Lead Generation",
-    ],
+    items: ["Search Visibility", "Content Optimization", "Keyword Strategy", "Lead Generation"],
   },
   {
     title: "Analytical Reports",
     icon: "/services/analytical-report.png",
-    items: [
-      "MIS Dashboards",
-      "KPI Monitoring",
-      "Tabular Reports",
-      "Trend Analysis",
-    ],
+    items: ["MIS Dashboards", "KPI Monitoring", "Tabular Reports", "Trend Analysis"],
   },
   {
     title: "Custom Development",
     icon: "/services/custome-development.png",
-    items: [
-      "Tailored Features",
-      "Business Automation",
-      "Workflow Tools",
-      "Process Modules",
-    ],
+    items: ["Tailored Features", "Business Automation", "Workflow Tools", "Process Modules"],
   },
   {
     title: "Service Administrations",
     icon: "/services/server-administration.png",
-    items: [
-      "User Management",
-      "Access Controls",
-      "Service Monitoring",
-      "Administrative Support",
-    ],
+    items: ["User Management", "Access Controls", "Service Monitoring", "Administrative Support"],
   },
   {
     title: "QA & QC",
     icon: "/services/QA-EC.png",
-    items: [
-      "Quality Checks",
-      "Test Planning",
-      "Validation",
-      "Issue Review",
-    ],
+    items: ["Quality Checks", "Test Planning", "Validation", "Issue Review"],
   },
   {
     title: "Marketing Consultancy",
     icon: "/services/marketing-seo.png",
-    items: [
-      "Growth Planning",
-      "Brand Positioning",
-      "Channel Strategy",
-      "Campaign Review",
-    ],
+    items: ["Growth Planning", "Brand Positioning", "Channel Strategy", "Campaign Review"],
   },
   {
     title: "Software Support",
     icon: "/services/custome-development.png",
-    items: [
-      "Feature Updates",
-      "Bug Fixing",
-      "System Maintenance",
-      "Release Support",
-    ],
+    items: ["Feature Updates", "Bug Fixing", "System Maintenance", "Release Support"],
   },
 ];
 ---
 
-<MainLayout title="Services">
-  <section class="relative overflow-hidden">
-    <img
-      src="/homepage/page-title-bg.jpg"
-      alt="Background Image"
-      class="absolute w-full h-70 object-cover scale-190 object-[20%_10%]"
-    />
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-20">
-      <h2 class="text-center text-black text-5xl font-bold mb-4">Services</h2>
-      <div class="text-center">
-        <span class="text-gray-500 hover:text-orange-500"><a href="/">Home</a></span><span
-          class="text-orange-500"
-        >
-          >
-        </span>
-        <span>Services</span>
-      </div>
+<MainLayout title="Services — EchoEleganceLTD">
+
+  <!-- Page Hero -->
+  <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+      <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
+        <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
+        <span style="margin: 0 6px;">›</span>
+        <span style="color: #09090b;">Services</span>
+      </p>
+      <h1 style="font-size: 56px; font-weight: 700; color: #09090b; line-height: 1.12;">
+        Our <span style="color: #a1a1aa;">Services</span>
+      </h1>
+      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;">
+        A coordinated set of services — accounting, marketing, and software development — built to support how businesses actually operate.
+      </p>
     </div>
   </section>
 
-  <section class="relative py-24 overflow-hidden">
-    <img
-      src="/homepage/black-bg.jpg"
-      alt="Background Image"
-      class="absolute inset-0 w-full h-full object-cover"
-    />
+  <!-- Services Grid -->
+  <section style="background-color: #f4f4f5; padding: 0 0 80px;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 ">
-      <h2 class="text-center text-white text-3xl font-bold mb-16 reveal">
-        Services that We Can Help You With
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
-        {
-          services.map((service) => (
-           <div class="reveal">
-             <div class="group relative overflow-hidden rounded-md border border-white/10 bg-white/95 p-8 min-h-[305px] shadow-[0_16px_36px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.24)]">
-              <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.16),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.96),rgba(239,246,255,0.92))] opacity-100 transition-opacity duration-300 group-hover:opacity-100"></div>
-              <div class="absolute inset-x-8 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#60a5fa] to-transparent opacity-50"></div>
-              <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-blue-300/15 blur-2xl transition-transform duration-300 group-hover:scale-125"></div>
-
-              <div class="relative z-10 flex items-start justify-between gap-4 mb-6">
-                <img src={service.icon} alt={service.title} class="h-14 w-14 transition-transform duration-300 group-hover:scale-105" />
-
-                <span class="inline-flex items-center rounded-full border border-blue-200 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-500 backdrop-blur-sm transition-all duration-300 group-hover:bg-blue-500 group-hover:text-white">
-                  Service
-                </span>
-              </div>
-
-              <h3 class="relative z-10 mb-3 text-[24px] font-semibold leading-tight text-[#25253b] transition-colors duration-300 group-hover:text-blue-600">
-                {service.title}
-              </h3>
-
-              <p class="relative z-10 mb-6 text-sm leading-6 text-[#6f6f84]">
-                Tailored delivery for this service area with practical support, clear communication, and measurable outcomes.
-              </p>
-
-              <ul class="relative z-10 space-y-3">
-                {service.items.map((item) => (
-                  <li class="flex gap-3 text-[16px] text-[#5f6275] transition-transform duration-300 group-hover:translate-x-1">
-                    <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#eff6ff] text-[12px] font-bold text-blue-500 transition-all duration-300 group-hover:bg-blue-500 group-hover:text-white">
-                      ✓
-                    </span>
-                    <span class="leading-6">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-           </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-white">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <div class="text-center mb-16">
-        <div class="flex items-center justify-center gap-4 reveal">
-          <img
-            src="/homepage/star-icon.png"
-            alt="start icon image"
-            class="animate-spin-slow"
-          />
-          <span
-            class="uppercase text-orange-500 font-semibold tracking-widest text-sm"
-          >
-            Our Solutions
-          </span>
-        </div>
-        <h2 class="text-4xl font-bold text-[#25253b] mt-4 max-w-4xl mx-auto reveal">
-          Generic Modules That Support Every Service
+      <div class="text-center reveal" style="margin-bottom: 48px;">
+        <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
+          Services We Can <span style="color: #a1a1aa;">Help You With</span>
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-        {
-          whyChooseUs.map((item) => {
-            const Icon = item.icon;
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        {services.map((service) => (
+          <article class="reveal service-card" style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
 
-            return (
-              <div class="border border-[#ececec] p-10 text-center min-h-[280px] hover:shadow-sm transition reveal">
-                <div class="flex justify-center mb-6">
-                  <Icon
-                    className="w-14 h-14 text-[#ff6b1a]"
-                    strokeWidth={1.75}
-                  />
-                </div>
+            <!-- Icon -->
+            <div style="width: 48px; height: 48px; border-radius: 40px; background-color: #f4f4f5; display: flex; align-items: center; justify-content: center;">
+              <img src={service.icon} alt={service.title} style="width: 28px; height: 28px; object-fit: contain;" />
+            </div>
 
-                <h3 class="font-semibold text-xl text-[#25253b] mb-4">
-                  {item.title}
-                </h3>
+            <!-- Title -->
+            <h3 style="font-size: 20px; font-weight: 600; color: #09090b; line-height: 1.35;">
+              {service.title}
+            </h3>
 
-                <p class="text-[#6f6f84] leading-relaxed">{item.description}</p>
-              </div>
-            );
-          })
-        }
+            <!-- Feature list -->
+            <ul style="display: flex; flex-direction: column; gap: 8px;">
+              {service.items.map((item) => (
+                <li style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background-color: #3f3f46; margin-top: 6px; flex-shrink: 0;"></div>
+                  <span style="font-size: 14px; font-weight: 400; color: #52525b; line-height: 1.56;">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="relative overflow-hidden bg-[#221638]">
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <!-- Generic Modules -->
+  <section style="background-color: #ffffff; padding: 80px 0;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+
+      <div class="text-center reveal" style="margin-bottom: 48px;">
+        <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
+          Our Solutions
+        </span>
+        <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
+          Generic Modules That <span style="color: #a1a1aa;">Support Every Service</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        {modules.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div class="reveal module-card" style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 28px;">
+              <div style="width: 48px; height: 48px; border-radius: 40px; background-color: #09090b; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
+              </div>
+              <h3 style="font-size: 20px; font-weight: 600; color: #09090b; line-height: 1.35; margin-bottom: 10px;">
+                {item.title}
+              </h3>
+              <p style="font-size: 15px; font-weight: 400; color: #71717a; line-height: 1.6;">
+                {item.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background-color: #f4f4f5; padding: 80px 0;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+      <div
+        style="background-color: #09090b; border-radius: 36px; padding: 48px 40px;"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+      >
+
+        <!-- Left: Illustration -->
         <div class="flex justify-center reveal-left">
           <img
             src="/homepage/project-start1.png"
             alt="Project Illustration"
-            class="max-w-[600px] w-full"
+            style="max-width: 420px; width: 100%;"
           />
         </div>
 
+        <!-- Right: Text + CTA -->
         <div class="reveal-right">
-          <h2 class="text-white text-4xl font-bold leading-tight mb-6">
-            You Like to Start Your Project With Us
+          <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.25; margin-bottom: 20px;">
+            Ready to Start Your <span style="color: #a1a1aa;">Project With Us?</span>
           </h2>
-
-          <p class="text-white/80 text-lg leading-relaxed mb-8 max-w-5xl">
-            With successfully delivering business solutions and having served
-            clients across multiple sectors, we aim to make business solutions
-            accessible to all users.
+          <p style="font-size: 16px; font-weight: 400; color: #a1a1aa; line-height: 1.5; margin-bottom: 32px; max-width: 440px;">
+            With proven delivery across multiple sectors, we make business solutions accessible, practical, and built to last.
           </p>
-
           <a
-              href="/contact-us"
-              class="cta-btn inline-flex items-center gap-3 bg-orange-500 text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md overflow-hidden"
+            href="/contact-us"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              background-color: #ffffff;
+              color: #09090b;
+              font-size: 15px;
+              font-weight: 500;
+              padding: 12px 24px;
+              border-radius: 36px;
+              text-decoration: none;
+              border: 1px solid #3f3f46;
+              transition: opacity 0.2s ease;
+            "
+            onmouseover="this.style.opacity='0.85'"
+            onmouseout="this.style.opacity='1'"
           >
-            Get Started
+            Get Started →
           </a>
         </div>
+
       </div>
     </div>
   </section>
+
 </MainLayout>
 
 <style>
-  .page-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
+  .service-card,
+  .module-card {
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    cursor: pointer;
+  }
+  .service-card:hover,
+  .module-card:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 16px 40px 0px, rgba(0, 0, 0, 0.04) 0px 4px 12px 0px;
   }
 </style>
