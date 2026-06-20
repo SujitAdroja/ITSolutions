@@ -1,228 +1,218 @@
 ---
-const testimonialGroups = [
-  [
-    {
-      text:
-        "I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your ERP and HRMS solutions are to update and manage.",
-      name: "Tejas Agrawal",
-      avatar: "/homepage/img1 (1).jpg",
-    },
-    {
-      text:
-        "We have started working with EchoEleganceLTD Solutions since the COVID-19 pandemic. Their products helped us increase business efficiency and manage customer relationships effectively.",
-      name: "Gaurav Doshi",
-      avatar: "/homepage/img2 (1).jpg",
-    },
-  ],
-
-  [
-    {
-      text:
-        "EchoEleganceLTD team delivered the project on time and exceeded expectations. Their support and communication throughout the project were exceptional.",
-      name: "John Smith",
-      avatar: "/homepage/img4 (1).jpg",
-    },
-    {
-      text:
-        "Very professional team with excellent communication. They understand business requirements and transform them into quality software solutions.",
-      name: "Sarah Johnson",
-      avatar: "/homepage/img3 (1).jpg",
-    },
-  ],
+const testimonials = [
+  {
+    text:
+      "The accounting support helped us bring structure to monthly closing and reporting. We now catch issues earlier and the team spends less time reconciling data.",
+    name: "Meera Joshi",
+  },
+  {
+    text:
+      "Their marketing guidance gave us a clearer campaign direction and better lead quality. The reporting is easier to understand and the decisions feel more grounded.",
+    name: "Arjun Mehta",
+  },
+  {
+    text:
+      "The development team translated our requirements into a clean, reliable application. The project stayed on schedule and the handoff was straightforward.",
+    name: "Ritika Shah",
+  },
+  {
+    text:
+      "We needed better bookkeeping discipline and they delivered a practical process that our staff could actually follow. That alone saved us a lot of time each month.",
+    name: "Kunal Verma",
+  },
+  {
+    text:
+      "Our marketing campaigns became more consistent once the strategy and tracking were fixed. We can now see what is working instead of guessing.",
+    name: "Sana Khan",
+  },
+  {
+    text:
+      "The development support has been responsive and practical from start to finish. Small changes no longer slow the project down and the codebase feels more maintainable.",
+    name: "Dev Patel",
+  },
 ];
+
+const desktopGroups = [];
+for (let i = 0; i < testimonials.length; i += 2) {
+  desktopGroups.push(testimonials.slice(i, i + 2));
+}
 ---
 
-<section
-  class="bg-[#eef6fa] py-16 md:py-20 lg:py-24 overflow-hidden"
-  x-data="{
-    current: 0,
-    total: 2,
+<section class="relative overflow-hidden bg-[#eef6fa] py-16 md:py-20 lg:py-24">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(96,165,250,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.95),transparent_32%)]"></div>
 
-    next() {
-      this.current = (this.current + 1) % this.total;
-    },
-
-    prev() {
-      this.current =
-        this.current === 0
-          ? this.total - 1
-          : this.current - 1;
-    },
-
-    init() {
-      setInterval(() => {
-        this.next();
-      }, 6000);
-    }
-  }"
-  x-init="init()"
->
-
-  <div class="max-w-[1400px] mx-auto px-6">
-
-    <!-- Header -->
-
+  <div class="relative z-10 max-w-[1400px] mx-auto px-6">
     <div class="text-center mb-16 lg:mb-20">
-
-      <div
-        class="flex justify-center items-center gap-2 text-[#ff6b1a] uppercase font-semibold text-sm mb-5 reveal"
-      >
-        <img
-          src="/homepage/star-icon.png"
-          alt=""
-          class="w-5 h-5 animate-spin-slow"
-        />
-
+      <div class="flex justify-center items-center gap-2 text-[#ff6b1a] uppercase font-semibold text-sm mb-5 reveal">
+        <img src="/homepage/star-icon.png" alt="" class="w-5 h-5 animate-spin-slow" />
         Testimonials
       </div>
 
       <div class="reveal">
-
-        <h2
-          class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#232323] mb-5"
-        >
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#232323] mb-5">
           What Our Clients are Saying?
         </h2>
 
-        <p
-          class="max-w-4xl mx-auto text-[#6d6d6d] text-base md:text-lg leading-relaxed"
-        >
-          We pride ourselves on providing an exceptional service
-          to our clients, but you don't just have to take our word
-          for it.
+        <p class="max-w-4xl mx-auto text-[#6d6d6d] text-base md:text-lg leading-relaxed">
+          We pride ourselves on providing an exceptional service to our clients, but you do not just have to take our word for it.
         </p>
-
       </div>
-
     </div>
 
-    <!-- Navigation -->
-
-    <div
-      class="flex justify-center lg:justify-between items-center gap-4 mb-10"
-    >
-
-      <button
-        @click="prev()"
-        class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300 reveal-left"
-      >
-        ←
-      </button>
-
-      <button
-        @click="next()"
-        class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-[#d9d9d9] bg-white hover:bg-[#ff6b1a] hover:text-white transition-all duration-300 reveal-right"
-      >
-        →
-      </button>
-
-    </div>
-
-    <!-- Slider -->
-
-    <div class="overflow-hidden reveal">
-
-      <div
-        class="flex transition-transform duration-700 ease-in-out"
-        :style="`transform: translateX(-${current * 100}%);`"
-      >
-
-        {
-          testimonialGroups.map((group) => (
-            <div class="w-full shrink-0">
-
-              <div
-                class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
-              >
-
-                {
-                  group.map((item) => (
-                    <div
-                      class="relative bg-white rounded-lg p-6 md:p-8 lg:p-12 shadow-sm hover:shadow-xl transition-all duration-300"
-                    >
-
-                      <!-- Quote -->
-
-                      <div
-                        class="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 text-[80px] md:text-[120px] lg:text-[180px] text-gray-100 leading-none select-none"
-                      >
-                        "
-                      </div>
-
-                      <!-- Content -->
-
-                      <p
-                        class="relative z-10 text-center text-[#6d6d6d] text-sm md:text-base lg:text-lg leading-7 md:leading-8 mt-10 md:mt-16 min-h-[180px] md:min-h-[220px]"
-                      >
-                        {item.text}
-                      </p>
-
-                      <!-- User -->
-
-                      <div
-                        class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-                      >
-
-                        <div class="text-center sm:text-left">
-
-                          <h4
-                            class="font-bold text-lg md:text-xl text-[#232323]"
-                          >
-                            {item.name}
-                          </h4>
-
-                        </div>
-
-                      </div>
-
-                    </div>
-                  ))
-                }
-
-              </div>
-
-            </div>
-          ))
-        }
-
-      </div>
-
-    </div>
-
-    <!-- Dots -->
-
-    <div
-      class="flex justify-center gap-3 mt-10"
-    >
-
-      <template x-for="(_, index) in total">
+    <div class="lg:hidden" x-data="{
+      current: 0,
+      total: 6,
+      next() { this.current = (this.current + 1) % this.total; },
+      prev() { this.current = this.current === 0 ? this.total - 1 : this.current - 1; },
+      init() {
+        setInterval(() => { this.next(); }, 6000);
+      }
+    }" x-init="init()">
+      <div class="flex justify-between items-center gap-4 mb-10">
+        <button
+          @click="prev()"
+          aria-label="Previous testimonial"
+          class="w-12 h-12 rounded-full border border-[#d9e6f7] bg-white/90 text-[#25507a] shadow-sm hover:bg-[#25507a] hover:text-white transition-all duration-300"
+        >
+          ←
+        </button>
 
         <button
-          @click="current = index"
-          class="h-3 rounded-full transition-all duration-300"
-          :class="current === index ? 'bg-[#ff6b1a] w-8' : 'bg-gray-300 w-3'"
-        ></button>
+          @click="next()"
+          aria-label="Next testimonial"
+          class="w-12 h-12 rounded-full border border-[#d9e6f7] bg-white/90 text-[#25507a] shadow-sm hover:bg-[#25507a] hover:text-white transition-all duration-300"
+        >
+          →
+        </button>
+      </div>
 
-      </template>
+      <div class="overflow-hidden">
+        <div
+          class="flex transition-transform duration-700 ease-in-out"
+          :style="`transform: translateX(-${current * 100}%);`"
+        >
+          {
+            testimonials.map((item) => (
+              <div class="w-full shrink-0 px-1">
+                <article class="relative overflow-hidden rounded-lg border border-[#e8eef6] bg-white p-7 md:p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-300">
+                  <div class="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 text-[88px] md:text-[128px] lg:text-[160px] text-[#edf4fb] leading-none select-none">
+                    "
+                  </div>
+                  <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(245,249,254,0.75))]"></div>
+                  <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[#60a5fa] to-transparent"></div>
+                  <div class="relative z-10 pt-8 md:pt-12">
+                    <p class="text-center text-[#5f6f82] text-base md:text-lg leading-8 md:leading-9 min-h-[170px] md:min-h-[210px] flex items-center justify-center">
+                      {item.text}
+                    </p>
+                    <div class="mt-6 flex flex-col items-center justify-center gap-1">
+                      <h4 class="font-bold text-lg md:text-xl text-[#1f2f44] text-center">
+                        {item.name}
+                      </h4>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            ))
+          }
+        </div>
+      </div>
 
+      <div class="flex justify-center gap-3 mt-10">
+        <template x-for="(_, index) in total">
+          <button
+            @click="current = index"
+            class="h-3 rounded-full transition-all duration-300"
+            :class="current === index ? 'bg-[#25507a] w-8' : 'bg-[#c8d9ea] w-3'"
+            :aria-label="`Go to testimonial ${index + 1}`"
+          ></button>
+        </template>
+      </div>
     </div>
 
-  </div>
+    <div class="hidden lg:block" x-data="{
+      current: 0,
+      total: 3,
+      next() { this.current = (this.current + 1) % this.total; },
+      prev() { this.current = this.current === 0 ? this.total - 1 : this.current - 1; },
+      init() {
+        setInterval(() => { this.next(); }, 6000);
+      }
+    }" x-init="init()">
+      <div class="flex justify-between items-center gap-4 mb-10">
+        <button
+          @click="prev()"
+          aria-label="Previous testimonial"
+          class="w-14 h-14 rounded-full border border-[#d9e6f7] bg-white/90 text-[#25507a] shadow-sm hover:bg-[#25507a] hover:text-white transition-all duration-300"
+        >
+          ←
+        </button>
 
+        <div class="flex items-center gap-2 text-sm font-medium text-[#7a8595]">
+          <span>Swipe or use arrows</span>
+        </div>
+
+        <button
+          @click="next()"
+          aria-label="Next testimonial"
+          class="w-14 h-14 rounded-full border border-[#d9e6f7] bg-white/90 text-[#25507a] shadow-sm hover:bg-[#25507a] hover:text-white transition-all duration-300"
+        >
+          →
+        </button>
+      </div>
+
+      <div class="overflow-hidden">
+        <div
+          class="flex transition-transform duration-700 ease-in-out"
+          :style="`transform: translateX(-${current * 100}%);`"
+        >
+          {
+            desktopGroups.map((group) => (
+              <div class="w-full shrink-0 px-2">
+                <div class="grid grid-cols-2 gap-6">
+                  {group.map((item) => (
+                    <article class="relative overflow-hidden rounded-lg border border-[#e8eef6] bg-white p-7 md:p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-300">
+                      <div class="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 text-[88px] md:text-[128px] lg:text-[160px] text-[#edf4fb] leading-none select-none">
+                        "
+                      </div>
+                      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(245,249,254,0.75))]"></div>
+                      <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[#60a5fa] to-transparent"></div>
+                      <div class="relative z-10 pt-8 md:pt-12">
+                        <p class="text-center text-[#5f6f82] text-base md:text-lg leading-8 md:leading-9 min-h-[170px] md:min-h-[210px] flex items-center justify-center">
+                          {item.text}
+                        </p>
+                        <div class="mt-6 flex flex-col items-center justify-center gap-1">
+                          <h4 class="font-bold text-lg md:text-xl text-[#1f2f44] text-center">
+                            {item.name}
+                          </h4>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-3 mt-10">
+        <template x-for="(_, index) in total">
+          <button
+            @click="current = index"
+            class="h-3 rounded-full transition-all duration-300"
+            :class="current === index ? 'bg-[#25507a] w-8' : 'bg-[#c8d9ea] w-3'"
+            :aria-label="`Go to testimonial ${index + 1}`"
+          ></button>
+        </template>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
   @keyframes spin-slow {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
-
-  .animate-spin-slow {
-    animation: spin-slow 12s linear infinite;
-  }
+  .animate-spin-slow { animation: spin-slow 12s linear infinite; }
 </style>

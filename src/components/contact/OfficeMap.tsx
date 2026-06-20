@@ -18,19 +18,9 @@ const locations = [
     position: [51.6298, -0.3966],
   },
   {
-    name: "Canada",
-    address: "25 Mabelle Avenue",
-    position: [43.6438, -79.5314],
-  },
-  {
     name: "India",
     address: "604 Sahitya Business Park",
     position: [23.0714, 72.6699],
-  },
-  {
-    name: "Australia",
-    address: "6/21 Railway Parade",
-    position: [-33.8036, 150.9879],
   },
 ];
 
