@@ -25,21 +25,21 @@ const areas = [
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="work-areas-grid">
       {areas.map((area) => (
-        <div
-          class="reveal"
-          style="background: #ffffff; border-radius: 28px; padding: 12px; box-shadow: rgba(0,0,0,0.04) 0px 4px 12px 0px, rgb(228,228,231) 0px 1px 0px 0px inset; cursor: pointer;"
-        >
+        <div class="area-card reveal">
           <img
             src={area.imgPath}
             alt={area.label}
-            style="width: 100%; height: 180px; object-fit: cover; display: block; border-radius: 20px;"
+            class="area-img"
           />
-          <div style="padding: 14px 8px 6px 8px;">
-            <p style="font-size: 15px; font-weight: 600; color: #09090b; line-height: 1.35; margin: 0;">
-              {area.label}
-            </p>
+          <!-- Hover overlay (desktop only) -->
+          <div class="area-overlay">
+            <span class="area-label-hover">{area.label}</span>
+          </div>
+          <!-- Always-visible label (mobile only) -->
+          <div class="area-label-mobile">
+            <span>{area.label}</span>
           </div>
         </div>
       ))}
@@ -47,3 +47,112 @@ const areas = [
 
   </div>
 </section>
+
+<style>
+  .work-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .area-card {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    cursor: pointer;
+    /* mobile: card style with label below */
+    background: #ffffff;
+    box-shadow: rgba(0,0,0,0.04) 0px 4px 12px 0px, rgb(228,228,231) 0px 1px 0px 0px inset;
+  }
+
+  .area-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.35s ease, transform 0.35s ease;
+  }
+
+  /* Hover overlay — hidden by default */
+  .area-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(9, 9, 11, 0.18);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    border-radius: 28px;
+  }
+
+  .area-label-hover {
+    background: #ffffff;
+    color: #09090b;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.35;
+    padding: 10px 20px;
+    border-radius: 36px;
+    text-align: center;
+    box-shadow: rgba(0,0,0,0.12) 0px 4px 16px 0px;
+    max-width: 80%;
+  }
+
+  /* Mobile label — hidden on desktop */
+  .area-label-mobile {
+    display: none;
+    padding: 12px 14px 10px;
+  }
+
+  .area-label-mobile span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #09090b;
+    line-height: 1.35;
+  }
+
+  /* Desktop hover effects */
+  @media (hover: hover) and (pointer: fine) {
+    .area-card:hover .area-img {
+      filter: blur(3px) brightness(0.85);
+      transform: scale(1.04);
+    }
+
+    .area-card:hover .area-overlay {
+      opacity: 1;
+    }
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .work-areas-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile — no hover, show label below image */
+  @media (max-width: 640px) {
+    .work-areas-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .area-card {
+      border-radius: 20px;
+    }
+
+    .area-img {
+      height: 140px;
+      border-radius: 0;
+    }
+
+    .area-overlay {
+      display: none;
+    }
+
+    .area-label-mobile {
+      display: block;
+    }
+  }
+</style>

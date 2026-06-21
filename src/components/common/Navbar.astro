@@ -2,65 +2,70 @@
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
-  // { label: 'Portfolio', href: '/portfolio' },
   { label: 'Services', href: '/services' },
   { label: 'Careers', href: '/careers' },
   { label: 'About Us', href: '/about-us' },
-  { label: 'Contact Us', href: '/contact-us' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="max-w-[1400px] mx-auto px-6 te">
-    <div class="flex items-center justify-between py-6">
+<nav class="navbar-root">
+  <div class="navbar-inner">
 
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-2.5 shrink-0">
-          <div>
-            <img src="/logo/Logo-Img.png" alt="Logo" class="w-50 object-fill" id="navbar-logo" />
-          </div>
-      </a>
+    <!-- Logo -->
+    <a href="/" class="navbar-logo">
+      <img src="/logo/Logo-Img.png" alt="Logo" id="navbar-logo" />
+    </a>
 
-      <!-- Desktop Nav -->
-      <ul class="hidden lg:flex items-center gap-8">
-        {navLinks.map(({ label, href }) => (
-          <li>
-            <a
-              href={href}
-              class:list={[
-                ' py-2 text-md md:text-lg font-medium transition-colors duration-150',
-                (currentPath === href || (href !== '/' && currentPath.startsWith(href)))
-                  ? 'text-orange-500'
-                  : 'text-black hover:text-orange-500'
-              ]}
-            >
-              {label}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <!-- Desktop Nav Links (centered) -->
+    <ul class="navbar-links">
+      {navLinks.map(({ label, href }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              'nav-link',
+              (currentPath === href || (href !== '/' && currentPath.startsWith(href)))
+                ? 'nav-link--active'
+                : ''
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
 
-      <!-- Mobile menu button -->
-      <button class="lg:hidden p-2 rounded-md text-gray-700 hover:text-orange-500" id="mobile-menu-btn" aria-label="Open menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    <!-- Right: ghost text + pill CTA -->
+    <div class="navbar-cta">
+      <a href="/contact-us" class="navbar-pill-btn">
+        Contact Us
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
-      </button>
+      </a>
     </div>
+
+    <!-- Mobile hamburger -->
+    <button class="navbar-hamburger" id="mobile-menu-btn" aria-label="Open menu">
+      <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
   </div>
 
   <!-- Mobile menu -->
-  <div class="lg:hidden hidden bg-white border-t border-gray-100 px-6 pb-4" id="mobile-menu">
-    {navLinks.map(({ label, href }) => (
+  <div class="mobile-menu hidden" id="mobile-menu">
+    {[...navLinks, { label: 'Contact Us', href: '/contact-us' }].map(({ label, href }) => (
       <a
         href={href}
         class:list={[
-          'block py-2 text-sm font-medium transition-colors',
+          'mobile-nav-link',
           (currentPath === href || (href !== '/' && currentPath.startsWith(href)))
-            ? 'text-orange-500'
-            : 'text-gray-700 hover:text-orange-500'
+            ? 'mobile-nav-link--active'
+            : ''
         ]}
       >
         {label}
@@ -69,15 +74,176 @@ const currentPath = Astro.url.pathname;
   </div>
 </nav>
 
+<style>
+  .navbar-root {
+    background-color: #f4f4f5;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid #ececee;
+  }
+
+  .navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: relative;
+  }
+
+  /* Logo */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .navbar-logo img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* Center links — absolute center on the bar */
+  .navbar-links {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 32px;
+  }
+
+  @media (min-width: 1024px) {
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #3f3f46;
+    text-decoration: none;
+    transition: color 0.15s ease;
+    white-space: nowrap;
+  }
+  .nav-link:hover {
+    color: #09090b;
+  }
+  .nav-link--active {
+    color: #09090b;
+    font-weight: 600;
+  }
+
+  /* Right CTA group */
+  .navbar-cta {
+    display: none;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .navbar-cta {
+      display: flex;
+    }
+  }
+
+  .navbar-ghost-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #52525b;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .navbar-ghost-link:hover {
+    color: #09090b;
+  }
+
+  .navbar-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #09090b;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 36px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+  .navbar-pill-btn:hover {
+    opacity: 0.85;
+  }
+
+  /* Hamburger */
+  .navbar-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    color: #3f3f46;
+    border-radius: 8px;
+    transition: color 0.15s ease;
+  }
+  .navbar-hamburger:hover {
+    color: #09090b;
+  }
+
+  @media (min-width: 1024px) {
+    .navbar-hamburger {
+      display: none;
+    }
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    background-color: #f4f4f5;
+    border-top: 1px solid #ececee;
+    padding: 12px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .mobile-menu.hidden {
+    display: none;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 10px 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #52525b;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .mobile-nav-link:hover {
+    background: #ececee;
+    color: #09090b;
+  }
+  .mobile-nav-link--active {
+    color: #09090b;
+    font-weight: 600;
+  }
+</style>
+
 <script>
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
-
-  const logo = document.getElementById('navbar-logo') as HTMLImageElement;
-  const fallback = document.getElementById('navbar-logo-fallback');
-  if (logo && !logo.src) {
-    logo.classList.add('hidden');
-    fallback?.classList.remove('hidden');
-  }
 </script>

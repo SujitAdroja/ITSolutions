@@ -104,15 +104,15 @@ export const services = [
   <!-- Page Hero -->
   <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
     <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
+      <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; margin-bottom: 12px;" class="reveal">
         <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
         <span style="margin: 0 6px;">›</span>
         <span style="color: #09090b;">Services</span>
       </p>
-      <h1 style="font-size: 56px; font-weight: 700; color: #09090b; line-height: 1.12;">
+      <h1 style="font-size: 56px; font-weight: 700; color: #09090b; line-height: 1.12;" class="reveal">
         Our <span style="color: #a1a1aa;">Services</span>
       </h1>
-      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;">
+      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;" class="reveal">
         A coordinated set of services — accounting, marketing, and software development — built to support how businesses actually operate.
       </p>
     </div>
@@ -191,7 +191,7 @@ export const services = [
   <!-- CTA Section -->
   <section style="background-color: #f4f4f5; padding: 80px 0;" class="reveal">
     <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <div class="services-cta-banner">
+      <div class="services-cta-banner flex flex-col md:flex-row md:items-center justify-between">
 
         <!-- Content -->
         <div style="position: relative; z-index: 1; max-width: 520px;">
@@ -202,6 +202,10 @@ export const services = [
           <p style="font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 32px;">
             With proven delivery across multiple sectors, we make business solutions accessible, practical, and built to last.
           </p>
+          
+        </div>
+
+        <div class="md:mr-20">
           <a href="/contact-us" class="services-cta-btn">
             Get Started →
           </a>
