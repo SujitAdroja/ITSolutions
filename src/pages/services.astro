@@ -122,11 +122,11 @@ export const services = [
   <section style="background-color: #f4f4f5; padding: 0 0 80px;">
     <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-      <div class="text-center reveal" style="margin-bottom: 48px;">
+      <!-- <div class="text-center reveal" style="margin-bottom: 48px;">
         <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
           Services We Can <span style="color: #a1a1aa;">Help You With</span>
         </h2>
-      </div>
+      </div> -->
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {services.map((service) => (
@@ -162,7 +162,7 @@ export const services = [
   <section style="background-color: #ffffff; padding: 80px 0;">
     <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-      <div class="text-center reveal" style="margin-bottom: 48px;">
+      <div class="text-center reveal" style="margin-bottom: 32px;">
         <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
           Our Solutions
         </span>
@@ -171,72 +171,38 @@ export const services = [
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-        {modules.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div class="reveal module-card" style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 28px;">
-              <div style="width: 48px; height: 48px; border-radius: 40px; background-color: #09090b; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-              </div>
-              <h3 style="font-size: 20px; font-weight: 600; color: #09090b; line-height: 1.35; margin-bottom: 10px;">
-                {item.title}
-              </h3>
-              <p style="font-size: 15px; font-weight: 400; color: #71717a; line-height: 1.6;">
-                {item.description}
-              </p>
-            </div>
-          );
-        })}
+      <!-- Single bordered container with divider cells -->
+      <div class="modules-grid">
+        {modules.map((item) => (
+          <div class="module-cell">
+            <h3 style="font-size: 18px; font-weight: 600; color: #09090b; line-height: 1.35; margin-bottom: 10px;">
+              {item.title}
+            </h3>
+            <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.65;">
+              {item.description}
+            </p>
+          </div>
+        ))}
       </div>
 
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section style="background-color: #f4f4f5; padding: 80px 0;">
+  <section style="background-color: #f4f4f5; padding: 80px 0;" class="reveal">
     <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <div
-        style="background-color: #09090b; border-radius: 36px; padding: 48px 40px;"
-        class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-      >
+      <div class="services-cta-banner">
 
-        <!-- Left: Illustration -->
-        <div class="flex justify-center reveal-left">
-          <img
-            src="/homepage/project-start1.png"
-            alt="Project Illustration"
-            style="max-width: 420px; width: 100%;"
-          />
-        </div>
-
-        <!-- Right: Text + CTA -->
-        <div class="reveal-right">
-          <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.25; margin-bottom: 20px;">
-            Ready to Start Your <span style="color: #a1a1aa;">Project With Us?</span>
+        <!-- Content -->
+        <div style="position: relative; z-index: 1; max-width: 520px;">
+          <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.2; margin-bottom: 16px;">
+            Ready to Start Your<br />
+            <span style="color: rgba(255,255,255,0.55);">Project With Us?</span>
           </h2>
-          <p style="font-size: 16px; font-weight: 400; color: #a1a1aa; line-height: 1.5; margin-bottom: 32px; max-width: 440px;">
+          <p style="font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 32px;">
             With proven delivery across multiple sectors, we make business solutions accessible, practical, and built to last.
           </p>
-          <a
-            href="/contact-us"
-            style="
-              display: inline-flex;
-              align-items: center;
-              gap: 8px;
-              background-color: #ffffff;
-              color: #09090b;
-              font-size: 15px;
-              font-weight: 500;
-              padding: 12px 24px;
-              border-radius: 36px;
-              text-decoration: none;
-              border: 1px solid #3f3f46;
-              transition: opacity 0.2s ease;
-            "
-            onmouseover="this.style.opacity='0.85'"
-            onmouseout="this.style.opacity='1'"
-          >
+          <a href="/contact-us" class="services-cta-btn">
             Get Started →
           </a>
         </div>
@@ -248,14 +214,87 @@ export const services = [
 </MainLayout>
 
 <style>
-  .service-card,
-  .module-card {
+  .service-card {
     transition: transform 0.28s ease, box-shadow 0.28s ease;
     cursor: pointer;
   }
-  .service-card:hover,
-  .module-card:hover {
+  .service-card:hover {
     transform: translateY(-8px) scale(1.015);
     box-shadow: rgba(0, 0, 0, 0.09) 0px 16px 40px 0px, rgba(0, 0, 0, 0.04) 0px 4px 12px 0px;
+  }
+
+  /* ── Modules grid: single bordered container with hairline dividers ── */
+  .modules-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid #ececee;
+    border-radius: 36px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .module-cell {
+    padding: 28px 28px;
+    border-bottom: 1px solid #ececee;
+  }
+  .module-cell:last-child {
+    border-bottom: none;
+  }
+
+  @media (min-width: 640px) {
+    .modules-grid { grid-template-columns: 1fr 1fr; }
+
+    .module-cell { border-right: 1px solid #ececee; }
+    .module-cell:nth-child(2n)  { border-right: none; }
+    /* last row = items 5 & 6 */
+    .module-cell:nth-last-child(-n+2) { border-bottom: none; }
+  }
+
+  @media (min-width: 1024px) {
+    .modules-grid { grid-template-columns: 1fr 1fr 1fr; }
+
+    /* reset 2-col overrides */
+    .module-cell                { border-right: 1px solid #ececee; border-bottom: 1px solid #ececee; }
+    .module-cell:nth-child(2n)  { border-right: 1px solid #ececee; }
+    /* no right border on col 3 */
+    .module-cell:nth-child(3n)  { border-right: none; }
+    /* no bottom border on last row (items 4-6) */
+    .module-cell:nth-last-child(-n+3) { border-bottom: none; }
+  }
+
+  /* ── Services CTA gradient banner ── */
+  .services-cta-banner {
+    border-radius: 36px;
+    padding: 56px 52px;
+    overflow: hidden;
+    position: relative;
+    /* Dark base + layered radial blobs: green top-right, magenta right, purple centre-right */
+    background:
+      linear-gradient(to right, #09090b 30%, rgba(9,9,11,0) 68%),
+      radial-gradient(ellipse at 96% 15%, #14532d 0%, transparent 48%),
+      radial-gradient(ellipse at 102% 75%, #be185d 0%, transparent 45%),
+      radial-gradient(ellipse at 80%  55%, #6d28d9 0%, transparent 42%),
+      #09090b;
+  }
+
+  .services-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    color: #09090b;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px 28px;
+    border-radius: 36px;
+    text-decoration: none;
+    border: none;
+    transition: opacity 0.2s ease;
+  }
+  .services-cta-btn:hover { opacity: 0.88; }
+
+  @media (max-width: 640px) {
+    .services-cta-banner { padding: 40px 28px; }
+    .services-cta-banner h2 { font-size: 30px !important; }
   }
 </style>
