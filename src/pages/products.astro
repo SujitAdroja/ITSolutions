@@ -1,12 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
 export const products = [
   {
     title: "Sales Force Automation (SFA)",
-    badge: "demo",
+    badge: "Demo Ready",
+    badgeType: "demo",
     image: "/products/salseforce.webp",
     description:
-      "For Company or Distributor to track activities to each and every sales man in market and convert their hours into productivity, capture more & more order from market.",
+      "For Company or Distributor to track activities of every salesperson in market and convert their hours into productivity, capturing more orders from market.",
     features: [
       "Monitor Sales Staff's activity real-time",
       "Online Ordering Process",
@@ -17,10 +19,11 @@ export const products = [
   },
   {
     title: "Distribution Manage System (DMS)",
-    badge: "demo",
+    badge: "Demo Ready",
+    badgeType: "demo",
     image: "/products/DMS.webp",
     description:
-      "For Company or Distributor to track their customers sales, purchase data to date stock, outstanding payment and expenses.",
+      "For Company or Distributor to track their customers sales, purchase data, stock, outstanding payment and expenses.",
     features: [
       "Distributor or Dealer's Sales",
       "Central Monitoring of all orders",
@@ -31,8 +34,9 @@ export const products = [
   },
   {
     title: "Sale Marketing Strategies (Machine Learning)",
-    badge: "upgrade",
-    image: "/products/sales-marketing.jpg",
+    badge: "Work Upgrade",
+    badgeType: "upgrade",
+    image: "/products/sales-marketing.webp",
     description:
       "Recognition of patterns in data and helpful for forecasting consumer purchases.",
     features: [
@@ -45,10 +49,11 @@ export const products = [
   },
   {
     title: "Point of Sale (POS)",
-    badge: "upgrade",
+    badge: "Work Upgrade",
+    badgeType: "upgrade",
     image: "/products/POS.png",
     description:
-      "Online - Offline solutions for giving distribution store / mobile store.",
+      "Online and offline solutions for distribution store and mobile store management.",
     features: [
       "Desktop to Manage Everything",
       "Inventory Management Module",
@@ -59,10 +64,11 @@ export const products = [
   },
   {
     title: "E-Commerce Application",
-    badge: "demo",
+    badge: "Demo Ready",
+    badgeType: "demo",
     image: "/products/ecommerce.webp",
     description:
-      "For business through world wide market via this E Commerce App.",
+      "Reach worldwide markets through our fully-featured E-Commerce application built for scale.",
     features: [
       "Coupon & Scheme Module",
       "Admin & Seller Portal",
@@ -73,10 +79,11 @@ export const products = [
   },
   {
     title: "Accounting Software",
-    badge: "upgrade",
+    badge: "Work Upgrade",
+    badgeType: "upgrade",
     image: "/products/accounting-software.png",
     description:
-      "At company level users can entries of Sales, Purchase, Stock, On Account Payment.",
+      "Company-level entries for Sales, Purchase, Stock, and On Account Payment with full reporting.",
     features: [
       "Sales order & Purchase order Module",
       "Inventory Management Module",
@@ -84,112 +91,97 @@ export const products = [
       "Payment Module",
       "Customize to support your business",
     ],
-  }
+  },
 ];
 ---
 
-<MainLayout title="Products">
-  <!-- Products Section -->
-  <section class="relative overflow-hidden">
-    <img
-      src="/homepage/page-title-bg.jpg"
-      alt="Background Image"
-      class="absolute -z-1 w-full h-70 object-cover scale-190 object-[20%_10%]"
-    />
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-10 md:py-20">
-      <h2 class="text-center text-black text-4xl md:text-5xl font-bold mb-4">Products</h2>
-      <div class="text-center">
-        <span class="text-gray-500 hover:text-orange-500"><a href="/">Home</a></span><span
-          class="text-orange-500"
-        >
+<MainLayout title="Products — EchoEleganceLTD">
+
+  <!-- Page Hero -->
+  <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+      <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
+        <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
+        <span style="margin: 0 6px;">›</span>
+        <span style="color: #09090b;">Products</span>
+      </p>
+      <h1 style="font-size: 56px; font-weight: 700; color: #09090b; line-height: 1.12;">
+        Our <span style="color: #2563eb;">Products</span>
+      </h1>
+      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;">
+        Purpose-built software tools that help businesses track, manage, and grow across every operational layer.
+      </p>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section style="background-color: #f4f4f5; padding: 0 0 80px;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        {products.map((product) => (
+          <article
+            class="reveal product-card"
+            style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; overflow: hidden; display: flex; flex-direction: column;"
           >
-        </span>
-        <span>Products</span>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="bg-[#f5f5f7] py-20">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <div class="text-center mb-16 reveal">
-        <h2 class="text-[40px] font-bold text-[#222] leading-tight">
-          Our Fantastic Products, you might like its features
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
-        {
-          products.map((product) => (
-            <div class="reveal">
-              <article class="bg-white h-full border border-[#e8e8e8] shadow-sm md:hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)] md:hover:-translate-y-2 transition-all duration-300 overflow-hidden rounded-md ">
-              {/* Image */}
-              <div class="relative">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  class="w-full h-[250px] object-cover "
-                />
-
-                <div
-                  class:list={[
-                    "absolute right-4 bottom-[-20px] w-[60px] h-[60px] rounded-full text-white text-[11px] font-semibold flex items-center justify-center text-center leading-tight shadow-lg",
-                    product.badge === "demo" ? "bg-[#16a34a]" : "bg-[#ff6b1a]",
-                  ]}
-                >
-                  {product.badge === "demo" ? (
-                    <>
-                      Demo
-                      <br />
-                      Ready
-                    </>
-                  ) : (
-                    <>
-                      Work
-                      <br />
-                      Upgrade
-                    </>
-                  )}
-                </div>
+            <!-- Image tile with overlay badge -->
+            <div style="position: relative; overflow: hidden; border-radius: 36px 36px 0 0;">
+              <img
+                src={product.image}
+                alt={product.title}
+                style="width: 100%; height: 220px; object-fit: cover; display: block;"
+              />
+              <!-- Dark overlay badge -->
+              <div style="position: absolute; bottom: 14px; left: 14px;">
+                <span style={`
+                  background: rgba(9, 9, 11, 0.6);
+                  color: #ffffff;
+                  border: 1px solid ${product.badgeType === 'demo' ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.35)'};
+                  border-radius: 12px;
+                  padding: 4px 10px;
+                  font-size: 12px;
+                  font-weight: 500;
+                  backdrop-filter: blur(8px);
+                `}>
+                  {product.badge}
+                </span>
               </div>
-
-              {/* Content */}
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-[#2a2a2a] leading-tight mb-3">
-                  {product.title}
-                </h3>
-
-                <p class="text-[#666] text-md leading-relaxed mb-6">
-                  {product.description}
-                </p>
-
-                <ul class="space-y-3">
-                  {product.features.map((feature) => (
-                    <li class="flex gap-3 items-start">
-                      <div class="w-6 h-6 rounded-full bg-[#f1f3f7] flex items-center justify-center text-lg text-[#7d7d7d] shrink-0 mt-[2px]">
-                        ✓
-                      </div>
-
-                      <span class="text-md text-[#666] leading-6">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
             </div>
-          ))
-        }
+
+            <!-- Content -->
+            <div style="padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; color: #09090b; line-height: 1.35;">
+                {product.title}
+              </h3>
+
+              <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.56;">
+                {product.description}
+              </p>
+
+              <!-- Feature list -->
+              <ul style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+                {product.features.map((feature) => (
+                  <li style="display: flex; align-items: flex-start; gap: 10px;">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background-color: #3f3f46; margin-top: 6px; flex-shrink: 0;"></div>
+                    <span style="font-size: 14px; font-weight: 400; color: #52525b; line-height: 1.56;">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
       </div>
+
     </div>
   </section>
+
 </MainLayout>
 
 <style>
-  .page-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
+  .product-card {
+    transition: transform 0.25s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
   }
 </style>

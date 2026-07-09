@@ -3,48 +3,34 @@ import OfficeMap from "./OfficeMap.tsx";
 import { officeLocations } from "./contactData";
 ---
 
-<section class="pb-24">
+<section style="background-color: #f4f4f5; padding: 0 0 80px;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-  <div class="max-w-[1400px] mx-auto ">
+    <div class="grid lg:grid-cols-[280px_1fr] gap-6">
 
-    <div class="grid lg:grid-cols-[320px_1fr] gap-8">
+      <!-- Office locations -->
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; width: fit-content; margin-bottom: 8px;">
+          {officeLocations.length} Office Locations
+        </span>
 
-      <!-- LEFT LOCATIONS -->
-
-      <div class="space-y-8">
-
-        <h3 class="text-[#ff6b1a] font-bold uppercase reveal">
-          2 Office Locations
-        </h3>
-
-        {
-          officeLocations.map((office) => (
-            <div
-              class="border-l-4 border-[#ff6b1a] pl-5 reveal"
-            >
-              <h4 class="font-bold mb-2">
-                {office.name}
-              </h4>
-
-              <p class="text-[#666] leading-7">
-                {office.address}
-              </p>
-            </div>
-          ))
-        }
-
+        {officeLocations.map((office) => (
+          <div
+            class="reveal rounded-2xl"
+            style="background-color: #ffffff; padding: 20px 24px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; border-left: 3px solid #09090b;"
+          >
+            <h4 style="font-size: 16px; font-weight: 600; color: #09090b; margin-bottom: 8px;">{office.name}</h4>
+            <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.6;">{office.address}</p>
+          </div>
+        ))}
       </div>
 
-      <!-- MAP -->
-
-      <div
-        class="border border-[#ececec] overflow-hidden"
-      >
+      <!-- Map -->
+      <div style="border-radius: 36px; overflow: hidden; border: 1px solid #ececee; min-height: 360px;">
         <OfficeMap client:only="react" />
       </div>
 
     </div>
 
   </div>
-
 </section>

@@ -1,144 +1,66 @@
-<section class="relative py-24 overflow-hidden bg-white">
+<section style="background-color: #ffffff; padding: 80px 0;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-  <div class="max-w-[1400px] mx-auto px-6">
-
+    <!-- 2-col: image + content -->
     <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
 
-      <!-- LEFT IMAGE -->
+      <!-- Image -->
       <div>
         <img
           src="/about/hero-image.png"
           alt="About Us"
-          class="w-full max-w-[700px]"
+          style="width: 100%; border-radius: 36px;"
         />
       </div>
 
-      <!-- RIGHT CONTENT -->
+      <!-- Content -->
       <div class="reveal-right">
+        <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
+          About Us
+        </span>
 
-        <div class="flex items-center justify-start gap-4 mb-3">
-          <img
-            src="/homepage/star-icon.png"
-            alt="start icon image"
-            class="animate-spin-slow"
-          />
-          <span
-            class="uppercase text-[#ff6b1a] font-semibold tracking-widest text-sm"
-          >
-            About Us
-          </span>
-        </div>
+        <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25; margin-bottom: 20px;">
+          Driving Business Growth Through <span style="color: #2563eb;">Practical Digital Solutions</span>
+        </h2>
 
-        <h1
-          class="text-4xl leading-10 font-bold text-[#222] mb-6"
-        >
-          Driving Business Growth
-          <br />
-          Through Practical Digital Solutions
-        </h1>
-
-        <p
-          class="text-[#6d6d6d] leading-relaxed mb-10"
-        >
-          EchoEleganceLTD Solutions provides professional services across accounting, digital marketing, web development, web designing, graphics designing, analytical reporting, service administration, QA & QC, and custom development. We help businesses improve visibility, streamline operations, and build dependable digital systems for daily use.
+        <p style="font-size: 15px; font-weight: 400; color: #71717a; line-height: 1.6; margin-bottom: 32px;">
+          EchoEleganceLTD Solutions provides professional services across accounting, digital marketing, web development, web designing, graphics designing, analytical reporting, service administration, QA & QC, and custom development. We help businesses improve visibility, streamline operations, and build dependable digital systems.
         </p>
 
-        <!-- STATS -->
-
-        <div class="grid grid-cols-2 gap-5 mb-10">
-
-          <div
-            class="border border-[#e8e8e8] p-6 flex items-center gap-4 hover:border-[#ff6b1a] transition-colors duration-300"
-          >
-            <img src="/about/icon.png" class="w-12 h-12" />
-            <div>
-              <h3 class="font-bold text-2xl">10+</h3>
-              <p class="text-sm text-gray-500">
-                Technologies
-              </p>
+        <!-- Stat blocks inline -->
+        <div class="grid grid-cols-2 gap-4" style="margin-bottom: 28px;">
+          {[
+            { value: '10+', label: 'Technologies' },
+            { value: '15+', label: 'Team Members' },
+            { value: '99.9%', label: 'Satisfaction Rate' },
+            { value: '2+', label: 'Countries' },
+          ].map(stat => (
+            <div style="background-color: #f4f4f5; border-radius: 28px; padding: 20px 24px;">
+              <p style="font-size: 32px; font-weight: 700; color: #09090b; line-height: 1.28;">{stat.value}</p>
+              <p style="font-size: 13px; font-weight: 400; color: #71717a; line-height: 1.56; margin-top: 4px;">{stat.label}</p>
             </div>
-          </div>
-
-          <div
-            class="border border-[#e8e8e8] p-6 flex items-center gap-4 hover:border-[#ff6b1a] transition-colors duration-300"
-          >
-            <img src="/about/icon.png" class="w-12 h-12" />
-            <div>
-              <h3 class="font-bold text-2xl">15+</h3>
-              <p class="text-sm text-gray-500">
-                Team members
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="border border-[#e8e8e8] p-6 flex items-center gap-4 hover:border-[#ff6b1a] transition-colors duration-300"
-          >
-            <img src="/about/icon.png" class="w-12 h-12" />
-            <div>
-              <h3 class="font-bold text-2xl">99.9%</h3>
-              <p class="text-sm text-gray-500">
-                Satisfaction rate
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="border border-[#e8e8e8] p-6 flex items-center gap-4 hover:border-[#ff6b1a] transition-colors duration-300"
-          >
-            <img src="/about/icon.png" class="w-12 h-12" />
-            <div>
-              <h3 class="font-bold text-2xl">4+</h3>
-              <p class="text-sm text-gray-500">
-                Countries
-              </p>
-            </div>
-          </div>
-
+          ))}
         </div>
 
-        <p class="text-[#6d6d6d] leading-relaxed">
+        <p style="font-size: 15px; font-weight: 400; color: #71717a; line-height: 1.6;">
           We combine strategic thinking with practical delivery to support clients from planning and execution through to reporting, optimisation, and long-term support.
         </p>
-
       </div>
 
     </div>
 
     <!-- Bottom 3 columns -->
-
-    <div class="grid md:grid-cols-3 gap-12 mt-24 reveal">
-
-      <div>
-        <h3 class="text-[30px] font-bold mb-4">
-          Our Team
-        </h3>
-
-        <p class="text-[#666] leading-relaxed">
-          Our team brings together specialists in accounting, marketing, design, and software development to support a wide range of business needs.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-[30px] font-bold mb-4">
-          Our Story
-        </h3>
-
-        <p class="text-[#666] leading-relaxed">
-          We have grown by delivering practical solutions that help clients stay organised, improve their presence, and move projects forward with confidence.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-[30px] font-bold mb-4">
-          Who we are
-        </h3>
-
-        <p class="text-[#666] leading-relaxed">
-          EchoEleganceLTD Solutions is a service-focused company helping businesses improve operations, strengthen digital presence, and deliver better customer experiences.
-        </p>
-      </div>
-
+    <div class="grid md:grid-cols-3 gap-5 reveal" style="margin-top: 64px;">
+      {[
+        { title: 'Our Team', body: 'Our team brings together specialists in accounting, marketing, design, and software development to support a wide range of business needs.' },
+        { title: 'Our Story', body: 'We have grown by delivering practical solutions that help clients stay organised, improve their presence, and move projects forward with confidence.' },
+        { title: 'Who We Are', body: 'EchoEleganceLTD Solutions is a service-focused company helping businesses improve operations, strengthen digital presence, and deliver better customer experiences.' },
+      ].map(col => (
+        <div style="background-color: #f4f4f5; border-radius: 36px; padding: 28px;">
+          <h3 style="font-size: 20px; font-weight: 600; color: #09090b; line-height: 1.35; margin-bottom: 12px;">{col.title}</h3>
+          <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.56;">{col.body}</p>
+        </div>
+      ))}
     </div>
 
   </div>

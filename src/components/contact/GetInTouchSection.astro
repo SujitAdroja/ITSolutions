@@ -1,107 +1,105 @@
-<section class="pb-24">
-  <div class="max-w-[1400px] mx-auto">
-     
+<section style="background-color: #f4f4f5; padding: 0 0 80px;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-    <div class="grid lg:grid-cols-2 gap-20 items-center">
       <!-- Illustration -->
-      <div>
-        <div class="reveal">
-          <img
-            src="/contact/contact.png"
-            alt=""
-            class="w-full max-w-[600px] mx-auto"
-          />
-        </div>
-
+      <div class="flex justify-center reveal-left">
+        <img
+          src="/contact/contact.png"
+          alt="Contact illustration"
+          style="width: 100%; max-width: 480px; border-radius: 36px;"
+        />
       </div>
 
-      <!-- Form -->
-
-      <div class="bg-white shadow-[0_20px_60px_rgba(17,17,26,0.08)] border border-[#ececec] rounded-lg p-6 md:p-10 reveal">
-        <div class="mb-8">
-          <h3 class="text-3xl font-bold text-[#25253b] mb-3">Send a Message</h3>
-          <p class="text-[#6f6f84] max-w-xl leading-relaxed">
-            Tell us about your project, question, or support request and our team will get back to you promptly.
-          </p>
-        </div>
+      <!-- Form card -->
+      <div
+        class="reveal-right"
+        style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 36px;"
+      >
+        <h3 style="font-size: 32px; font-weight: 700; color: #09090b; line-height: 1.28; margin-bottom: 8px;">
+          Send a Message
+        </h3>
+        <p style="font-size: 15px; font-weight: 400; color: #71717a; line-height: 1.6; margin-bottom: 28px;">
+          Tell us about your project, question, or support request and our team will get back to you promptly.
+        </p>
 
         <form
-          class="space-y-4"
+          style="display: flex; flex-direction: column; gap: 12px;"
           method="POST"
           action="https://formsubmit.co/bonebreaker712003@gmail.com"
         >
-          <!-- <input
-            type="hidden"
-            name="access_key"
-            value="f9cbc9e2-78f8-40ba-8369-ef02a39f6897"
-          /> -->
-
           <input
             type="text"
             placeholder="Your name"
             name="name"
-            class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
             required
+            style="width: 100%; background-color: #f4f4f5; border: none; border-radius: 14px; padding: 14px 16px; font-size: 14px; color: #18181b; outline: none;"
           />
-
           <input
             type="email"
             name="email"
             placeholder="Your email address"
-            class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
             required
+            style="width: 100%; background-color: #f4f4f5; border: none; border-radius: 14px; padding: 14px 16px; font-size: 14px; color: #18181b; outline: none;"
           />
-
           <input
             type="text"
             name="number"
             placeholder="Your mobile number"
-            class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
             required
+            style="width: 100%; background-color: #f4f4f5; border: none; border-radius: 14px; padding: 14px 16px; font-size: 14px; color: #18181b; outline: none;"
           />
-
           <textarea
-            rows="6"
+            rows="5"
             name="message"
             placeholder="Write your message..."
-            class="w-full p-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition resize-none"
             required
+            style="width: 100%; background-color: #f4f4f5; border: none; border-radius: 14px; padding: 14px 16px; font-size: 14px; color: #18181b; outline: none; resize: none;"
           ></textarea>
 
           <button
             type="submit"
-            class="cta-btn inline-flex items-center justify-center w-full gap-3 bg-orange-500 text-white font-semibold px-5 py-3 md:px-6 md:py-3 rounded-md overflow-hidden"
+            style="
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              background-color: #09090b;
+              color: #ffffff;
+              font-size: 15px;
+              font-weight: 500;
+              padding: 14px 24px;
+              border-radius: 36px;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              box-shadow:
+                rgba(255,255,255,0.5) 0px 0.5px 0px 0px inset,
+                rgba(117,123,133,0.4) 0px 9px 14px -5px inset,
+                rgb(44,46,52) 0px 0px 0px 1.5px,
+                rgba(0,0,0,0.14) 0px 4px 6px 0px;
+              transition: opacity 0.2s ease;
+            "
+            onmouseover="this.style.opacity='0.88'"
+            onmouseout="this.style.opacity='1'"
           >
-            Send Message
+            Send Message →
           </button>
         </form>
       </div>
+
     </div>
   </div>
 </section>
 
 <script is:inline>
-  var d = document,
-    w = "https://tally.so/widgets/embed.js",
+  var d = document, w = "https://tally.so/widgets/embed.js",
     v = function () {
-      if (typeof Tally !== "undefined") {
-        Tally.loadEmbeds();
-      } else {
-        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(
-          function (e) {
-            e.src = e.dataset.tallySrc;
-          },
-        );
-      }
+      if (typeof Tally !== "undefined") { Tally.loadEmbeds(); }
+      else { d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) { e.src = e.dataset.tallySrc; }); }
     };
-
-  if (typeof Tally !== "undefined") {
-    v();
-  } else if (d.querySelector('script[src="' + w + '"]') == null) {
-    var s = d.createElement("script");
-    s.src = w;
-    s.onload = v;
-    s.onerror = v;
-    d.body.appendChild(s);
+  if (typeof Tally !== "undefined") { v(); }
+  else if (d.querySelector('script[src="' + w + '"]') == null) {
+    var s = d.createElement("script"); s.src = w; s.onload = v; s.onerror = v; d.body.appendChild(s);
   }
 </script>

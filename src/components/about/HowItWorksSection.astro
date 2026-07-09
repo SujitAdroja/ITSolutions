@@ -1,80 +1,46 @@
 ---
 export const processSteps = [
-  {
-    id: "01",
-    title: "Frame the Problem",
-    image: "/about/hiw-card-image.png",
-  },
-  {
-    id: "02",
-    title: "Analysis and Review",
-    image: "/about/hiw-card-image.png",
-  },
-  {
-    id: "03",
-    title: "Collect the Raw Data",
-    image: "/about/hiw-card-image.png",
-  },
-  {
-    id: "04",
-    title: "Explore the Data",
-    image: "/about/hiw-card-image.png",
-  },
-  {
-    id: "05",
-    title: "Perform Update",
-    image: "/about/hiw-card-image.png",
-  },
-  {
-    id: "06",
-    title: "Communicate Results",
-    image: "/about/hiw-card-image.png",
-  },
+  { id: "01", title: "Frame the Problem", image: "/about/hiw-card-image.png" },
+  { id: "02", title: "Analysis and Review", image: "/about/hiw-card-image.png" },
+  { id: "03", title: "Collect the Raw Data", image: "/about/hiw-card-image.png" },
+  { id: "04", title: "Explore the Data", image: "/about/hiw-card-image.png" },
+  { id: "05", title: "Perform Update", image: "/about/hiw-card-image.png" },
+  { id: "06", title: "Communicate Results", image: "/about/hiw-card-image.png" },
 ];
 ---
 
-<section class="bg-[#f8f8f8] py-24">
-  <div class="max-w-[1400px] mx-auto px-6">
-    <div class="text-center mb-20">
-      <div class="flex items-center justify-center gap-4 reveal">
-        <img
-          src="/homepage/star-icon.png"
-          alt="start icon image"
-          class="animate-spin-slow"
-        />
-        <span class="text-[#ff6b1a] uppercase text-sm"> How Its Work </span>
-      </div>
+<section style="background-color: #ffffff; padding: 80px 0;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-      <h2 class="text-4xl font-bold mt-4 reveal">
-        Our Process For Customize Software  
+    <div class="text-center reveal" style="margin-bottom: 48px;">
+      <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
+        How It Works
+      </span>
+      <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
+        Our Process For <span style="color: #2563eb;">Custom Software</span>
       </h2>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-20 items-center">
-      <img src="/about/how-it-work.png" class="w-full reveal-left" />
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-      <div class="space-y-4">
-        {
-          processSteps.map((step) => (
-            <div class="bg-white flex shadow-sm reveal-right">
-              <div class="bg-[#EDFCFF] px-6 flex items-center justify-center">
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  class="w-14 h-14 object-contain"
-                />
-              </div>
-              <div class="p-4 self-center">
-                <span class="font-semibold text-xl">{step.title}</span>
-              </div>
-
-              <span class="align-self-end text-[70px] font-bold text-gray-100">
-                {step.id}
-              </span>
-            </div>
-          ))
-        }
+      <!-- Image -->
+      <div class="reveal-left">
+        <img src="/about/how-it-work.png" style="width: 100%; border-radius: 36px;" alt="How it works" />
       </div>
+
+      <!-- Steps -->
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        {processSteps.map((step) => (
+          <div class="reveal-right" style="background-color: #f4f4f5; border-radius: 28px; padding: 16px 20px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 48px; height: 48px; border-radius: 40px; background-color: #ffffff; border: 1px solid #ececee; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <img src={step.image} alt={step.title} style="width: 28px; height: 28px; object-fit: contain;" />
+            </div>
+            <span style="font-size: 16px; font-weight: 600; color: #09090b; flex: 1;">{step.title}</span>
+            <span style="font-size: 28px; font-weight: 700; color: #ececee; line-height: 1;">{step.id}</span>
+          </div>
+        ))}
+      </div>
+
     </div>
   </div>
 </section>

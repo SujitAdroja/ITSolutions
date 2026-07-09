@@ -1,52 +1,20 @@
 ---
-import { Mail, PhoneIncoming } from "lucide-react"
-import { contactCards } from "./contactData"
 ---
 
-<section class="py-12 mb-6 mx-auto">
-  <div class="text-center mb-16">
-     <span class="inline-flex items-center rounded-full bg-[#fff4ec] px-4 py-2 text-sm font-semibold tracking-[0.18em] uppercase text-[#ff6b1a] mb-5">
-Start the Conversation
-        </span>
-    <h2 class="text-4xl font-bold text-[#232323] reveal">
-      Get in Touch With Our Team
-    </h2>
+<section style="background-color: #f4f4f5; padding: 0 0 64px;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-    <p class="mt-5 text-[#6d6d6d] max-w-3xl mx-auto leading-relaxed reveal">
-      Reach out for project enquiries, service support, partnerships, or general information. Share your requirements and our team will respond with the most relevant next step.
-    </p>
-  </div>
-<!-- 
-    <div class="grid md:grid-cols-3 gap-8">
-
-      {
-        contactCards.map((item) => (
-          <div
-            class="bg-white border border-[#ececec] p-4 md:p-8 flex flex-col md:flex-row md:items-center gap-2 md:gap-6 reveal"
-          >
-            <div
-              class="flex md:items-center md:justify-center "
-            >
-                {item.title!=="Call Us" && <Mail className="w-8 h-8 text-[#ff6b1a]"
-      strokeWidth={2}/>}
-              {item.title==="Call Us" && <PhoneIncoming className="w-8 h-8 text-[#ff6b1a]"
-      strokeWidth={2}/>}
-            </div>
-
-            <div>
-              <h3 class="font-bold text-xl mb-2 ">
-                {item.title}
-              </h3>
-
-              <p class="text-[#6d6d6d]">
-                {item.value}
-              </p>
-            </div>
-          </div>
-        ))
-      }
-
+    <div class="text-center reveal" style="margin-bottom: 48px;">
+      <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
+        Start the Conversation
+      </span>
+      <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
+        Get in Touch With <span style="color: #2563eb;">Our Team</span>
+      </h2>
+      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 12px; max-width: 520px; margin-left: auto; margin-right: auto;">
+        Share your requirements and our team will respond with the most relevant next step.
+      </p>
     </div>
- -->
 
+  </div>
 </section>

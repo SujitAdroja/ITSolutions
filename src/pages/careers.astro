@@ -3,158 +3,182 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Careers">
-  <section class="relative overflow-hidden">
-    <img
-      src="/homepage/page-title-bg.jpg"
-      alt="Background Image"
-      class="absolute w-full h-70 object-cover scale-190 object-[20%_10%]"
-    />
-    <div class="relative max-w-[1400px] mx-auto px-6 py-10 md:py-20">
-      <h2 class="text-center text-black text-4xl md:text-5xl font-bold mb-4">
-        Careers
-      </h2>
-      <div class="text-center">
-        <span class="text-gray-500 hover:text-orange-500"><a href="/">Home</a></span>
-        <span class="text-orange-500"> &gt; </span>
-        <span>Careers</span>
-      </div>
+
+  <!-- ── Hero ── -->
+  <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+      <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
+        <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
+        <span style="margin: 0 6px;">›</span>
+        <span style="color: #09090b;">Careers</span>
+      </p>
+      <h1 style="font-size: 56px; font-weight: 700; color: #09090b; line-height: 1.12; margin-bottom: 16px;">
+        Join Our <span style="color: #2563eb;">Team</span>
+      </h1>
+      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; max-width: 480px;">
+        Submit your profile and let us know where you want to contribute — across marketing, accounting, and software development.
+      </p>
     </div>
   </section>
 
-  <section class="relative overflow-hidden py-24 bg-white">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,107,26,0.08),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(34,22,56,0.06),transparent_28%)]"></div>
+  <!-- ── Form + Image ── -->
+  <section style="background-color: #f4f4f5; padding: 0 0 80px;">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
 
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <span class="inline-flex items-center rounded-full bg-[#fff4ec] px-4 py-2 text-sm font-semibold tracking-[0.18em] uppercase text-[#ff6b1a] mb-5">
-          Careers & Opportunities
-        </span>
-        <h2 class="text-4xl md:text-5xl font-bold text-[#25253b] mb-5">
-          Build your next role with a focused and professional team.
-        </h2>
-        <p class="text-[#6f6f84] text-lg leading-relaxed">
-          Submit your profile through the form and let us know the area where you want to contribute. We support careers across marketing, accounting, and software development.
-        </p>
-      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
 
-      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-start">
-        <div class="bg-white border border-[#ececec] shadow-[0_20px_60px_rgba(17,17,26,0.08)] rounded-lg p-6 md:p-10 reveal-left">
-          <div class="mb-8">
-            <h3 class="text-3xl font-bold text-[#25253b] mb-3">Submit Your CV</h3>
-            <p class="text-[#6f6f84] max-w-xl">
-              Share your details below. We review applications carefully and reach out when there is a suitable match.
+        <!-- Left: Content + image card -->
+        <div style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 16px; display: flex; flex-direction: column; gap: 0;">
+
+          <!-- Framed image -->
+          <div style="border-radius: 24px; overflow: hidden; flex-shrink: 0; height: 260px;">
+            <img
+              src="/services/career-hero.png"
+              alt="Careers at EchoEleganceLTD"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+            />
+          </div>
+
+          <!-- Content -->
+          <div style="padding: 28px 20px 20px;">
+            <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 14px;">
+              Join Our Team
+            </span>
+            <h3 style="font-size: 24px; font-weight: 700; color: #09090b; line-height: 1.3; margin-bottom: 10px;">
+              Work with a team that values <span style="color: #2563eb;">clarity and quality.</span>
+            </h3>
+            <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.65; margin-bottom: 20px;">
+              We welcome professionals who want to contribute to accounting, marketing, and software projects with a structured and dependable approach.
+            </p>
+
+            <!-- Role badges -->
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              {['Accounting', 'Digital Marketing', 'Software Development', 'QA & Testing', 'UI / UX Design'].map(role => (
+                <span style="background-color: #f4f4f5; color: #52525b; border: 1px solid #ececee; border-radius: 12px; padding: 5px 12px; font-size: 12px; font-weight: 500;">
+                  {role}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form card -->
+        <div style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 40px 36px; display: flex; flex-direction: column; gap: 0;">
+
+          <div style="margin-bottom: 28px;">
+            <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 14px;">
+              Apply Now
+            </span>
+            <h2 style="font-size: 28px; font-weight: 700; color: #09090b; line-height: 1.25; margin-bottom: 8px;">
+              Submit Your CV
+            </h2>
+            <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.6;">
+              We review applications carefully and reach out when there is a suitable match.
             </p>
           </div>
 
           <form
-            class="space-y-4"
             action="https://formsubmit.co/bonebreaker712003@gmail.com"
             method="POST"
             enctype="multipart/form-data"
+            style="display: flex; flex-direction: column; gap: 12px;"
           >
             <input
               type="text"
               name="name"
               placeholder="Your name"
-              class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
+              style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; box-sizing: border-box;"
+              class="career-input"
             />
-
             <input
               type="email"
               name="email"
               placeholder="Your email address"
-              class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
+              style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; box-sizing: border-box;"
+              class="career-input"
             />
-
-            <input
-              type="text"
-              name="mobile"
-              placeholder="Your mobile number"
-              class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
-            />
-
-            <input
-              type="text"
-              name="job position"
-              placeholder="Job position"
-              class="w-full h-14 px-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition"
-            />
-
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input
+                type="text"
+                name="mobile"
+                placeholder="Mobile number"
+                style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; box-sizing: border-box;"
+                class="career-input"
+              />
+              <input
+                type="text"
+                name="job position"
+                placeholder="Job position"
+                style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; box-sizing: border-box;"
+                class="career-input"
+              />
+            </div>
             <textarea
-              rows="5"
+              rows="4"
               name="message"
               placeholder="Write your message..."
-              class="w-full p-4 rounded-lg bg-[#f7f7f7] border border-[#ececec] outline-none focus:border-[#ff6b1a] transition resize-none"
+              style="width: 100%; padding: 14px 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; resize: none; box-sizing: border-box; line-height: 1.6;"
+              class="career-input"
             ></textarea>
 
+            <!-- Upload zone -->
             <label
               for="resume"
-              class="h-24 rounded-lg border border-dashed border-[#ff6b1a]/45 bg-[#fff8f3] flex items-center justify-center cursor-pointer text-[#4b4b66] transition hover:bg-[#fff2e9]"
+              id="upload-zone"
+              style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; height: 88px; border-radius: 14px; border: 1.5px dashed #d4d4d8; background-color: #f4f4f5; cursor: pointer; transition: border-color 0.2s ease, background-color 0.2s ease;"
             >
-              <span class="text-center px-4">
-                <span id="file-name" class="block font-medium">Browse or drop your CV (PDF only)</span>
-                <span class="block text-sm text-[#8a8aa3] mt-1">Recommended file type: PDF</span>
-              </span>
-
-              <input
-                id="resume"
-                type="file"
-                name="resume"
-                accept=".pdf,application/pdf"
-                required
-                class="hidden"
-              />
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 13V4M10 4L7 7M10 4l3 3" stroke="#a1a1aa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 14v1a2 2 0 002 2h10a2 2 0 002-2v-1" stroke="#a1a1aa" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+              <span id="file-name" style="font-size: 13px; font-weight: 500; color: #71717a;">Browse or drop your CV (PDF only)</span>
+              <span style="font-size: 11px; color: #a1a1aa;">Recommended file type: PDF</span>
+              <input id="resume" type="file" name="resume" accept=".pdf,application/pdf" required class="hidden" />
             </label>
 
             <button
               type="submit"
-              class="w-full text-center cta-btn inline-flex items-center justify-center gap-3 bg-orange-500 text-white font-semibold px-5 py-3 md:px-6 md:py-3 rounded-md overflow-hidden"
+              style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 20px; background-color: #09090b; color: #ffffff; font-size: 15px; font-weight: 500; border-radius: 36px; border: none; cursor: pointer; box-shadow: rgba(255,255,255,0.5) 0px 0.5px 0px 0px inset, rgba(117,123,133,0.4) 0px 9px 14px -5px inset, rgb(44,46,52) 0px 0px 0px 1.5px, rgba(0,0,0,0.14) 0px 4px 6px 0px; transition: opacity 0.2s ease;"
+              class="submit-btn"
             >
-              Send Message
+              Send Application
             </button>
           </form>
         </div>
 
-        <div class="space-y-6 reveal-right h-full">
-          <div class="overflow-hidden h-full rounded-lg border border-[#ececec] bg-[#fafafa] shadow-[0_20px_60px_rgba(17,17,26,0.08)]">
-            <div class="relative h-full">
-              <img
-                src="/services/career-hero.png"
-                alt="Careers illustration"
-                class="absolute inset-0 h-[200px] md:h-full w-full object-cover object-center"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#221638]/85 via-[#221638]/25 to-transparent"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                <p class="text-sm uppercase tracking-[0.2em] text-white/70 mb-2">Join Our Team</p>
-                <h3 class="text-2xl md:text-3xl font-bold mb-3">Work with a team that values clarity and quality.</h3>
-                <p class="text-white/78 leading-relaxed max-w-xl">
-                  We welcome professionals who want to contribute to accounting, marketing, and software projects with a structured and dependable approach.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
+
 </MainLayout>
 
+<style>
+  .career-input:focus {
+    border-color: #09090b !important;
+    background-color: #ffffff !important;
+  }
+  #upload-zone:hover {
+    border-color: #a1a1aa !important;
+    background-color: #ececee !important;
+  }
+  .submit-btn:hover {
+    opacity: 0.88;
+  }
+</style>
+
 <script>
-  const resumeInput = document.getElementById("resume");
+  const resumeInput = document.getElementById("resume") as HTMLInputElement;
   const fileName = document.getElementById("file-name");
 
   resumeInput?.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-
+    const file = (e.target as HTMLInputElement).files?.[0];
     if (!file) return;
-
     if (file.type !== "application/pdf") {
       alert("Please upload a PDF file only.");
       resumeInput.value = "";
-      fileName.textContent = "Browse or drop your CV (PDF only)";
+      if (fileName) fileName.textContent = "Browse or drop your CV (PDF only)";
       return;
     }
-
-    fileName.textContent = file.name;
+    if (fileName) fileName.textContent = file.name;
   });
 </script>

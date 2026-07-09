@@ -2,53 +2,62 @@
 
 ---
 
-<section class="relative overflow-hidden" style="background-color: #dff5fb;">
-  <div class="max-w-[1400px] mx-auto px-6 lg:px-8 pt-16 pb-32 lg:pt-20 lg:pb-40">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
-      <!-- Left: Text -->
-      <div class="reveal-left">
+<section style="background-color: #f4f4f5;">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Left: Headline + CTA -->
+      <div class="reveal-left order-2 lg:order-1">
         <h1
-          class="text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-4"
+          style="font-size: 56px; font-weight: 700; line-height: 1.12; color: #09090b; letter-spacing: normal;"
+          class="mb-6"
         >
-          Innovative Solution To Drive Your Business Forward
+          Innovative Solutions To Drive Your Business
+          <span style="color: #2563eb;">Forward</span>
         </h1>
-        <p class="text-gray-500 text-lg mb-8 max-w-md leading-relaxed">
+        <p
+          style="font-size: 16px; font-weight: 400; line-height: 1.5; color: #18181b;"
+          class="mb-8 max-w-md"
+        >
           Delivering innovative technology solutions that help businesses scale, automate, and grow.
         </p>
         <a
           href="/contact-us"
-          class="cta-btn inline-flex items-center gap-3 bg-orange-500 text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md overflow-hidden"
+          style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #09090b;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 36px;
+            text-decoration: none;
+            box-shadow:
+              rgba(255,255,255,0.5) 0px 0.5px 0px 0px inset,
+              rgba(117,123,133,0.4) 0px 9px 14px -5px inset,
+              rgb(44,46,52) 0px 0px 0px 1.5px,
+              rgba(0,0,0,0.14) 0px 4px 6px 0px;
+            transition: opacity 0.2s ease;
+          "
+          onmouseover="this.style.opacity='0.88'"
+          onmouseout="this.style.opacity='1'"
         >
-          <span class="relative z-10">Get Started</span>
-
-          <span class="relative z-10 transition-transform duration-300">
-            →
-          </span>
+          Get Started
+          <span style="transition: transform 0.2s ease;" class="arrow">→</span>
         </a>
       </div>
 
       <!-- Right: Illustration -->
-      <div class="flex justify-center lg:justify-end reveal-right">
+      <div class="flex justify-center lg:justify-end reveal-right order-1 lg:order-2">
         <img
           src="/homepage/banner-img1.png"
           alt="Business Solutions Illustration"
           class="w-full max-w-md lg:max-w-lg h-100 lg:h-150 object-contain md:scale-130"
         />
       </div>
-    </div>
-  </div>
 
-  <!-- Wave bottom -->
-  <div class="absolute bottom-0 left-0 right-0">
-    <svg
-      viewBox="0 0 1440 80"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-full block"
-    >
-      <path
-        fill="#ffffff"
-        d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
-      ></path>
-    </svg>
+    </div>
   </div>
 </section>
