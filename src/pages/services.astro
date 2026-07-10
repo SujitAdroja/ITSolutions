@@ -104,15 +104,15 @@ export const services = [
   <!-- Page Hero -->
   <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
     <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; margin-bottom: 12px;" class="reveal">
+      <p class="text-xs md:text-sm reveal" style="font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
         <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
         <span style="margin: 0 6px;">›</span>
         <span style="color: #09090b;">Services</span>
       </p>
-      <h1 style="font-size: 56px; font-weight: 700; color: #09090b; line-height: 1.12;" class="reveal">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold reveal" style="color: #09090b; line-height: 1.12;">
         Our <span style="color: #2563eb;">Services</span>
       </h1>
-      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;" class="reveal">
+      <p class="text-sm md:text-base reveal" style="font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;">
         A coordinated set of services — accounting, marketing, and software development — built to support how businesses actually operate.
       </p>
     </div>
@@ -124,7 +124,7 @@ export const services = [
 
       <!-- <div class="text-center reveal" style="margin-bottom: 48px;">
         <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
-          Services We Can <span style="color: #2563eb;">Help You With</span>
+          Services We Can <span style="color: #a1a1aa;">Help You With</span>
         </h2>
       </div> -->
 
@@ -138,7 +138,7 @@ export const services = [
             </div>
 
             <!-- Title -->
-            <h3 style="font-size: 20px; font-weight: 600; color: #09090b; line-height: 1.35;">
+            <h3 class="text-xl md:text-2xl font-semibold" style="color: #09090b; line-height: 1.35;">
               {service.title}
             </h3>
 
@@ -147,7 +147,7 @@ export const services = [
               {service.items.map((item) => (
                 <li style="display: flex; align-items: flex-start; gap: 10px;">
                   <div style="width: 6px; height: 6px; border-radius: 50%; background-color: #3f3f46; margin-top: 6px; flex-shrink: 0;"></div>
-                  <span style="font-size: 14px; font-weight: 400; color: #52525b; line-height: 1.56;">{item}</span>
+                  <span class="text-xs md:text-sm" style="font-weight: 400; color: #52525b; line-height: 1.56;">{item}</span>
                 </li>
               ))}
             </ul>
@@ -166,7 +166,7 @@ export const services = [
         <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
           Our Solutions
         </span>
-        <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
+        <h2 class="text-3xl md:text-4xl font-bold" style="color: #09090b; line-height: 1.25;">
           Generic Modules That <span style="color: #2563eb;">Support Every Service</span>
         </h2>
       </div>
@@ -175,10 +175,10 @@ export const services = [
       <div class="modules-grid">
         {modules.map((item) => (
           <div class="module-cell">
-            <h3 style="font-size: 18px; font-weight: 600; color: #09090b; line-height: 1.35; margin-bottom: 10px;">
+            <h3 class="text-lg md:text-xl font-semibold" style="color: #09090b; line-height: 1.35; margin-bottom: 10px;">
               {item.title}
             </h3>
-            <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.65;">
+            <p class="text-sm md:text-base" style="font-weight: 400; color: #71717a; line-height: 1.65;">
               {item.description}
             </p>
           </div>
@@ -195,11 +195,11 @@ export const services = [
 
         <!-- Content -->
         <div style="position: relative; z-index: 1; max-width: 520px;">
-          <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.2; margin-bottom: 16px;">
+          <h2 class="text-3xl md:text-4xl font-bold" style="color: #ffffff; line-height: 1.2; margin-bottom: 16px;">
             Ready to Start Your<br />
             <span style="color: rgba(255,255,255,0.55);">Project With Us?</span>
           </h2>
-          <p style="font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 32px;">
+          <p class="text-sm md:text-base" style="font-weight: 400; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 32px;">
             With proven delivery across multiple sectors, we make business solutions accessible, practical, and built to last.
           </p>
           
