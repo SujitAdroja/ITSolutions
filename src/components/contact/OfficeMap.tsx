@@ -14,8 +14,8 @@ const markerIcon = new L.Icon({
 const locations = [
   {
     name: "London",
-    address: "35 Sidmouth Close",
-    position: [51.6298, -0.3966],
+    address: "Unit 1, Liberty Centre, Mount Pleasant, Wembley",
+    position: [51.556, -0.2797],
   },
   {
     name: "India",

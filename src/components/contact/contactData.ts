@@ -19,9 +19,9 @@ export const contactCards = [
 export const officeLocations = [
   {
     name: "London",
-    address: "35 Sidmouth Close, Watford - WD19 7QN",
-    lat: 51.6298,
-    lng: -0.3966,
+    address: "Unit 1, Liberty Centre, Mount Pleasant, Wembley - HA0 1TX",
+    lat: 51.556,
+    lng: -0.2797,
   },
   {
     name: "India",
