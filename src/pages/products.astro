@@ -95,75 +95,60 @@ export const products = [
 ];
 ---
 
-<MainLayout title="Products — EchoEleganceLTD">
+<MainLayout
+  title="Products | SFA, DMS, POS, E-Commerce & Accounting Software UK — EchoEleganceLtd.uk"
+  description="Ready-to-deploy business software from a UK quick-delivery IT company: Sales Force Automation, Distribution Management, POS, E-Commerce and Accounting software — demo ready and customisable."
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Products', href: '/products' }]}
+>
 
-  <!-- Page Hero -->
-  <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <p class="text-xs md:text-sm" style="font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
-        <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
-        <span style="margin: 0 6px;">›</span>
-        <span style="color: #09090b;">Products</span>
-      </p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold" style="color: #09090b; line-height: 1.12;">
-        Our <span style="color: #2563eb;">Products</span>
-      </h1>
-      <p class="text-sm md:text-base" style="font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;">
+  <section class="page-hero">
+    <div class="container-x py-14 md:py-20">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>Products</span>
+      </nav>
+      <h1 class="h-display">Our <span class="text-gradient">Products</span></h1>
+      <p class="lead mt-5 max-w-xl">
         Purpose-built software tools that help businesses track, manage, and grow across every operational layer.
       </p>
     </div>
   </section>
 
-  <!-- Products Grid -->
-  <section style="background-color: #f4f4f5; padding: 0 0 80px;">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+  <section class="section bg-bg-alt">
+    <div class="container-x">
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {products.map((product) => (
-          <article
-            class="reveal product-card"
-            style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; overflow: hidden; display: flex; flex-direction: column;"
-          >
-            <!-- Image tile with overlay badge -->
-            <div style="position: relative; overflow: hidden; border-radius: 36px 36px 0 0;">
+          <article class="card card-hover reveal group flex flex-col overflow-hidden">
+            <div class="relative overflow-hidden">
               <img
                 src={product.image}
                 alt={product.title}
-                style="width: 100%; height: 220px; object-fit: cover; display: block;"
+                class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
               />
-              <!-- Dark overlay badge -->
-              <div style="position: absolute; bottom: 14px; left: 14px;">
-                <span style={`
-                  background: transparent;
-                  color: #ffffff;
-                  border: 1px solid ${product.badgeType === 'demo' ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.35)'};
-                  border-radius: 12px;
-                  padding: 4px 10px;
-                  font-size: 12px;
-                  font-weight: 500;
-                  backdrop-filter: blur(8px);
-                `}>
-                  {product.badge}
-                </span>
-              </div>
+              <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+              <span
+                class:list={[
+                  'absolute bottom-3.5 left-3.5 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur',
+                  product.badgeType === 'demo'
+                    ? 'bg-emerald-500/90 text-white'
+                    : 'bg-white/90 text-navy',
+                ]}
+              >
+                <span class:list={['size-1.5 rounded-full', product.badgeType === 'demo' ? 'bg-white' : 'bg-brand']}></span>
+                {product.badge}
+              </span>
             </div>
 
-            <!-- Content -->
-            <div style="padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
-              <h3 class="text-xl md:text-2xl font-semibold" style="color: #09090b; line-height: 1.35;">
-                {product.title}
-              </h3>
-
-              <p class="text-sm md:text-base" style="font-weight: 400; color: #71717a; line-height: 1.56;">
-                {product.description}
-              </p>
-
-              <!-- Feature list -->
-              <ul style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+            <div class="flex flex-1 flex-col gap-3 p-6 md:p-7">
+              <h3 class="text-xl font-semibold leading-snug text-fg">{product.title}</h3>
+              <p class="text-sm leading-relaxed text-muted md:text-[15px]">{product.description}</p>
+              <ul class="mt-1 flex flex-col gap-2">
                 {product.features.map((feature) => (
-                  <li style="display: flex; align-items: flex-start; gap: 10px;">
-                    <div style="width: 6px; height: 6px; border-radius: 50%; background-color: #3f3f46; margin-top: 6px; flex-shrink: 0;"></div>
-                    <span class="text-xs md:text-sm" style="font-weight: 400; color: #52525b; line-height: 1.56;">{feature}</span>
+                  <li class="flex items-start gap-2.5 text-sm text-fg-2">
+                    <svg class="mt-0.5 shrink-0 text-brand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    {feature}
                   </li>
                 ))}
               </ul>
@@ -171,17 +156,7 @@ export const products = [
           </article>
         ))}
       </div>
-
     </div>
   </section>
 
 </MainLayout>
-
-<style>
-  .product-card {
-    transition: transform 0.25s ease;
-  }
-  .product-card:hover {
-    transform: translateY(-6px);
-  }
-</style>

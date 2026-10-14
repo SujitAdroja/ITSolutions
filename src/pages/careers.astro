@@ -1,78 +1,65 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+const roles = ['Accounting', 'Digital Marketing', 'Software Development', 'QA & Testing', 'UI / UX Design'];
 ---
 
-<MainLayout title="Careers">
+<MainLayout
+  title="Careers | Developer & IT Jobs in the UK — EchoEleganceLtd.uk"
+  description="Join EchoEleganceLtd.uk, a fast-growing UK staff augmentation and IT delivery company. We hire React, Angular, Node.js, Flutter, UI/UX, QA, marketing and accounting professionals. Submit your CV today."
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Careers', href: '/careers' }]}
+>
 
-  <!-- ── Hero ── -->
-  <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <p class="text-xs md:text-sm" style="font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
-        <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
-        <span style="margin: 0 6px;">›</span>
-        <span style="color: #09090b;">Careers</span>
-      </p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold" style="color: #09090b; line-height: 1.12; margin-bottom: 16px;">
-        Join Our <span style="color: #2563eb;">Team</span>
-      </h1>
-      <p class="text-sm md:text-base" style="font-weight: 400; color: #71717a; line-height: 1.5; max-width: 480px;">
+  <section class="page-hero">
+    <div class="container-x py-14 md:py-20">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>Careers</span>
+      </nav>
+      <h1 class="h-display">Join Our <span class="text-gradient">Team</span></h1>
+      <p class="lead mt-5 max-w-xl">
         Submit your profile and let us know where you want to contribute — across marketing, accounting, and software development.
       </p>
     </div>
   </section>
 
-  <!-- ── Form + Image ── -->
-  <section style="background-color: #f4f4f5; padding: 0 0 80px;">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+  <section class="section bg-bg-alt">
+    <div class="container-x">
+      <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-
-        <!-- Left: Content + image card -->
-        <div style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 16px; display: flex; flex-direction: column; gap: 0;">
-
-          <!-- Framed image -->
-          <div style="border-radius: 24px; overflow: hidden; flex-shrink: 0; height: 260px;">
+        <!-- Info card -->
+        <div class="card reveal-left flex flex-col p-4">
+          <div class="h-56 shrink-0 overflow-hidden rounded-2xl sm:h-64">
             <img
               src="/services/career-hero.png"
-              alt="Careers at EchoEleganceLTD"
-              style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+              alt="Careers at EchoElegance"
+              class="h-full w-full object-cover"
+              loading="lazy"
             />
           </div>
-
-          <!-- Content -->
-          <div style="padding: 28px 20px 20px;">
-            <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 14px;">
-              Join Our Team
-            </span>
-            <h3 class="text-2xl md:text-3xl font-bold" style="color: #09090b; line-height: 1.3; margin-bottom: 10px;">
-              Work with a team that values <span style="color: #2563eb;">clarity and quality.</span>
-            </h3>
-            <p class="text-sm md:text-base" style="font-weight: 400; color: #71717a; line-height: 1.65; margin-bottom: 20px;">
+          <div class="p-4 pt-7 sm:p-6 sm:pt-8">
+            <span class="eyebrow">Join Our Team</span>
+            <h2 class="mt-4 text-2xl font-bold leading-snug text-fg md:text-3xl">
+              Work with a team that values <span class="text-gradient">clarity and quality.</span>
+            </h2>
+            <p class="mt-3 text-sm leading-relaxed text-muted md:text-base">
               We welcome professionals who want to contribute to accounting, marketing, and software projects with a structured and dependable approach.
             </p>
-
-            <!-- Role badges -->
-            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-              {['Accounting', 'Digital Marketing', 'Software Development', 'QA & Testing', 'UI / UX Design'].map(role => (
-                <span style="background-color: #f4f4f5; color: #52525b; border: 1px solid #ececee; border-radius: 12px; padding: 5px 12px; font-size: 12px; font-weight: 500;">
-                  {role}
-                </span>
+            <div class="mt-5 flex flex-wrap gap-2">
+              {roles.map((role) => (
+                <span class="rounded-full border border-line bg-bg-alt px-3 py-1.5 text-xs font-medium text-fg-2">{role}</span>
               ))}
             </div>
           </div>
         </div>
 
-        <!-- Right: Form card -->
-        <div style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 40px 36px; display: flex; flex-direction: column; gap: 0;">
-
-          <div style="margin-bottom: 28px;">
-            <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 14px;">
-              Apply Now
-            </span>
-            <h2 class="text-2xl md:text-3xl font-bold" style="color: #09090b; line-height: 1.25; margin-bottom: 8px;">
-              Submit Your CV
-            </h2>
-            <p class="text-sm md:text-base" style="font-weight: 400; color: #71717a; line-height: 1.6;">
+        <!-- Form card -->
+        <div class="card reveal-right flex flex-col p-6 sm:p-8 md:p-10">
+          <div class="mb-7">
+            <span class="eyebrow">Apply Now</span>
+            <h2 class="mt-4 text-2xl font-bold text-fg md:text-3xl">Submit Your CV</h2>
+            <p class="mt-2 text-sm leading-relaxed text-muted md:text-base">
               We review applications carefully and reach out when there is a suitable match.
             </p>
           </div>
@@ -81,67 +68,28 @@ import MainLayout from "../layouts/MainLayout.astro";
             action="https://formsubmit.co/runa@echoeleganceltd.uk"
             method="POST"
             enctype="multipart/form-data"
-            style="display: flex; flex-direction: column; gap: 12px;"
+            class="flex flex-col gap-3"
           >
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; box-sizing: border-box;"
-              class="career-input"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email address"
-              style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; box-sizing: border-box;"
-              class="career-input"
-            />
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input
-                type="text"
-                name="mobile"
-                placeholder="Mobile number"
-                style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; box-sizing: border-box;"
-                class="career-input"
-              />
-              <input
-                type="text"
-                name="job position"
-                placeholder="Job position"
-                style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; box-sizing: border-box;"
-                class="career-input"
-              />
+            <input type="text" name="name" placeholder="Your name" class="input" required />
+            <input type="email" name="email" placeholder="Your email address" class="input" required />
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <input type="tel" name="mobile" placeholder="Mobile number" class="input" />
+              <input type="text" name="job position" placeholder="Job position" class="input" />
             </div>
-            <textarea
-              rows="4"
-              name="message"
-              placeholder="Write your message..."
-              style="width: 100%; padding: 14px 16px; border-radius: 14px; background-color: #f4f4f5; border: 1px solid #ececee; outline: none; font-size: 14px; color: #09090b; resize: none; box-sizing: border-box; line-height: 1.6;"
-              class="career-input"
-            ></textarea>
+            <textarea rows="4" name="message" placeholder="Write your message..." class="input resize-none"></textarea>
 
-            <!-- Upload zone -->
-            <label
-              for="resume"
-              id="upload-zone"
-              style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; height: 88px; border-radius: 14px; border: 1.5px dashed #d4d4d8; background-color: #f4f4f5; cursor: pointer; transition: border-color 0.2s ease, background-color 0.2s ease;"
-            >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 13V4M10 4L7 7M10 4l3 3" stroke="#a1a1aa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 14v1a2 2 0 002 2h10a2 2 0 002-2v-1" stroke="#a1a1aa" stroke-width="1.6" stroke-linecap="round"/>
+            <label for="resume" class="upload-zone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 16V4m0 0-4 4m4-4 4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
               </svg>
-              <span id="file-name" style="font-size: 13px; font-weight: 500; color: #71717a;">Browse or drop your CV (PDF only)</span>
-              <span style="font-size: 11px; color: #a1a1aa;">Recommended file type: PDF</span>
-              <input id="resume" type="file" name="resume" accept=".pdf,application/pdf" required class="hidden" />
+              <span id="file-name" class="text-sm font-medium text-fg-2">Browse or drop your CV (PDF only)</span>
+              <span class="text-xs text-muted-2">Recommended file type: PDF</span>
+              <input id="resume" type="file" name="resume" accept=".pdf,application/pdf" required class="sr-only" />
             </label>
 
-            <button
-              type="submit"
-              style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 20px; background-color: #09090b; color: #ffffff; font-size: 15px; font-weight: 500; border-radius: 36px; border: none; cursor: pointer; box-shadow: rgba(255,255,255,0.5) 0px 0.5px 0px 0px inset, rgba(117,123,133,0.4) 0px 9px 14px -5px inset, rgb(44,46,52) 0px 0px 0px 1.5px, rgba(0,0,0,0.14) 0px 4px 6px 0px; transition: opacity 0.2s ease;"
-              class="submit-btn"
-            >
+            <button type="submit" class="btn-primary mt-2 w-full">
               Send Application
+              <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </form>
         </div>
@@ -153,22 +101,33 @@ import MainLayout from "../layouts/MainLayout.astro";
 </MainLayout>
 
 <style>
-  .career-input:focus {
-    border-color: #09090b !important;
-    background-color: #ffffff !important;
+  .upload-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 96px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1.5px dashed var(--line-strong);
+    background: var(--bg-alt);
+    color: var(--brand);
+    cursor: pointer;
+    text-align: center;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
   }
-  #upload-zone:hover {
-    border-color: #a1a1aa !important;
-    background-color: #ececee !important;
-  }
-  .submit-btn:hover {
-    opacity: 0.88;
+  .upload-zone:hover,
+  .upload-zone:focus-within {
+    border-color: var(--brand);
+    background: var(--brand-soft);
   }
 </style>
 
 <script>
   const resumeInput = document.getElementById("resume") as HTMLInputElement;
   const fileName = document.getElementById("file-name");
+  const defaultText = "Browse or drop your CV (PDF only)";
 
   resumeInput?.addEventListener("change", (e) => {
     const file = (e.target as HTMLInputElement).files?.[0];
@@ -176,7 +135,7 @@ import MainLayout from "../layouts/MainLayout.astro";
     if (file.type !== "application/pdf") {
       alert("Please upload a PDF file only.");
       resumeInput.value = "";
-      if (fileName) fileName.textContent = "Browse or drop your CV (PDF only)";
+      if (fileName) fileName.textContent = defaultText;
       return;
     }
     if (fileName) fileName.textContent = file.name;

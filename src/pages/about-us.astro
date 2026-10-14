@@ -7,31 +7,29 @@ import MainLayout from "../layouts/MainLayout.astro";
 import TestimonialsSection from "../components/home/TestimonialsSection.astro";
 ---
 
-<MainLayout title="About Us — EchoEleganceLTD">
+<MainLayout
+  title="About Us | UK Staff Augmentation & Quick-Delivery IT Company — EchoEleganceLtd.uk"
+  description="Meet EchoEleganceLtd.uk — a London-based IT company trusted across the UK for staff augmentation, fast software delivery, digital marketing and accounting. 50+ developers delivered, 20+ technologies, 100% client satisfaction."
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'About Us', href: '/about-us' }]}
+>
 
-  <!-- Page Hero -->
-  <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <p class="text-xs md:text-sm" style="font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
-        <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
-        <span style="margin: 0 6px;">›</span>
-        <span style="color: #09090b;">About Us</span>
-      </p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold" style="color: #09090b; line-height: 1.12;">
-        About <span style="color: #2563eb;">Us</span>
-      </h1>
-      <p class="text-sm md:text-base" style="font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;">
+  <section class="page-hero">
+    <div class="container-x py-14 md:py-20">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>About Us</span>
+      </nav>
+      <h1 class="h-display">About <span class="text-gradient">Us</span></h1>
+      <p class="lead mt-5 max-w-xl">
         A service-focused company helping businesses improve operations, strengthen digital presence, and deliver better customer experiences.
       </p>
-
     </div>
   </section>
 
-  <section class="page-section">
-    <HeroSection />
-    <StatsSection />
-    <PeopleLoveUsSection />
-    <HowItWorksSection />
-    <TestimonialsSection />
-  </section>
+  <HeroSection />
+  <StatsSection />
+  <PeopleLoveUsSection />
+  <HowItWorksSection />
+  <TestimonialsSection />
 </MainLayout>

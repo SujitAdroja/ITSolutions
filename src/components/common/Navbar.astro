@@ -8,28 +8,33 @@ const navLinks = [
 ];
 
 const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  currentPath === href || (href !== '/' && currentPath.startsWith(href));
 ---
 
-<nav class="navbar-root">
-  <div class="navbar-inner">
+<header class="site-header sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-xl" id="site-header">
+  <nav class="container-x flex h-[72px] items-center justify-between gap-4 lg:h-[88px]" aria-label="Main">
 
-    <!-- Logo -->
-    <a href="/" class="navbar-logo">
-      <img src="/logo/Logo-Img.png" alt="Logo" id="navbar-logo" />
+    <!-- Logo (image has generous vertical whitespace, so the header is taller than usual) -->
+    <a href="/" class="flex shrink-0 items-center" aria-label="EchoEleganceLtd.uk — Home">
+      <img
+        src="/logo/Logo-Img.png"
+        alt="EchoEleganceLtd.uk — IT Solutions"
+        class="brand-logo h-[52px] w-auto object-contain sm:h-[58px] lg:h-[72px]"
+        width="1149"
+        height="257"
+        fetchpriority="high"
+      />
     </a>
 
-    <!-- Desktop Nav Links (centered) -->
-    <ul class="navbar-links">
+    <!-- Desktop links -->
+    <ul class="hidden items-center gap-1 lg:flex">
       {navLinks.map(({ label, href }) => (
         <li>
           <a
             href={href}
-            class:list={[
-              'nav-link',
-              (currentPath === href || (href !== '/' && currentPath.startsWith(href)))
-                ? 'nav-link--active'
-                : ''
-            ]}
+            class:list={['nav-link', { 'nav-link--active': isActive(href) }]}
+            aria-current={isActive(href) ? 'page' : undefined}
           >
             {label}
           </a>
@@ -37,213 +42,217 @@ const currentPath = Astro.url.pathname;
       ))}
     </ul>
 
-    <!-- Right: ghost text + pill CTA -->
-    <div class="navbar-cta">
-      <a href="/contact-us" class="navbar-pill-btn">
+    <!-- Right actions -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <button
+        type="button"
+        class="theme-toggle"
+        data-theme-toggle
+        aria-label="Toggle dark mode"
+        title="Toggle theme"
+      >
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+
+      <a href="/contact-us" class="btn-primary hidden !px-5 !py-2.5 lg:inline-flex">
         Contact Us
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <button
+        type="button"
+        class="theme-toggle lg:hidden"
+        id="mobile-menu-btn"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="icon-open" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg class="icon-close" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu lg:hidden" hidden>
+    <div class="container-x flex flex-col gap-1 pb-5 pt-2">
+      {navLinks.map(({ label, href }) => (
+        <a
+          href={href}
+          class:list={['mobile-nav-link', { 'mobile-nav-link--active': isActive(href) }]}
+          aria-current={isActive(href) ? 'page' : undefined}
+        >
+          {label}
+        </a>
+      ))}
+      <a href="/contact-us" class="btn-primary mt-3 w-full">
+        Contact Us
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
     </div>
-
-    <!-- Mobile hamburger -->
-    <button class="navbar-hamburger" id="mobile-menu-btn" aria-label="Open menu">
-      <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-
   </div>
-
-  <!-- Mobile menu -->
-  <div class="mobile-menu hidden" id="mobile-menu">
-    {[...navLinks, { label: 'Contact Us', href: '/contact-us' }].map(({ label, href }) => (
-      <a
-        href={href}
-        class:list={[
-          'mobile-nav-link',
-          (currentPath === href || (href !== '/' && currentPath.startsWith(href)))
-            ? 'mobile-nav-link--active'
-            : ''
-        ]}
-      >
-        {label}
-      </a>
-    ))}
-  </div>
-</nav>
+</header>
 
 <style>
-  .navbar-root {
-    background-color: #f4f4f5;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 1px solid #ececee;
+  .site-header {
+    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+  }
+  .site-header.is-scrolled {
+    box-shadow: 0 8px 30px -18px rgba(11, 26, 58, 0.35);
   }
 
-  .navbar-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    position: relative;
-  }
-
-  /* Logo */
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    z-index: 1;
-  }
-  .navbar-logo img {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  /* Center links — absolute center on the bar */
-  .navbar-links {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 32px;
-  }
-
-  @media (min-width: 1024px) {
-    .navbar-links {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  /* Logo has navy text — re-map it for dark surfaces while keeping the blue mark */
+  :global(.dark) .brand-logo {
+    filter: invert(1) hue-rotate(185deg) brightness(1.15) saturate(1.1);
   }
 
   .nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
     font-size: 14px;
     font-weight: 500;
-    color: #3f3f46;
+    color: var(--muted);
     text-decoration: none;
-    transition: color 0.15s ease;
-    white-space: nowrap;
+    transition: color 0.2s ease, background-color 0.2s ease;
   }
   .nav-link:hover {
-    color: #09090b;
+    color: var(--fg);
+    background-color: var(--surface-2);
   }
   .nav-link--active {
-    color: #09090b;
+    color: var(--brand);
     font-weight: 600;
   }
-
-  /* Right CTA group */
-  .navbar-cta {
-    display: none;
-    align-items: center;
-    gap: 20px;
-    flex-shrink: 0;
-    z-index: 1;
+  .nav-link--active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 1px;
+    width: 16px;
+    height: 2px;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    background: var(--brand-gradient);
   }
 
-  @media (min-width: 1024px) {
-    .navbar-cta {
-      display: flex;
-    }
-  }
-
-  .navbar-ghost-link {
-    font-size: 14px;
-    font-weight: 500;
-    color: #52525b;
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-  .navbar-ghost-link:hover {
-    color: #09090b;
-  }
-
-  .navbar-pill-btn {
+  .theme-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background-color: #09090b;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 36px;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-    white-space: nowrap;
-  }
-  .navbar-pill-btn:hover {
-    opacity: 0.85;
-  }
-
-  /* Hamburger */
-  .navbar-hamburger {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    background: none;
-    border: none;
-    padding: 6px;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--fg-2);
     cursor: pointer;
-    color: #3f3f46;
-    border-radius: 8px;
-    transition: color 0.15s ease;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
   }
-  .navbar-hamburger:hover {
-    color: #09090b;
+  .theme-toggle:hover {
+    color: var(--brand);
+    border-color: var(--brand);
   }
-
+  .theme-toggle:active {
+    transform: scale(0.94);
+  }
+  .theme-toggle .icon-moon,
+  :global(.dark) .theme-toggle .icon-sun {
+    display: none;
+  }
+  :global(.dark) .theme-toggle .icon-moon {
+    display: block;
+  }
+  #mobile-menu-btn .icon-close,
+  #mobile-menu-btn[aria-expanded="true"] .icon-open {
+    display: none;
+  }
+  #mobile-menu-btn[aria-expanded="true"] .icon-close {
+    display: block;
+  }
   @media (min-width: 1024px) {
-    .navbar-hamburger {
+    #mobile-menu-btn {
       display: none;
     }
   }
 
-  /* Mobile menu */
   .mobile-menu {
-    background-color: #f4f4f5;
-    border-top: 1px solid #ececee;
-    padding: 12px 24px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+    animation: menu-in 0.2s ease;
   }
-  .mobile-menu.hidden {
+  .mobile-menu[hidden] {
     display: none;
+  }
+  @keyframes menu-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: none; }
   }
 
   .mobile-nav-link {
     display: block;
-    padding: 10px 8px;
+    padding: 12px 14px;
+    border-radius: 12px;
     font-size: 15px;
     font-weight: 500;
-    color: #52525b;
+    color: var(--fg-2);
     text-decoration: none;
-    border-radius: 10px;
-    transition: background 0.15s ease, color 0.15s ease;
+    transition: background-color 0.15s ease, color 0.15s ease;
   }
   .mobile-nav-link:hover {
-    background: #ececee;
-    color: #09090b;
+    background: var(--surface-2);
+    color: var(--fg);
   }
   .mobile-nav-link--active {
-    color: #09090b;
+    color: var(--brand);
+    background: var(--brand-soft);
     font-weight: 600;
   }
 </style>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
+  const root = document.documentElement;
+  const header = document.getElementById('site-header');
+  const menuBtn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
-  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const isDark = root.classList.toggle('dark');
+      try {
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      } catch {}
+    });
+  });
+
+  // Follow system preference only while the user hasn't chosen explicitly
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) root.classList.toggle('dark', e.matches);
+  });
+
+  menuBtn?.addEventListener('click', () => {
+    const open = menu?.hasAttribute('hidden') ?? false;
+    if (open) menu?.removeAttribute('hidden');
+    else menu?.setAttribute('hidden', '');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+
+  const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 </script>

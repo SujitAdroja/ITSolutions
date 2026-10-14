@@ -1,103 +1,48 @@
 ---
-
 ---
 
-<section style="background-color: #f4f4f5; padding: 80px 0;">
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<section class="section bg-bg-alt">
+  <div class="container-x">
 
-    <!-- Header -->
-    <div class="text-center reveal" style="margin-bottom: 48px;">
-      <span style="
-        background-color: #3f3f46;
-        color: #fafafa;
-        border-radius: 12px;
-        padding: 4px 10px;
-        font-size: 12px;
-        font-weight: 500;
-        display: inline-block;
-        margin-bottom: 16px;
-      ">
-        Get In Touch
-      </span>
-      <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25; margin-bottom: 8px;">
-        Ready to Get <span style="color: #2563eb;">Started?</span>
-      </h2>
-      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5;">
-        Send us a message and we'll get back to you shortly.
-      </p>
+    <div class="reveal mx-auto mb-10 max-w-2xl text-center md:mb-12">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="h-section mt-4">Ready to Get <span class="text-gradient">Started?</span></h2>
+      <p class="lead mt-4">Send us a message and we'll get back to you shortly.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-      <!-- Left: Illustration -->
-      <div class="flex justify-center reveal-left">
-        <img
-          src="/contact/contact.png"
-          alt="Get In Touch Illustration"
-          style="width: 100%; max-width: 440px; height: 380px; object-fit: contain;"
-        />
+      <!-- Illustration -->
+      <div class="reveal-left hidden justify-center lg:flex">
+        <div class="relative w-full max-w-md">
+          <div aria-hidden="true" class="absolute inset-8 rounded-full bg-brand/15 blur-3xl"></div>
+          <img
+            src="/contact/contact.png"
+            alt="Get in touch illustration"
+            class="relative h-auto w-full object-contain"
+            loading="lazy"
+          />
+        </div>
       </div>
 
-      <!-- Right: Form -->
-      <div class="reveal-right">
+      <!-- Form -->
+      <div class="reveal-right card p-6 sm:p-8">
         <form
-          style="display: flex; flex-direction: column; gap: 12px;"
+          class="flex flex-col gap-3"
           action="https://formsubmit.co/runa@echoeleganceltd.uk"
           method="POST"
         >
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            style="width: 100%; background-color: #ffffff; border: none; border-radius: 14px; padding: 12px 16px; font-size: 14px; color: #18181b; outline: none;"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email address"
-            style="width: 100%; background-color: #ffffff; border: none; border-radius: 14px; padding: 12px 16px; font-size: 14px; color: #18181b; outline: none;"
-          />
-          <input
-            type="tel"
-            name="mobile"
-            placeholder="Your mobile number"
-            style="width: 100%; background-color: #ffffff; border: none; border-radius: 14px; padding: 12px 16px; font-size: 14px; color: #18181b; outline: none;"
-          />
-          <textarea
-            name="message"
-            placeholder="Write your message..."
-            rows="4"
-            style="width: 100%; background-color: #ffffff; border: none; border-radius: 14px; padding: 12px 16px; font-size: 14px; color: #18181b; outline: none; resize: none;"
-          ></textarea>
-
-          <div style="margin-top: 4px;">
-            <button
-              type="submit"
-              style="
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                background-color: #09090b;
-                color: #ffffff;
-                font-size: 15px;
-                font-weight: 500;
-                padding: 12px 24px;
-                border-radius: 36px;
-                border: none;
-                cursor: pointer;
-                box-shadow:
-                  rgba(255,255,255,0.5) 0px 0.5px 0px 0px inset,
-                  rgba(117,123,133,0.4) 0px 9px 14px -5px inset,
-                  rgb(44,46,52) 0px 0px 0px 1.5px,
-                  rgba(0,0,0,0.14) 0px 4px 6px 0px;
-                transition: opacity 0.2s ease;
-              "
-              onmouseover="this.style.opacity='0.88'"
-              onmouseout="this.style.opacity='1'"
-            >
-              Send Message →
-            </button>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <input type="text" name="name" placeholder="Your name" class="input" required />
+            <input type="email" name="email" placeholder="Your email address" class="input" required />
           </div>
+          <input type="tel" name="mobile" placeholder="Your mobile number" class="input" />
+          <textarea name="message" placeholder="Write your message..." rows="4" class="input resize-none" required></textarea>
+
+          <button type="submit" class="btn-primary mt-2 w-full sm:w-auto">
+            Send Message
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
         </form>
       </div>
 

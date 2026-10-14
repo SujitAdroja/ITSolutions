@@ -3,34 +3,47 @@ import OfficeMap from "./OfficeMap.tsx";
 import { officeLocations } from "./contactData";
 ---
 
-<section style="background-color: #f4f4f5; padding: 0 0 80px;">
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<section class="bg-bg-alt pb-16 md:pb-24">
+  <div class="container-x">
+    <div class="grid gap-6 lg:grid-cols-[300px_1fr]">
 
-    <div class="grid lg:grid-cols-[280px_1fr] gap-6">
-
-      <!-- Office locations -->
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; width: fit-content; margin-bottom: 8px;">
-          {officeLocations.length} Office Locations
-        </span>
+      <!-- Office list -->
+      <div class="flex flex-col gap-4">
+        <span class="eyebrow w-fit">{officeLocations.length > 1 ? `${officeLocations.length} Office Locations` : 'Our Office'}</span>
 
         {officeLocations.map((office) => (
-          <div
-            class="reveal rounded-2xl"
-            style="background-color: #ffffff; padding: 20px 24px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; border-left: 3px solid #09090b;"
-          >
-            <h4 style="font-size: 16px; font-weight: 600; color: #09090b; margin-bottom: 8px;">{office.name}</h4>
-            <p style="font-size: 14px; font-weight: 400; color: #71717a; line-height: 1.6;">{office.address}</p>
-          </div>
+          <article class="card reveal relative overflow-hidden p-5">
+            <span aria-hidden="true" class="absolute inset-y-0 left-0 w-1" style="background: var(--brand-gradient);"></span>
+            <div class="flex items-start gap-3 pl-2">
+              <div class="icon-tile !size-10 !rounded-xl">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4 class="text-base font-semibold text-fg">{office.name}</h4>
+                <p class="mt-1 text-sm leading-relaxed text-muted">{office.address}</p>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
 
       <!-- Map -->
-      <div style="border-radius: 36px; overflow: hidden; border: 1px solid #ececee; min-height: 360px;">
+      <div class="map-frame min-h-[360px] overflow-hidden rounded-3xl border border-line shadow-card">
         <OfficeMap client:only="react" />
       </div>
 
     </div>
-
   </div>
 </section>
+
+<style>
+  .map-frame :global(.leaflet-container) {
+    height: 100%;
+    min-height: 360px;
+  }
+  @media (min-width: 1024px) {
+    .map-frame :global(.leaflet-container) {
+      min-height: 520px;
+    }
+  }
+</style>

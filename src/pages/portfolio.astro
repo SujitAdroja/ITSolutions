@@ -1,110 +1,77 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-
-import { portfolioItems, clientLogos } from "../data/portfolioData.ts";
+import { portfolioItems } from "../data/portfolioData.ts";
 ---
 
-<MainLayout title="Portfolio">
-  <section class="relative">
-    <img
-      src="/homepage/page-title-bg.jpg"
-      alt="Background Image"
-      class="absolute w-full h-70 object-cover scale-190 object-[20%_10%]"
-    />
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-10 md:py-20">
-      <h2 class="text-center text-black text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Portfolio</h2>
-      <div class="text-center">
-        <span class="text-gray-500 hover:text-orange-500"><a href="/">Home</a></span><span
-          class="text-orange-500"
-        >
-          >
-        </span>
+<MainLayout
+  title="Portfolio | Software & Web Projects Delivered Fast in the UK — EchoEleganceLtd.uk"
+  description="Explore web, mobile and e-commerce projects delivered on time by EchoEleganceLtd.uk — the UK's quick-delivery IT company and staff augmentation partner."
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Portfolio', href: '/portfolio' }]}
+>
+
+  <section class="page-hero">
+    <div class="container-x py-14 md:py-20">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
         <span>Portfolio</span>
-      </div>
+      </nav>
+      <h1 class="h-display">Our <span class="text-gradient">Portfolio</span></h1>
+      <p class="lead mt-5 max-w-xl">
+        We've discovered the secret of winning customers — it's all about delivering quality projects.
+      </p>
     </div>
   </section>
 
-  <section class="relative py-24 overflow-hidden">
-    <!-- Background Image -->
-    <img
-      src="/homepage/black-bg.jpg"
-      alt=""
-      class="absolute inset-0 w-full h-full object-cover"
-    />
-
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 ">
-      <div class="text-center mb-16 reveal">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-          Amazing Portfolio You Might Like
-        </h2>
-
-        <p class="text-sm md:text-base text-white/80 max-w-3xl mx-auto">
-          We've discovered the secret of winning customers — it's all about
-          delivering quality projects.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-        {
-          portfolioItems.map((item) => (
-            <div class="reveal">
-              <div class="h-full bg-white rounded overflow-hidden shadow-md md:hover:-translate-y-2 transition duration-300  ">
+  <section class="section bg-bg-alt">
+    <div class="container-x">
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {portfolioItems.map((item) => (
+          <article class="card card-hover reveal group flex flex-col overflow-hidden">
+            <div class="overflow-hidden">
               <img
                 src={item.image}
                 alt={item.title}
-                class="w-full h-[220px] object-cover"
+                class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
               />
-
-              <div class="p-5">
-                <h3 class="text-xl md:text-2xl font-semibold text-[#25253b] mb-3 text-center">
-                  {item.title}
-                </h3>
-
-                <p class="text-[#ff6b1a] text-sm md:text-base leading-relaxed text-center">
-                  {item.description}
-                </p>
-              </div>
             </div>
+            <div class="flex flex-1 flex-col gap-2 p-6">
+              <h3 class="text-lg font-semibold leading-snug text-fg md:text-xl">{item.title}</h3>
+              <p class="text-sm leading-relaxed text-muted">{item.description}</p>
             </div>
-          ))
-        }
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-<!-- cta section -->
-   <section class="relative overflow-hidden bg-[#221638]">
-    <!-- Background Image -->
-    <img src="/portfolio/vector-shape3.png" alt="Background Image" class="absolute inset-0 w-100 h-100 object-cover left-50 md:left-100 lg:left-300 top-180 md:top-150 lg:top-10" />
-
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 py-24 ">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Illustration -->
-        <div class="flex justify-center reveal-left">
+  <!-- CTA -->
+  <section class="bg-bg pb-16 md:pb-24 pt-16 md:pt-24">
+    <div class="container-x">
+      <div class="banner-navy reveal grid items-center gap-10 p-8 md:p-14 lg:grid-cols-2">
+        <div class="flex justify-center lg:order-last">
           <img
             src="/homepage/project-start1.png"
-            alt="Project Illustration"
-            class="max-w-[600px] w-full"
+            alt="Project illustration"
+            class="w-full max-w-md object-contain"
+            loading="lazy"
           />
         </div>
-
-        <!-- Content -->
-        <div class="reveal-right">
-          <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-            You Want to Became Our Partner
+        <div>
+          <h2 class="text-3xl font-bold leading-tight md:text-4xl">
+            Want to Become <span class="text-sky-300">Our Partner?</span>
           </h2>
-
-          <p class="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-5xl">
-           With successfully delivering business solutions and having served clients across multiple sectors, we aim to make business solutions accessible to all users.
+          <p class="mt-4 text-sm leading-relaxed text-white/65 md:text-base">
+            With successfully delivered business solutions and clients across multiple sectors, we aim to make business solutions accessible to all.
           </p>
-
-          <a href="/contact-us"
-              class="cta-btn inline-flex items-center gap-3 bg-orange-500 text-white font-semibold text-sm md:text-base px-4 py-2 md:px-6 md:py-3 rounded-md overflow-hidden"
-          >
+          <a href="/contact-us" class="btn-primary mt-8 w-full sm:w-auto">
             Contact Us
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
+
 </MainLayout>

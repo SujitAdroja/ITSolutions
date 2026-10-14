@@ -19,14 +19,8 @@ export const contactCards = [
 export const officeLocations = [
   {
     name: "London",
-    address: "Unit 1, Liberty Centre, Mount Pleasant, Wembley - HA0 1TX",
+    address: "Unit 1, Liberty Centre, Mount Pleasant, Wembley - HA0 1TX, United Kingdom",
     lat: 51.556,
     lng: -0.2797,
-  },
-  {
-    name: "India",
-    address: "604, Sahitya Business Park, Ahmedabad, Gujarat 382350",
-    lat: 23.0714,
-    lng: 72.6699,
   },
 ];

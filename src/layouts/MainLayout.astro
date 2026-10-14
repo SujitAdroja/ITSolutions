@@ -2,25 +2,113 @@
 import Navbar from '../components/common/Navbar.astro';
 import Footer from '../components/common/Footer.astro';
 import '../styles/global.css';
+import {
+  SITE,
+  DEFAULT_TITLE,
+  DEFAULT_DESCRIPTION,
+  absoluteUrl,
+  organizationSchema,
+  breadcrumbSchema,
+  type Crumb,
+} from '../data/seo';
 
 interface Props {
   title?: string;
+  description?: string;
+  keywords?: string[];
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  breadcrumbs?: Crumb[];
+  /** Extra JSON-LD objects (Service, FAQPage, …) */
+  schema?: Record<string, unknown>[];
 }
 
-const { title = 'EchoEleganceLTD Solutions' } = Astro.props;
+const {
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  keywords = SITE.keywords,
+  ogImage = SITE.ogImage,
+  ogType = 'website',
+  noindex = false,
+  breadcrumbs,
+  schema = [],
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE.url).toString().replace(/\/$/, '') || SITE.url;
+const ogImageUrl = absoluteUrl(ogImage);
+
+const jsonLd = [
+  organizationSchema(),
+  ...(breadcrumbs?.length ? [breadcrumbSchema(breadcrumbs)] : []),
+  ...schema,
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(', ')} />
+    <meta name="author" content={SITE.name} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
+    <link rel="canonical" href={canonical} />
+    <meta name="geo.region" content="GB-LND" />
+    <meta name="geo.placename" content="London" />
+    <meta name="geo.position" content={`${SITE.geo.latitude};${SITE.geo.longitude}`} />
+    <meta name="ICBM" content={`${SITE.geo.latitude}, ${SITE.geo.longitude}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={`${SITE.name} — IT Solutions`} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    {SITE.twitter && <meta name="twitter:site" content={SITE.twitter} />}
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a1020" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    {jsonLd.map((obj) => (
+      <script type="application/ld+json" set:html={JSON.stringify(obj)} />
+    ))}
+
+    <!-- Apply saved/system theme before first paint to avoid a flash -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var dark = stored
+            ? stored === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="antialiased bg-white text-gray-900">
+  <body class="antialiased bg-bg text-fg">
     <Navbar />
     <main>
       <slot />
