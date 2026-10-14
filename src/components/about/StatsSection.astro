@@ -1,18 +1,19 @@
-<section style="background-color: #f4f4f5; padding: 0 0 0;">
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-8 py-20">
-    <div
-      style="background-color: #09090b; border-radius: 36px; padding: 48px 40px;"
-    >
-      <div class="flex items-center justify-between flex-wrap gap-8 md:px-10">
-        {[
-          { value: '10+', label: 'Technologies' },
-          { value: '15+', label: 'Team Members' },
-          { value: '100%', label: 'Satisfaction Rate' },
-          { value: '2+', label: 'Countries' },
-        ].map(stat => (
-          <div class="reveal" style="display: flex; flex-direction: column; gap: 4px;">
-            <p style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.25;">{stat.value}</p>
-            <p style="font-size: 13px; font-weight: 400; color: #a1a1aa; line-height: 1.56;">{stat.label}</p>
+---
+const stats = [
+  { value: '20+', label: 'Technologies' },
+  { value: '50+', label: 'Staff Augmentation Developers Delivered' },
+  { value: '100%', label: 'Satisfaction Rate' },
+];
+---
+
+<section class="bg-bg pb-16 md:pb-20">
+  <div class="container-x">
+    <div class="banner-navy p-8 md:p-12">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
+        {stats.map((stat) => (
+          <div class="reveal flex flex-col gap-1">
+            <p class="text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl">{stat.value}</p>
+            <p class="mt-2 text-sm font-medium text-sky-200/80">{stat.label}</p>
           </div>
         ))}
       </div>

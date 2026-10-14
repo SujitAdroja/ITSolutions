@@ -8,151 +8,48 @@ const areas = [
   { label: 'Transport & Logistics', imgPath: '/homepage/transports-logistics.jpg' },
   { label: 'Retail & FMCG', imgPath: '/homepage/retailmarket.jpg' },
   { label: 'Chemical & Paint', imgPath: '/homepage/chemical-paint.jpg' },
+  { label: 'Healthcare', imgPath: '/homepage/healthcare.jpg' },
+  { label: 'FinTech', imgPath: '/homepage/fintech.jpg' },
+  { label: 'PropTech', imgPath: '/homepage/proptech.jpg' },
+  { label: 'EducationTech', imgPath: '/homepage/educationtech.jpg' },
+  { label: 'Crypto & Blockchain', imgPath: '/homepage/crypto-blockchain.jpg' },
+  { label: 'SaaS & Enterprise', imgPath: '/homepage/saas-enterprise.jpg' },
 ];
 ---
 
-<section style="background-color: #f4f4f5; padding: 80px 0;">
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<section class="section bg-bg-alt">
+  <div class="container-x">
 
-    <!-- Header -->
-    <div class="text-center reveal" style="margin-bottom: 48px;">
-      <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25; margin-bottom: 16px;">
-        Work <span style="color: #2563eb;">Areas</span>
-      </h2>
-      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; max-width: 600px; margin: 0 auto;">
+    <div class="reveal mx-auto mb-10 max-w-2xl text-center md:mb-12">
+      <span class="eyebrow">Industries</span>
+      <h2 class="h-section mt-4">Work <span class="text-gradient">Areas</span></h2>
+      <p class="lead mt-4">
         Every industry faces relentless change. We provide high-quality service and support across sectors.
       </p>
     </div>
 
-    <!-- Grid -->
-    <div class="work-areas-grid">
+    <div class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
       {areas.map((area) => (
-        <div class="area-card reveal">
+        <figure class="area-card group reveal relative overflow-hidden rounded-2xl border border-line bg-surface shadow-card md:rounded-3xl">
           <img
             src={area.imgPath}
-            alt={area.label}
-            class="area-img"
+            alt={`${area.label} industry solutions`}
+            class="h-36 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-44 lg:h-52"
+            width="900"
+            height="600"
+            loading="lazy"
+            decoding="async"
           />
-          <!-- Hover overlay (desktop only) -->
-          <div class="area-overlay">
-            <span class="area-label-hover">{area.label}</span>
-          </div>
-          <!-- Always-visible label (mobile only) -->
-          <div class="area-label-mobile">
-            <span>{area.label}</span>
-          </div>
-        </div>
+          <!-- gradient overlay for legibility -->
+          <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent"></div>
+          <figcaption class="absolute inset-x-0 bottom-0 p-3 sm:p-4">
+            <span class="inline-block rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-navy backdrop-blur transition group-hover:bg-brand group-hover:text-white sm:text-sm dark:bg-white/85">
+              {area.label}
+            </span>
+          </figcaption>
+        </figure>
       ))}
     </div>
 
   </div>
 </section>
-
-<style>
-  .work-areas-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-
-  .area-card {
-    position: relative;
-    border-radius: 28px;
-    overflow: hidden;
-    cursor: pointer;
-    /* mobile: card style with label below */
-    background: #ffffff;
-    box-shadow: rgba(0,0,0,0.04) 0px 4px 12px 0px, rgb(228,228,231) 0px 1px 0px 0px inset;
-  }
-
-  .area-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-    transition: filter 0.35s ease, transform 0.35s ease;
-  }
-
-  /* Hover overlay — hidden by default */
-  .area-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(9, 9, 11, 0.18);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    border-radius: 28px;
-  }
-
-  .area-label-hover {
-    background: #ffffff;
-    color: #09090b;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.35;
-    padding: 10px 20px;
-    border-radius: 36px;
-    text-align: center;
-    box-shadow: rgba(0,0,0,0.12) 0px 4px 16px 0px;
-    max-width: 80%;
-  }
-
-  /* Mobile label — hidden on desktop */
-  .area-label-mobile {
-    display: none;
-    padding: 12px 14px 10px;
-  }
-
-  .area-label-mobile span {
-    font-size: 14px;
-    font-weight: 600;
-    color: #09090b;
-    line-height: 1.35;
-  }
-
-  /* Desktop hover effects */
-  @media (hover: hover) and (pointer: fine) {
-    .area-card:hover .area-img {
-      filter: blur(3px) brightness(0.85);
-      transform: scale(1.04);
-    }
-
-    .area-card:hover .area-overlay {
-      opacity: 1;
-    }
-  }
-
-  /* Tablet */
-  @media (max-width: 1024px) {
-    .work-areas-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  /* Mobile — no hover, show label below image */
-  @media (max-width: 640px) {
-    .work-areas-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .area-card {
-      border-radius: 20px;
-    }
-
-    .area-img {
-      height: 140px;
-      border-radius: 0;
-    }
-
-    .area-overlay {
-      display: none;
-    }
-
-    .area-label-mobile {
-      display: block;
-    }
-  }
-</style>

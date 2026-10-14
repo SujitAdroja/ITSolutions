@@ -1,19 +1,41 @@
 ---
+import { contactCards } from "./contactData";
+
+const icons: Record<string, string> = {
+  Mail: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`,
+  Phone: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+};
+
+const isEmail = (v: string) => v.includes('@');
 ---
 
-<section style="background-color: #f4f4f5; padding: 0 0 64px;">
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<section class="bg-bg-alt pt-14 md:pt-20">
+  <div class="container-x">
 
-    <div class="text-center reveal" style="margin-bottom: 48px;">
-      <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
-        Start the Conversation
-      </span>
-      <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
-        Get in Touch With <span style="color: #2563eb;">Our Team</span>
-      </h2>
-      <p style="font-size: 16px; font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 12px; max-width: 520px; margin-left: auto; margin-right: auto;">
+    <div class="reveal mx-auto mb-10 max-w-2xl text-center md:mb-12">
+      <span class="eyebrow">Start the Conversation</span>
+      <h2 class="h-section mt-4">Get in Touch With <span class="text-gradient">Our Team</span></h2>
+      <p class="lead mt-4">
         Share your requirements and our team will respond with the most relevant next step.
       </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
+      {contactCards.map((card) => (
+        <article class="card card-hover reveal flex items-start gap-4 p-5 sm:flex-col sm:p-6">
+          <div class="icon-tile">
+            <Fragment set:html={icons[card.icon]} />
+          </div>
+          <div class="min-w-0">
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-muted">{card.title}</h3>
+            {isEmail(card.value) ? (
+              <a href={`mailto:${card.value}`} class="mt-1 block truncate text-[15px] font-semibold text-fg transition hover:text-brand">{card.value}</a>
+            ) : (
+              <p class="mt-1 text-[15px] font-semibold text-fg">{card.value}</p>
+            )}
+          </div>
+        </article>
+      ))}
     </div>
 
   </div>

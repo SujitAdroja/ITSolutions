@@ -25,109 +25,73 @@ const featureCards = [
 ];
 ---
 
-<section style="background-color:#f4f4f5;padding:80px 0;">
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<section class="section bg-bg-alt">
+  <div class="container-x">
 
-    <!-- Section label + heading -->
-    <div style="margin-bottom:40px;">
-      <span style="background-color:#3f3f46;color:#fafafa;border-radius:12px;padding:4px 12px;font-size:12px;font-weight:500;display:inline-block;margin-bottom:16px;letter-spacing:.02em;">
-        Why Choose Us
-      </span>
-      <h2 style="font-size:40px;font-weight:700;color:#09090b;line-height:1.25;max-width:560px;">
-        Why EchoEleganceLTD is the <span style="color:#2563eb;">Right Choice for You</span>
+    <div class="reveal mb-10 md:mb-12">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2 class="h-section mt-4 max-w-xl">
+        Why EchoEleganceLtd is the <span class="text-gradient">Right Choice for You</span>
       </h2>
     </div>
 
-    <!-- Asymmetric grid -->
     <div class="wcus-grid">
-
-      <!-- Card 1: Accounting (top-left) -->
-      <div class="wcus-card wcus-card--a" style="background:#ffffff;border-radius:36px;border:1px solid #ececee;box-shadow:rgb(228,228,231) 0px 1px 0px 0px inset;padding:28px;display:flex;flex-direction:column;gap:16px;">
-        <div style="width:48px;height:48px;border-radius:40px;background:#f4f4f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <img src={featureCards[0].icon} alt={featureCards[0].title} style="width:26px;height:26px;object-fit:contain;" />
-        </div>
-        <h3 style="font-size:20px;font-weight:600;color:#09090b;line-height:1.3;">{featureCards[0].title}</h3>
-        <p style="font-size:14px;font-weight:400;color:#71717a;line-height:1.65;">{featureCards[0].description}</p>
-      </div>
-
-      <!-- Card 2: Marketing (top-right of left block) -->
-      <div class="wcus-card wcus-card--b" style="background:#ffffff;border-radius:36px;border:1px solid #ececee;box-shadow:rgb(228,228,231) 0px 1px 0px 0px inset;padding:28px;display:flex;flex-direction:column;gap:16px;">
-        <div style="width:48px;height:48px;border-radius:40px;background:#f4f4f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <img src={featureCards[1].icon} alt={featureCards[1].title} style="width:26px;height:26px;object-fit:contain;" />
-        </div>
-        <h3 style="font-size:20px;font-weight:600;color:#09090b;line-height:1.3;">{featureCards[1].title}</h3>
-        <p style="font-size:14px;font-weight:400;color:#71717a;line-height:1.65;">{featureCards[1].description}</p>
-      </div>
-
-      <!-- Card 3: Software (bottom wide) -->
-      <div class="wcus-card wcus-card--c" style="background:#ffffff;border-radius:36px;border:1px solid #ececee;box-shadow:rgb(228,228,231) 0px 1px 0px 0px inset;padding:28px;display:flex;flex-direction:column;gap:16px;">
-        <div style="width:48px;height:48px;border-radius:40px;background:#f4f4f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <img src={featureCards[2].icon} alt={featureCards[2].title} style="width:26px;height:26px;object-fit:contain;" />
-        </div>
-        <h3 style="font-size:20px;font-weight:600;color:#09090b;line-height:1.3;">{featureCards[2].title}</h3>
-        <p style="font-size:14px;font-weight:400;color:#71717a;line-height:1.65;max-width:480px;">{featureCards[2].description}</p>
-      </div>
-
-      <!-- Dark card: Why Choose Us (tall, right) -->
-      <div class="wcus-card wcus-card--d" style="border-radius:36px;padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;background:linear-gradient(to bottom,#09090b 20%,rgba(9,9,11,0.1) 80%),radial-gradient(ellipse at 105% 100%,#be185d 0%,transparent 52%),radial-gradient(ellipse at 40% 110%,#6d28d9 0%,transparent 48%),radial-gradient(ellipse at 95% 0%,#14532d 0%,transparent 45%),#09090b;overflow:hidden;">
-        <div>
-          <h3 style="font-size:28px;font-weight:700;color:#ffffff;line-height:1.25;margin-bottom:24px;">
-            Why Choose <span style="color:#a1a1aa;">Us?</span>
-          </h3>
-          <div style="display:flex;flex-direction:column;gap:18px;">
-            {points.map((p) => (
-              <div style="display:flex;align-items:flex-start;gap:12px;">
-                <div style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.3);margin-top:7px;flex-shrink:0;"></div>
-                <p style="font-size:15px;line-height:1.5;">
-                  <span style="color:#a1a1aa;font-weight:400;">{p.lead} </span>
-                  <span style="color:#ffffff;font-weight:600;">{p.key}</span>
-                </p>
-              </div>
-            ))}
+      {featureCards.map((card, i) => (
+        <article class:list={['card card-hover reveal flex flex-col gap-4 p-7', `wcus-card--${['a', 'b', 'c'][i]}`]}>
+          <div class="icon-tile">
+            <img src={card.icon} alt="" class="size-7 object-contain" loading="lazy" />
           </div>
+          <h3 class="text-xl font-semibold leading-snug text-fg">{card.title}</h3>
+          <p class="max-w-md text-sm leading-relaxed text-muted md:text-[15px]">{card.description}</p>
+        </article>
+      ))}
+
+      <!-- Navy highlight card -->
+      <div class="banner-navy wcus-card--d reveal flex flex-col justify-between gap-8 p-8 md:p-9">
+        <div>
+          <h3 class="text-2xl font-bold leading-tight md:text-[28px]">
+            Why Choose <span class="text-sky-300">Us?</span>
+          </h3>
+          <ul class="mt-6 flex flex-col gap-4">
+            {points.map((p) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-2 size-1.5 shrink-0 rounded-full bg-sky-300"></span>
+                <p class="text-[15px] leading-snug">
+                  <span class="text-white/60">{p.lead} </span>
+                  <span class="font-semibold text-white">{p.key}</span>
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
-        <a
-          href="/about-us"
-          class="wcus-cta"
-          style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#ffffff;color:#09090b;font-size:14px;font-weight:500;padding:12px 20px;border-radius:36px;text-decoration:none;border:1px solid rgba(255,255,255,0.2);transition:opacity .2s ease;"
-        >
-          More About Us →
+        <a href="/about-us" class="btn-ghost w-full sm:w-auto lg:w-full">
+          More About Us
+          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
-
     </div>
   </div>
 </section>
 
 <style>
-  /* Mobile: single column stack */
   .wcus-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
-
-  /* Tablet: 2-col, dark card full-width at bottom */
   @media (min-width: 640px) {
-    .wcus-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-    .wcus-card--c { grid-column: span 2; }
-    .wcus-card--d { grid-column: span 2; }
+    .wcus-grid { grid-template-columns: 1fr 1fr; }
+    .wcus-card--c, .wcus-card--d { grid-column: span 2; }
   }
-
-  /* Desktop: asymmetric 3-col layout */
   @media (min-width: 1024px) {
     .wcus-grid {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: auto auto;
-      gap: 14px;
+      gap: 18px;
     }
     .wcus-card--a { grid-column: 1;     grid-row: 1; }
     .wcus-card--b { grid-column: 2;     grid-row: 1; }
     .wcus-card--c { grid-column: 1 / 3; grid-row: 2; }
     .wcus-card--d { grid-column: 3;     grid-row: 1 / 3; }
   }
-
-  .wcus-cta:hover { opacity: 0.85; }
 </style>

@@ -1,23 +1,18 @@
 ---
 const stats = [
-  { value: '10+', label: 'Technologies' },
-  { value: '15+', label: 'Team Members' },
+  { value: '20+', label: 'Technologies' },
+  { value: '50+', label: 'Staff Augmentation Developers Delivered' },
   { value: '100%', label: 'Satisfaction Rate' },
-  { value: '2+', label: 'Countries' },
 ];
 ---
 
-<section style="background-color: #f4f4f5; padding: 64px 0;">
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+<section class="bg-bg py-14 md:py-16">
+  <div class="container-x">
+    <div class="grid grid-cols-1 gap-6 rounded-3xl border border-line bg-surface p-6 shadow-card sm:grid-cols-3 md:p-10">
       {stats.map((stat, i) => (
-        <div class="reveal" style="display: flex; flex-direction: column; gap: 4px;">
-          <p style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
-            {stat.value}
-          </p>
-          <p style="font-size: 13px; font-weight: 400; color: #71717a; line-height: 1.56;">
-            {stat.label}
-          </p>
+        <div class:list={['reveal flex flex-col gap-1 sm:px-6', i > 0 && 'sm:border-l sm:border-line']}>
+          <p class="text-gradient text-4xl font-extrabold leading-none tracking-tight md:text-5xl">{stat.value}</p>
+          <p class="mt-2 text-sm font-medium text-muted">{stat.label}</p>
         </div>
       ))}
     </div>

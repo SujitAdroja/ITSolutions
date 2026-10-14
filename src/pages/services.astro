@@ -1,41 +1,40 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import { Rocket, Laptop, Headset, PlugZap, BarChart3, CloudCog } from "lucide-react";
+import { serviceSchema, faqSchema } from "../data/seo";
 
 const modules = [
   {
     title: "Workflow Automation",
-    icon: Rocket,
     description: "Streamline routine operations with structured processes that improve speed, consistency, and control across your team.",
   },
   {
     title: "Responsive Experience",
-    icon: Laptop,
     description: "Deliver a clean and accessible experience across desktop, tablet, and mobile without compromising usability.",
   },
   {
     title: "Reliable Support",
-    icon: Headset,
     description: "Keep operations moving with responsive assistance, issue resolution, and ongoing service support when you need it.",
   },
   {
     title: "System Integration",
-    icon: PlugZap,
     description: "Connect core business tools, data sources, and external platforms to reduce duplication and improve accuracy.",
   },
   {
     title: "Reporting & Insights",
-    icon: BarChart3,
     description: "Access meaningful reports and dashboards that help teams monitor performance and make better decisions.",
   },
   {
     title: "Scalable Delivery",
-    icon: CloudCog,
     description: "Build solutions that can grow with your business, supporting new requirements without disrupting existing operations.",
   },
 ];
 
 export const services = [
+  {
+    title: "Staff Augmentation",
+    icon: "/services/custome-development.png",
+    items: ["Dedicated Developers", "Flexible Engagement Models", "Rapid Onboarding", "50+ Developers Delivered"],
+  },
   {
     title: "Digital Marketing",
     icon: "/services/marketing-seo.png",
@@ -97,120 +96,305 @@ export const services = [
     items: ["Feature Updates", "Bug Fixing", "System Maintenance", "Release Support"],
   },
 ];
+
+const techStacks = [
+  {
+    group: "Design & UI/UX",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>`,
+    items: [
+      "UI Developer",
+      "UX Developer",
+      "UI/UX Developer",
+      "Figma / XD / Photoshop / Illustrator Designer",
+      "Web Designer",
+      "HTML, CSS & jQuery Expert (Figma to Code)",
+      "Svelte",
+    ],
+  },
+  {
+    group: "Frontend Frameworks",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+    items: [
+      "React JS / Next JS / Redux / Thunk / Saga",
+      "Vue JS / Nuxt JS",
+      "Angular / Angular Universal",
+      "Angular Version Upgrade Expert (all versions)",
+      "Nx Monorepo (Micro Frontend)",
+      "JavaScript / TypeScript",
+    ],
+  },
+  {
+    group: "Styling & Component Libraries",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
+    items: ["Tailwind CSS", "SCSS", "Material UI", "Bootstrap", "Ant Design", "Chakra UI"],
+  },
+  {
+    group: "Backend & APIs",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>`,
+    items: ["Node.js", "Express", "NestJS", "GraphQL", "AWS Cloud Service Integration (any JS stack)"],
+  },
+  {
+    group: "Databases & Data",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+    items: [
+      "SQL / NoSQL Databases",
+      "MongoDB",
+      "PostgreSQL",
+      "DynamoDB",
+      "Couchbase",
+      "Elasticsearch",
+      "Redis",
+      "Supabase",
+    ],
+  },
+  {
+    group: "CMS & Commerce Integration",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg>`,
+    items: ["Contentstack", "commercetools", "Algolia", "Strapi", "Directus"],
+  },
+  {
+    group: "Mobile",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>`,
+    items: ["Flutter Developer", "Android Developer"],
+  },
+  {
+    group: "Optional Tech Stack (Available)",
+    optional: true,
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>`,
+    items: ["Python / Django / Flask", "Java + Spring Boot", ".NET / .NET Full Stack", "And more on request"],
+  },
+];
+
+const engagementPoints = [
+  { title: "Dedicated developers", body: "Hand-picked engineers who work exclusively on your product, aligned with your time zone and workflow." },
+  { title: "Flexible engagement", body: "Scale up or down month to month — hourly, part-time, or full-time contracts with no long lock-ins." },
+  { title: "Rapid onboarding", body: "Shortlisted profiles within days, interviews on your schedule, and developers productive from week one." },
+  { title: "Quality guaranteed", body: "Vetted for technical depth and communication, backed by our delivery leads and replacement guarantee." },
+];
+
+const faqs = [
+  {
+    q: "Why is EchoEleganceLtd.uk considered the best staff augmentation company in the UK?",
+    a: "We combine a UK-based delivery team in London with a vetted bench of 50+ developers across 20+ technologies — React, Angular, Vue, Node.js, NestJS, Flutter, AWS and more. Clients get shortlisted profiles within days, flexible month-to-month contracts, a replacement guarantee and a 100% satisfaction record.",
+  },
+  {
+    q: "How quickly can you deliver IT projects or onboard developers?",
+    a: "For staff augmentation we typically share shortlisted CVs within 2–3 working days and developers start within one to two weeks. For project delivery we work in short sprints with a demo every one to two weeks, so you see working software fast and can adjust scope early.",
+  },
+  {
+    q: "What does IT staff augmentation cost in the UK?",
+    a: "Pricing depends on seniority, technology and engagement length. We offer hourly, part-time and full-time dedicated models with transparent monthly invoicing and no long lock-ins. Contact us for a same-day quote.",
+  },
+  {
+    q: "Which technologies do your augmented developers cover?",
+    a: "Frontend: React, Next.js, Angular, Vue, Nuxt, Svelte, TypeScript, Tailwind, Material UI. Backend: Node.js, Express, NestJS, GraphQL, AWS. Databases: PostgreSQL, MongoDB, DynamoDB, Redis, Elasticsearch, Supabase. Mobile: Flutter and Android. CMS: Contentstack, commercetools, Algolia, Strapi, Directus. Python, Java Spring Boot and .NET are available on request.",
+  },
+  {
+    q: "Do you work with companies outside London?",
+    a: "Yes. We are headquartered in Wembley, London and serve clients across the whole of the United Kingdom remotely, with on-site visits available in and around London.",
+  },
+  {
+    q: "Can augmented developers work directly inside our team and tools?",
+    a: "Absolutely. Our developers join your stand-ups, Slack/Teams, Jira and Git workflows and report to your leads, while our delivery managers handle HR, performance and replacements in the background.",
+  },
+];
+
+const pageSchema = [
+  serviceSchema({
+    name: "IT Staff Augmentation UK",
+    serviceType: "Staff Augmentation",
+    path: "/services#staff-augmentation",
+    description:
+      "Hire vetted UK-ready developers within days. EchoEleganceLtd.uk provides React, Angular, Vue, Node.js, Flutter, AWS and UI/UX specialists on flexible contracts — 50+ developers delivered.",
+    offers: techStacks.flatMap((s) => s.items),
+  }),
+  serviceSchema({
+    name: "Quick-Delivery IT Services UK",
+    serviceType: "Software Development",
+    path: "/services",
+    description:
+      "Fast, sprint-based delivery of web, mobile and custom software, plus digital marketing and accounting services for UK businesses.",
+    offers: services.map((s) => s.title),
+  }),
+  faqSchema(faqs),
+];
 ---
 
-<MainLayout title="Services — EchoEleganceLTD">
+<MainLayout
+  title="IT Staff Augmentation UK | Quick-Delivery IT Services — EchoEleganceLtd.uk"
+  description="Best staff augmentation company in the UK: hire vetted React, Angular, Node.js, Flutter & AWS developers within days. Quick-delivery software development, digital marketing and accounting services from London for all of the UK."
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }]}
+  schema={pageSchema}
+>
 
-  <!-- Page Hero -->
-  <section style="background-color: #f4f4f5; padding: 64px 0 48px;">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <p class="text-xs md:text-sm reveal" style="font-weight: 400; color: #a1a1aa; margin-bottom: 12px;">
-        <a href="/" style="color: #a1a1aa; text-decoration: none;">Home</a>
-        <span style="margin: 0 6px;">›</span>
-        <span style="color: #09090b;">Services</span>
+  <section class="page-hero">
+    <div class="container-x py-14 md:py-20">
+      <nav class="breadcrumb reveal" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>Services</span>
+      </nav>
+      <h1 class="h-display reveal">Staff Augmentation &amp; <span class="text-gradient">Quick-Delivery IT Services</span> in the UK</h1>
+      <p class="lead reveal mt-5 max-w-2xl">
+        Hire vetted developers within days or get software shipped in short, predictable sprints — alongside accounting and marketing services built to support how UK businesses actually operate.
       </p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold reveal" style="color: #09090b; line-height: 1.12;">
-        Our <span style="color: #2563eb;">Services</span>
-      </h1>
-      <p class="text-sm md:text-base reveal" style="font-weight: 400; color: #71717a; line-height: 1.5; margin-top: 16px; max-width: 520px;">
         A coordinated set of services — accounting, marketing, and software development — built to support how businesses actually operate.
       </p>
     </div>
   </section>
 
-  <!-- Services Grid -->
-  <section style="background-color: #f4f4f5; padding: 0 0 80px;">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-
-      <!-- <div class="text-center reveal" style="margin-bottom: 48px;">
-        <h2 style="font-size: 40px; font-weight: 700; color: #09090b; line-height: 1.25;">
-          Services We Can <span style="color: #a1a1aa;">Help You With</span>
-        </h2>
-      </div> -->
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+  <!-- Services grid -->
+  <section class="section bg-bg-alt">
+    <div class="container-x">
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {services.map((service) => (
-          <article class="reveal service-card" style="background-color: #ffffff; border-radius: 36px; border: 1px solid #ececee; box-shadow: rgb(228,228,231) 0px 1px 0px 0px inset; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
-
-            <!-- Icon -->
-            <div style="width: 48px; height: 48px; border-radius: 40px; background-color: #f4f4f5; display: flex; align-items: center; justify-content: center;">
-              <img src={service.icon} alt={service.title} style="width: 28px; height: 28px; object-fit: contain;" />
+          <article class="card card-hover reveal flex flex-col gap-4 p-7">
+            <div class="icon-tile">
+              <img src={service.icon} alt="" class="size-7 object-contain" loading="lazy" />
             </div>
-
-            <!-- Title -->
-            <h3 class="text-xl md:text-2xl font-semibold" style="color: #09090b; line-height: 1.35;">
-              {service.title}
-            </h3>
-
-            <!-- Feature list -->
-            <ul style="display: flex; flex-direction: column; gap: 8px;">
+            <h3 class="text-xl font-semibold leading-snug text-fg">{service.title}</h3>
+            <ul class="flex flex-col gap-2">
               {service.items.map((item) => (
-                <li style="display: flex; align-items: flex-start; gap: 10px;">
-                  <div style="width: 6px; height: 6px; border-radius: 50%; background-color: #3f3f46; margin-top: 6px; flex-shrink: 0;"></div>
-                  <span class="text-xs md:text-sm" style="font-weight: 400; color: #52525b; line-height: 1.56;">{item}</span>
+                <li class="flex items-start gap-2.5 text-sm text-fg-2">
+                  <svg class="mt-0.5 shrink-0 text-brand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  {item}
                 </li>
               ))}
             </ul>
-
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Generic Modules -->
-  <section style="background-color: #ffffff; padding: 80px 0;">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+  <!-- Staff Augmentation -->
+  <section id="staff-augmentation" class="section bg-bg">
+    <div class="container-x">
 
-      <div class="text-center reveal" style="margin-bottom: 32px;">
-        <span style="background-color: #3f3f46; color: #fafafa; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 16px;">
-          Our Solutions
-        </span>
-        <h2 class="text-3xl md:text-4xl font-bold" style="color: #09090b; line-height: 1.25;">
-          Generic Modules That <span style="color: #2563eb;">Support Every Service</span>
-        </h2>
-      </div>
+      <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14">
 
-      <!-- Single bordered container with divider cells -->
-      <div class="modules-grid">
-        {modules.map((item) => (
-          <div class="module-cell">
-            <h3 class="text-lg md:text-xl font-semibold" style="color: #09090b; line-height: 1.35; margin-bottom: 10px;">
-              {item.title}
-            </h3>
-            <p class="text-sm md:text-base" style="font-weight: 400; color: #71717a; line-height: 1.65;">
-              {item.description}
-            </p>
-          </div>
-        ))}
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section style="background-color: #f4f4f5; padding: 80px 0;" class="reveal">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
-      <div class="services-cta-banner flex flex-col md:flex-row md:items-center justify-between">
-
-        <!-- Content -->
-        <div style="position: relative; z-index: 1; max-width: 520px;">
-          <h2 class="text-3xl md:text-4xl font-bold" style="color: #ffffff; line-height: 1.2; margin-bottom: 16px;">
-            Ready to Start Your<br />
-            <span style="color: rgba(255,255,255,0.55);">Project With Us?</span>
+        <!-- Pitch -->
+        <div class="reveal-left lg:sticky lg:top-28">
+          <span class="eyebrow">Staff Augmentation</span>
+          <h2 class="h-section mt-4">
+            Extend Your Team With <span class="text-gradient">Proven Developers</span>
           </h2>
-          <p class="text-sm md:text-base" style="font-weight: 400; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 32px;">
-            With proven delivery across multiple sectors, we make business solutions accessible, practical, and built to last.
+          <p class="lead mt-5">
+            Plug skilled engineers and designers directly into your team. We have delivered 50+ developers across the stacks below — from UI/UX through to cloud-native backends.
           </p>
-          
-        </div>
 
-        <div class="md:mr-20">
-          <a href="/contact-us" class="services-cta-btn">
-            Get Started →
+          <div class="mt-8 flex gap-6 rounded-3xl border border-line bg-bg-alt p-6">
+            <div>
+              <p class="text-gradient text-4xl font-extrabold leading-none">50+</p>
+              <p class="mt-2 text-xs font-medium text-muted">Developers Delivered</p>
+            </div>
+            <div class="border-l border-line pl-6">
+              <p class="text-gradient text-4xl font-extrabold leading-none">20+</p>
+              <p class="mt-2 text-xs font-medium text-muted">Technologies</p>
+            </div>
+          </div>
+
+          <ul class="mt-8 flex flex-col gap-5">
+            {engagementPoints.map((p) => (
+              <li class="flex gap-3">
+                <svg class="mt-0.5 shrink-0 text-brand" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+                <div>
+                  <p class="font-semibold text-fg">{p.title}</p>
+                  <p class="mt-1 text-sm leading-relaxed text-muted">{p.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <a href="/contact-us" class="btn-primary mt-8 w-full sm:w-auto">
+            Hire Developers
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
 
+        <!-- Tech stack -->
+        <div class="grid gap-4 sm:grid-cols-2">
+          {techStacks.map((stack) => (
+            <article class:list={['card card-hover reveal p-6', stack.optional && 'sm:col-span-2 border-dashed']}>
+              <div class="flex items-center gap-3">
+                <div class="icon-tile !size-10 !rounded-xl [&>svg]:size-5">
+                  <Fragment set:html={stack.icon} />
+                </div>
+                <h3 class="text-base font-semibold text-fg">{stack.group}</h3>
+              </div>
+              <ul class="mt-4 flex flex-wrap gap-2">
+                {stack.items.map((item) => (
+                  <li class="rounded-full border border-line bg-bg-alt px-3 py-1.5 text-xs font-medium text-fg-2 transition hover:border-brand/50 hover:text-brand sm:text-[13px]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Generic modules -->
+  <section class="section bg-bg-alt">
+    <div class="container-x">
+      <div class="reveal mx-auto mb-10 max-w-2xl text-center md:mb-12">
+        <span class="eyebrow">Our Solutions</span>
+        <h2 class="h-section mt-4">Generic Modules That <span class="text-gradient">Support Every Service</span></h2>
+      </div>
+
+      <div class="modules-grid reveal">
+        {modules.map((item, i) => (
+          <div class="module-cell">
+            <span class="text-gradient text-sm font-bold">0{i + 1}</span>
+            <h3 class="mt-2 text-lg font-semibold text-fg md:text-xl">{item.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted md:text-[15px]">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-bg" id="faq">
+    <div class="container-x">
+      <div class="reveal mx-auto mb-10 max-w-2xl text-center md:mb-12">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="h-section mt-4">Staff Augmentation in the UK — <span class="text-gradient">Your Questions Answered</span></h2>
+      </div>
+
+      <div class="mx-auto flex max-w-3xl flex-col gap-3">
+        {faqs.map((f, i) => (
+          <details class="faq-item card reveal group" open={i === 0}>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-left font-semibold text-fg sm:p-6">
+              <span>{f.q}</span>
+              <svg class="faq-chevron shrink-0 text-brand transition-transform duration-300" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 pb-5 text-sm leading-relaxed text-muted sm:px-6 sm:pb-6 sm:text-[15px]">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-bg pb-16 md:pb-24">
+    <div class="container-x">
+      <div class="banner-navy reveal flex flex-col gap-8 p-8 md:flex-row md:items-center md:justify-between md:p-14">
+        <div class="relative max-w-xl">
+          <h2 class="text-3xl font-bold leading-tight md:text-4xl">
+            Ready to Start Your <span class="text-sky-300">Project With Us?</span>
+          </h2>
+          <p class="mt-4 text-sm leading-relaxed text-white/65 md:text-base">
+            With proven delivery across multiple sectors, we make business solutions accessible, practical, and built to last.
+          </p>
+        </div>
+        <a href="/contact-us" class="btn-primary relative w-full shrink-0 md:w-auto">
+          Get Started
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -218,28 +402,29 @@ export const services = [
 </MainLayout>
 
 <style>
-  .service-card {
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
-    cursor: pointer;
+  .faq-item summary::-webkit-details-marker {
+    display: none;
   }
-  .service-card:hover {
-    transform: translateY(-8px) scale(1.015);
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 16px 40px 0px, rgba(0, 0, 0, 0.04) 0px 4px 12px 0px;
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
   }
 
-  /* ── Modules grid: single bordered container with hairline dividers ── */
   .modules-grid {
     display: grid;
     grid-template-columns: 1fr;
-    border: 1px solid #ececee;
-    border-radius: 36px;
     overflow: hidden;
-    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 1.5rem;
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
   }
-
   .module-cell {
-    padding: 28px 28px;
-    border-bottom: 1px solid #ececee;
+    padding: 28px;
+    border-bottom: 1px solid var(--line);
+    transition: background-color 0.2s ease;
+  }
+  .module-cell:hover {
+    background: var(--bg-alt);
   }
   .module-cell:last-child {
     border-bottom: none;
@@ -247,58 +432,16 @@ export const services = [
 
   @media (min-width: 640px) {
     .modules-grid { grid-template-columns: 1fr 1fr; }
-
-    .module-cell { border-right: 1px solid #ececee; }
-    .module-cell:nth-child(2n)  { border-right: none; }
-    /* last row = items 5 & 6 */
-    .module-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .module-cell { border-right: 1px solid var(--line); }
+    .module-cell:nth-child(2n) { border-right: none; }
+    .module-cell:nth-last-child(-n + 2) { border-bottom: none; }
   }
 
   @media (min-width: 1024px) {
     .modules-grid { grid-template-columns: 1fr 1fr 1fr; }
-
-    /* reset 2-col overrides */
-    .module-cell                { border-right: 1px solid #ececee; border-bottom: 1px solid #ececee; }
-    .module-cell:nth-child(2n)  { border-right: 1px solid #ececee; }
-    /* no right border on col 3 */
-    .module-cell:nth-child(3n)  { border-right: none; }
-    /* no bottom border on last row (items 4-6) */
-    .module-cell:nth-last-child(-n+3) { border-bottom: none; }
-  }
-
-  /* ── Services CTA gradient banner ── */
-  .services-cta-banner {
-    border-radius: 36px;
-    padding: 56px 52px;
-    overflow: hidden;
-    position: relative;
-    /* Dark base + layered radial blobs: green top-right, magenta right, purple centre-right */
-    background:
-      linear-gradient(to right, #09090b 30%, rgba(9,9,11,0) 68%),
-      radial-gradient(ellipse at 96% 15%, #14532d 0%, transparent 48%),
-      radial-gradient(ellipse at 102% 75%, #be185d 0%, transparent 45%),
-      radial-gradient(ellipse at 80%  55%, #6d28d9 0%, transparent 42%),
-      #09090b;
-  }
-
-  .services-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #ffffff;
-    color: #09090b;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 13px 28px;
-    border-radius: 36px;
-    text-decoration: none;
-    border: none;
-    transition: opacity 0.2s ease;
-  }
-  .services-cta-btn:hover { opacity: 0.88; }
-
-  @media (max-width: 640px) {
-    .services-cta-banner { padding: 40px 28px; }
-    .services-cta-banner h2 { font-size: 30px !important; }
+    .module-cell { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .module-cell:nth-child(2n) { border-right: 1px solid var(--line); }
+    .module-cell:nth-child(3n) { border-right: none; }
+    .module-cell:nth-last-child(-n + 3) { border-bottom: none; }
   }
 </style>

@@ -14,23 +14,20 @@ const markerIcon = new L.Icon({
 const locations = [
   {
     name: "London",
-    address: "Unit 1, Liberty Centre, Mount Pleasant, Wembley",
+    address: "Unit 1, Liberty Centre, Mount Pleasant, Wembley, HA0 1TX",
     position: [51.556, -0.2797],
-  },
-  {
-    name: "India",
-    address: "604 Sahitya Business Park",
-    position: [23.0714, 72.6699],
   },
 ];
 
 export default function OfficeMap() {
   return (
     <MapContainer
-      center={[20, 0]}
-      zoom={2}
+      center={[51.556, -0.2797]}
+      zoom={13}
+      scrollWheelZoom={false}
       style={{
-        height: "700px",
+        height: "100%",
+        minHeight: "360px",
         width: "100%",
       }}
     >
