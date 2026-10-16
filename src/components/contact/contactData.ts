@@ -1,12 +1,12 @@
 export const contactCards = [
   {
     title: "Sales Enquiry",
-    value: "runa@echoeleganceltd.uk",
+    value: "info@echoeleganceltd.uk",
     icon: "Mail",
   },
   {
     title: "Other Enquiry",
-    value: "runa@echoeleganceltd.uk",
+    value: "info@echoeleganceltd.uk",
     icon: "Mail",
   },
   {
