@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import contactImg from '../../assets/contact/contact.png';
 ---
 
 <section class="section bg-bg-alt">
@@ -16,11 +18,15 @@
       <div class="reveal-left hidden justify-center lg:flex">
         <div class="relative w-full max-w-md">
           <div aria-hidden="true" class="absolute inset-8 rounded-full bg-brand/15 blur-3xl"></div>
-          <img
-            src="/contact/contact.png"
+          <Image
+            src={contactImg}
             alt="Get in touch illustration"
             class="relative h-auto w-full object-contain"
+            format="webp"
+            widths={[448, 750]}
+            sizes="448px"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
