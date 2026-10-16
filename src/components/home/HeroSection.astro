@@ -1,4 +1,7 @@
 ---
+import { Picture } from 'astro:assets';
+import { heroImage, heroWidths, heroSizes } from './heroImage';
+
 const highlights = ['Staff Augmentation', 'Software Development', 'Digital Marketing', 'Accounting'];
 ---
 
@@ -10,8 +13,8 @@ const highlights = ['Staff Augmentation', 'Software Development', 'Digital Marke
   <div class="container-x relative py-16 md:py-24 lg:py-28">
     <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
-      <!-- Copy -->
-      <div class="reveal-left order-2 text-center lg:order-1 lg:text-left">
+      <!-- Copy (no scroll-reveal here: above-the-fold content must paint immediately for LCP) -->
+      <div class="order-2 text-center lg:order-1 lg:text-left">
         <span class="eyebrow">Best Staff Augmentation Company · United Kingdom</span>
 
         <h1 class="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-fg sm:text-5xl lg:text-[52px] xl:text-6xl">
@@ -42,15 +45,19 @@ const highlights = ['Staff Augmentation', 'Software Development', 'Digital Marke
       </div>
 
       <!-- Illustration -->
-      <div class="reveal-right order-1 flex justify-center lg:order-2 lg:justify-end">
+      <div class="order-1 flex justify-center lg:order-2 lg:justify-end">
         <div class="relative w-full max-w-md lg:max-w-xl">
           <div aria-hidden="true" class="absolute inset-6 rounded-full bg-brand/15 blur-3xl"></div>
-          <img
-            src="/homepage/banner-img1.png"
+          <Picture
+            src={heroImage}
             alt="Business solutions illustration"
             class="animate-float-y relative h-auto w-full object-contain"
-            width="800"
-            height="640"
+            formats={['avif']}
+            fallbackFormat="webp"
+            widths={heroWidths}
+            sizes={heroSizes}
+            loading="eager"
+            decoding="async"
             fetchpriority="high"
           />
         </div>

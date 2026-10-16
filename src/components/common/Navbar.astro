@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo/Logo-Img.png';
+
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
@@ -17,13 +20,15 @@ const isActive = (href: string) =>
 
     <!-- Logo (image has generous vertical whitespace, so the header is taller than usual) -->
     <a href="/" class="flex shrink-0 items-center" aria-label="EchoEleganceLtd.uk — Home">
-      <img
-        src="/logo/Logo-Img.png"
+      <Image
+        src={logo}
         alt="EchoEleganceLtd.uk — IT Solutions"
         class="brand-logo h-[52px] w-auto object-contain sm:h-[58px] lg:h-[72px]"
-        width="1149"
-        height="257"
-        fetchpriority="high"
+        format="webp"
+        widths={[240, 330, 420, 480, 660]}
+        sizes="(min-width: 1024px) 322px, (min-width: 640px) 260px, 232px"
+        loading="eager"
+        decoding="async"
       />
     </a>
 

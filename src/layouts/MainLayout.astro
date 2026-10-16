@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import Navbar from '../components/common/Navbar.astro';
 import Footer from '../components/common/Footer.astro';
 import '../styles/global.css';
@@ -78,18 +79,16 @@ const jsonLd = [
     <meta name="twitter:image" content={ogImageUrl} />
     {SITE.twitter && <meta name="twitter:site" content={SITE.twitter} />}
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0a1020" media="(prefers-color-scheme: dark)" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Self-hosted Inter (downloaded at build time) — no third-party CSS request, preloaded -->
+    <Font cssVariable="--font-inter" preload />
+    <slot name="head" />
 
     {jsonLd.map((obj) => (
       <script type="application/ld+json" set:html={JSON.stringify(obj)} />
@@ -117,40 +116,9 @@ const jsonLd = [
   </body>
 </html>
 
-<script type="module">
-  import Alpine from 'https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/module.esm.js';
-  window.Alpine = Alpine;
-  Alpine.start();
-
-  document.addEventListener("alpine:init", () => {
-    Alpine.data("testimonialSlider", () => ({
-      current: 0,
-      total: 4,
-
-      init() {
-        setInterval(() => {
-          this.next();
-        }, 5000);
-      },
-
-      next() {
-        if (this.current >= this.total - 2) {
-          this.current = 0;
-        } else {
-          this.current++;
-        }
-      },
-
-      prev() {
-        if (this.current <= 0) {
-          this.current = this.total - 2;
-        } else {
-          this.current--;
-        }
-      },
-    }));
-  });
-
+<script>
+  // Scroll-reveal runs immediately (tiny); Alpine is only needed below the fold,
+  // so it is loaded in a separate chunk once the browser is idle.
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -169,4 +137,46 @@ const jsonLd = [
   ).forEach((el) => {
     observer.observe(el);
   });
+
+  async function startAlpine() {
+    const { default: Alpine } = await import('alpinejs');
+
+    document.addEventListener("alpine:init", () => {
+      Alpine.data("testimonialSlider", () => ({
+        current: 0,
+        total: 4,
+
+        init() {
+          setInterval(() => {
+            this.next();
+          }, 5000);
+        },
+
+        next() {
+          if (this.current >= this.total - 2) {
+            this.current = 0;
+          } else {
+            this.current++;
+          }
+        },
+
+        prev() {
+          if (this.current <= 0) {
+            this.current = this.total - 2;
+          } else {
+            this.current--;
+          }
+        },
+      }));
+    });
+
+    window.Alpine = Alpine;
+    Alpine.start();
+  }
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => startAlpine(), { timeout: 2000 });
+  } else {
+    setTimeout(startAlpine, 200);
+  }
 </script>

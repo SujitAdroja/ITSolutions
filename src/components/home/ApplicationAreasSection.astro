@@ -1,20 +1,39 @@
 ---
+import { Image } from 'astro:assets';
+import textile from '../../assets/homepage/areas/textile.jpg';
+import manufacturing from '../../assets/homepage/areas/manufacturing-engineering.jpg';
+import ecommerce from '../../assets/homepage/areas/ecommerce.jpg';
+import realEstate from '../../assets/homepage/areas/real-estate.jpg';
+import advertising from '../../assets/homepage/areas/advertising-marketing.jpg';
+import transport from '../../assets/homepage/areas/transports-logistics.jpg';
+import retail from '../../assets/homepage/areas/retailmarket.jpg';
+import chemical from '../../assets/homepage/areas/chemical-paint.jpg';
+import healthcare from '../../assets/homepage/areas/healthcare.jpg';
+import fintech from '../../assets/homepage/areas/fintech.jpg';
+import proptech from '../../assets/homepage/areas/proptech.jpg';
+import educationtech from '../../assets/homepage/areas/educationtech.jpg';
+import crypto from '../../assets/homepage/areas/crypto-blockchain.jpg';
+import saas from '../../assets/homepage/areas/saas-enterprise.jpg';
+
 const areas = [
-  { label: 'Textile', imgPath: '/homepage/textile.jpg' },
-  { label: 'Manufacturing & Engineering', imgPath: '/homepage/manufacturing-engineering.jpg' },
-  { label: 'E-Commerce', imgPath: '/homepage/ecommerce.jpg' },
-  { label: 'Real Estate', imgPath: '/homepage/real-estate.jpg' },
-  { label: 'Advertising & Marketing', imgPath: '/homepage/advertising-marketing.jpg' },
-  { label: 'Transport & Logistics', imgPath: '/homepage/transports-logistics.jpg' },
-  { label: 'Retail & FMCG', imgPath: '/homepage/retailmarket.jpg' },
-  { label: 'Chemical & Paint', imgPath: '/homepage/chemical-paint.jpg' },
-  { label: 'Healthcare', imgPath: '/homepage/healthcare.jpg' },
-  { label: 'FinTech', imgPath: '/homepage/fintech.jpg' },
-  { label: 'PropTech', imgPath: '/homepage/proptech.jpg' },
-  { label: 'EducationTech', imgPath: '/homepage/educationtech.jpg' },
-  { label: 'Crypto & Blockchain', imgPath: '/homepage/crypto-blockchain.jpg' },
-  { label: 'SaaS & Enterprise', imgPath: '/homepage/saas-enterprise.jpg' },
+  { label: 'Textile', img: textile },
+  { label: 'Manufacturing & Engineering', img: manufacturing },
+  { label: 'E-Commerce', img: ecommerce },
+  { label: 'Real Estate', img: realEstate },
+  { label: 'Advertising & Marketing', img: advertising },
+  { label: 'Transport & Logistics', img: transport },
+  { label: 'Retail & FMCG', img: retail },
+  { label: 'Chemical & Paint', img: chemical },
+  { label: 'Healthcare', img: healthcare },
+  { label: 'FinTech', img: fintech },
+  { label: 'PropTech', img: proptech },
+  { label: 'EducationTech', img: educationtech },
+  { label: 'Crypto & Blockchain', img: crypto },
+  { label: 'SaaS & Enterprise', img: saas },
 ];
+
+// Card is 2-up on mobile, 3-up on md, 4-up on lg; height-capped, so ~300–450px is plenty
+const cardSizes = '(min-width: 1024px) 300px, (min-width: 768px) 33vw, 50vw';
 ---
 
 <section class="section bg-bg-alt">
@@ -31,12 +50,13 @@ const areas = [
     <div class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
       {areas.map((area) => (
         <figure class="area-card group reveal relative overflow-hidden rounded-2xl border border-line bg-surface shadow-card md:rounded-3xl">
-          <img
-            src={area.imgPath}
+          <Image
+            src={area.img}
             alt={`${area.label} industry solutions`}
             class="h-36 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-44 lg:h-52"
-            width="900"
-            height="600"
+            format="webp"
+            widths={[320, 480, 640]}
+            sizes={cardSizes}
             loading="lazy"
             decoding="async"
           />
