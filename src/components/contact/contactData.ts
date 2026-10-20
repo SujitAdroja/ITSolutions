@@ -20,7 +20,7 @@ export const officeLocations = [
   {
     name: "London",
     address: "Unit 1, Liberty Centre, Mount Pleasant, Wembley - HA0 1TX, United Kingdom",
-    lat: 51.556,
-    lng: -0.2797,
+    lat: 51.5407443,
+    lng: -0.2899325,
   },
 ];
