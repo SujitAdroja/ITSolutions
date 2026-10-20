@@ -1,6 +1,9 @@
 ---
-import OfficeMap from "./OfficeMap.tsx";
 import { officeLocations } from "./contactData";
+
+const office = officeLocations[0];
+// Keyless Google Maps embed: free, no API key / billing required
+const mapSrc = `https://maps.google.com/maps?q=${office.lat},${office.lng}&z=16&hl=en&output=embed`;
 ---
 
 <section class="bg-bg-alt pb-16 md:pb-24">
@@ -29,21 +32,17 @@ import { officeLocations } from "./contactData";
 
       <!-- Map -->
       <div class="map-frame min-h-[360px] overflow-hidden rounded-3xl border border-line shadow-card">
-        <OfficeMap client:only="react" />
+        <iframe
+          title={`${office.name} office location`}
+          src={mapSrc}
+          class="h-full min-h-[360px] w-full lg:min-h-[520px]"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
 
     </div>
   </div>
 </section>
 
-<style>
-  .map-frame :global(.leaflet-container) {
-    height: 100%;
-    min-height: 360px;
-  }
-  @media (min-width: 1024px) {
-    .map-frame :global(.leaflet-container) {
-      min-height: 520px;
-    }
-  }
-</style>
