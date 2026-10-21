@@ -267,14 +267,3 @@
     transition: none;
   }
 }
-
-/* Leaflet map — darken tiles in dark mode */
-.dark .leaflet-tile-pane {
-  filter: invert(1) hue-rotate(190deg) brightness(0.85) contrast(0.9) saturate(0.7);
-}
-.dark .leaflet-container {
-  background: #0d1528;
-}
-.leaflet-container {
-  font-family: var(--font-sans);
-}
